@@ -1,0 +1,41 @@
+.title {
+	font-family: 'Merriweather', serif;
+	text-align: center;
+	font-size: 68px;
+	}
+.profilepic {
+	text-align: center;
+}
+.profilepic img {
+	border: 1px solid white;
+	border-radius: 100px;
+	display: inline-block;
+	float: center;
+	margin: 10px 0 20px 0;
+}
+.profilepic p {
+	line-height: 21px;
+	font-size: 14px;
+	padding: 0px 25% 0 25%;
+}	
+.story {
+	margin-top: 40px;
+	text-align: center;
+}
+.story p {
+	line-height: 21px;
+	padding: 30px 20% 0 20%;
+	font-family: 'Quattrocento', serif;
+}
+iframe {
+	border: 5px solid white;
+	border-radius: 10px;
+}
+hr {
+	padding-bottom: 30px;
+}		
+@media screen and (min-width: 1000px) {
+	.profilepic p {
+		padding: 0px 34% 0px 34%;
+	}
+}
