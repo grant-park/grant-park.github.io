@@ -1,0 +1,53 @@
+.title h1 {
+	text-align: center;
+	font-size: 68px;
+}
+.profilepic {
+	text-align: center;
+}
+.profilepic img {
+	border: 3px solid white;
+	border-radius: 100px;
+	margin-bottom: 20px;
+}
+.profilepic p {
+	padding: 0 30% 0 30%;
+}
+
+.story {
+	text-align: center;
+	padding: 20px 0 0 0;
+}
+.story p {
+	padding: 15px 15% 0 15%;
+}
+body {
+	background-color: orange;
+	color: white;
+	padding-top:80px; 
+}
+hr {
+	border: 1px solid rgba(248, 221, 44, 0.9);
+}
+.blue {
+	color: rgba(55, 103, 162, 0.9);
+}
+/* navbar */
+.navbar-default {
+    background-color: rgba(55, 103, 162, 0.9);
+    border-color: rgba(55, 103, 162, 0.9);
+}
+/* title */
+.navbar-default .navbar-brand {
+    color: white;
+}
+/* link */
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
+@media (max-width: 768px) {
+	body {
+		padding-top:225px;
+	}
+}
+
