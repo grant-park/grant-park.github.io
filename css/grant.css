@@ -24,7 +24,6 @@
 }
 body {
 	background: url('mountain.jpg');
-	background-attachment: fixed;
 	color: white;
 	padding-top:70px; 
 }
