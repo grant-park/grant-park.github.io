@@ -23,7 +23,8 @@
 	padding: 15px 15% 0 15%;
 }
 body {
-	background-color: #7A6D09;
+	background: url('chicago.jpg');
+	background-attachment: fixed;
 	color: white;
 	padding-top:70px; 
 }
