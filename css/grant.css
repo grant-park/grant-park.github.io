@@ -30,6 +30,7 @@ body {
 	color: white;
 	padding-top:70px; 
 }
+
 hr {
 	border: 1px solid white;
 }
@@ -51,7 +52,7 @@ hr {
 }
 @media (max-width: 768px) {
 	body {
-		padding-top:225px;
+		padding-top:50px;
 	}
 }
 
