@@ -53,6 +53,8 @@ hr {
 @media (max-width: 768px) {
 	body {
 		padding-top:50px;
+		background-attachment: none;
+		background-repeat: repeat;
 	}
 }
 
