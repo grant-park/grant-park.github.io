@@ -23,7 +23,9 @@
 	padding: 15px 15% 0 15%;
 }
 body {
-	background-color: BurlyWood;
+	background-image: url(trianglify-background.svg);
+	background-repeat: no-repeat;
+    background-attachment: fixed;
 	color: white;
 	padding-top:70px; 
 }
