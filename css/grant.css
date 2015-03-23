@@ -22,6 +22,11 @@
 .story p {
 	padding: 15px 15% 0 15%;
 }
+.inline li {
+	list-style-type: none;
+	display: inline;
+	padding: 0 10px 0 10px;
+}
 body {
 	background-image: url(background.png);
 	background-size: 100% 100% 100% 100%;
