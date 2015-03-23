@@ -58,8 +58,6 @@ body {
 @media (max-width: 768px) {
 	body {
 		padding-top:50px;
-		background-image: none;
-		background-color: #B2B28F;
 	}
 }
 
