@@ -57,6 +57,7 @@ body {
 }
 @media (max-width: 768px) {
 	body {
+		background-image: url(triangle.svg);
 		padding-top:50px;
 	}
 }
