@@ -1,5 +1,6 @@
 .title h1 {
 	text-align: center;
+	text-shadow: -1px -2px 5px rgba(150, 150, 150, 1);
 	font-size: 68px;
 }
 .profilepic {
