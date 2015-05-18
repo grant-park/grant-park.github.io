@@ -29,7 +29,7 @@
 	padding: 0 10px 0 10px;
 }
 body {
-	background-image: url(background.png);
+	background-image: url(pattern.svg);
 	background-size: cover;
 	background-repeat: no-repeat;
     background-attachment: fixed;
