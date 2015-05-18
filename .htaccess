@@ -1,9 +1,0 @@
-<Files ~ "^\.(htaccess|htpasswd)$">
-deny from all
-</Files>
-Options Indexes
-RewriteEngine on
-RewriteCond %{HTTP_HOST} ^(www\.granthpark\.me)(:80)? [NC]
-RewriteRule ^(.*) http://granthpark.me/$1 [R=301,L]
-DirectoryIndex index.html       
-order deny,allow
