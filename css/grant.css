@@ -1,6 +1,6 @@
 .title h1 {
 	text-align: center;
-	text-shadow: -1px -2px 5px rgba(150, 150, 150, 1);
+
 	font-size: 68px;
 }
 .profilepic {
@@ -29,7 +29,7 @@
 	padding: 0 10px 0 10px;
 }
 body {
-	background-image: url(pattern.svg);
+	background-image: url(pattern.png);
 	background-size: cover;
 	background-repeat: no-repeat;
     background-attachment: fixed;
