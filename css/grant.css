@@ -46,7 +46,8 @@ body {
 /* navbar */
 .navbar-default {
     background-color: white;
-    border-color: black;
+    border-color: blue;
+    opacity: 0.8;
 }
 /* title */
 .navbar-default .navbar-brand {
