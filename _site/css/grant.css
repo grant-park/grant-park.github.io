@@ -1,6 +1,6 @@
 .title h1 {
 	text-align: center;
-
+	text-shadow: -1px -2px 5px rgba(150, 150, 150, 1);
 	font-size: 68px;
 }
 .profilepic {
@@ -29,7 +29,7 @@
 	padding: 0 10px 0 10px;
 }
 body {
-	background-image: url(pattern.png);
+	background-image: url(pattern.svg);
 	background-size: cover;
 	background-repeat: no-repeat;
     background-attachment: fixed;
@@ -41,21 +41,20 @@ body {
 	border: 1px solid white;
 }
 .blue {
-	color: white;
+	color: rgba(55, 103, 162, 0.9);
 }
 /* navbar */
 .navbar-default {
-    background-color: white;
-    border-color: white;
-    opacity: 0.8;
+    background-color: rgba(55, 103, 162, 0.9);
+    border-color: rgba(55, 103, 162, 0.9);
 }
 /* title */
 .navbar-default .navbar-brand {
-    color: black;
+    color: white;
 }
 /* link */
 .navbar-default .navbar-nav > li > a {
-    color: black;
+    color: white;
 }
 @media (max-width: 768px) {
 	body {
