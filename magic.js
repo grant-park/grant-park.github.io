@@ -1,4 +1,5 @@
 jQuery(document).ready(function($) {
+
 		  $.ajax({
 		  url : "http://api.wunderground.com/api/c1ea49b3e06dc3b3/geolookup/conditions/q/CA/San_Francisco.json",
 		  dataType : "jsonp",
@@ -20,10 +21,10 @@ jQuery(document).ready(function($) {
 		  var mTag = document.createElement('img');
 		  var fTag = document.createElement('img');
 
-		  mTag.width = 400;
-		  mTag.height = 400;
-		  fTag.width = 400;
-		  fTag.height = 400;
+
+		  mTag.style.maxWidth = "100%";
+		  fTag.style.maxWidth = "100%";
+
 
 		  mTag.style.borderRadius = "100px"
 		  fTag.style.borderRadius = "100px"
