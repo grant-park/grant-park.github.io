@@ -16,6 +16,7 @@
 		font-size: 100%;
 		font: inherit;
 		vertical-align: baseline;
+		position: relative;
 	}
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
