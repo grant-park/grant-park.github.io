@@ -29,16 +29,16 @@
 		  var weather = parsed_json['current_observation']['weather'];
 		  console.log(weather);
 		  if (weather == "Patches of Fog" || weather == "Shallow Fog" || weather == "Partial Fog" || weather == "Overcast" || weather == "Clear" || weather == "Partly Cloudy" || weather == "Mostly Cloudy" || weather == "Scattered Clouds" || weather == "Light Mist" || weather == "Heavy Mist") { 
-		  document.getElementById("mainz").innerHTML = "The weather at Outside Lands is OKAY!";
+		  document.getElementById("mainz").textContent = "The weather at Outside Lands is OKAY!";
 		  }
 		  else {
-		  	document.getElementById("mainz").innerHTML = "The weather at Outside Lands sucks right now.";
+		  	document.getElementById("mainz").textContent = "The weather at Outside Lands sucks right now.";
 		  }
 		}
 		  });
 		});
 		</script></h1>
-						<p id="weather" style="font-size:30px;"><script>
+						<pre id="weather" style="font-size:30px;"><script>
 		jQuery(document).ready(function($) {
 		  $.ajax({
 		  url : "http://api.wunderground.com/api/c1ea49b3e06dc3b3/geolookup/conditions/q/CA/San_Francisco.json",
@@ -47,11 +47,11 @@
 		  var location = parsed_json['location']['city'];
 		  var temp_f = parsed_json['current_observation']['temp_f'];
 		  var weather = parsed_json['current_observation']['weather'];
-		  document.getElementById("weather").innerHTML = "Current temperature in " + location + " is " + temp_f + "&#176" + "F" + " and it's " + weather.toLowerCase() + ".";
+		  document.getElementById("weather").textContent = "Current temperature in " + location + " is " + temp_f + "&#176" + "F" + " and it's " + weather.toLowerCase() + ".";
 		  }
 		  });
 		});
-		</script></p>
+		</script></pre>
 						<nav>
 							<ul>
 								<li><a href="https://twitter.com/sfoutsidelands" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
