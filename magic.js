@@ -20,10 +20,10 @@ jQuery(document).ready(function($) {
 		  var mTag = document.createElement('img');
 		  var fTag = document.createElement('img');
 
-		  mTag.width = 275;
-		  mTag.height = 275;
-		  fTag.width = 275;
-		  fTag.height = 275;
+		  mTag.width = 400;
+		  mTag.height = 400;
+		  fTag.width = 400;
+		  fTag.height = 400;
 
 		  mTag.style.borderRadius = "100px"
 		  fTag.style.borderRadius = "100px"
