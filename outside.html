@@ -37,6 +37,7 @@
 		  var location = parsed_json['location']['city'];
 		  var temp_f = parsed_json['current_observation']['temp_f'];
 		  document.getElementById("weather").innerHTML = "Current temperature in " + location + " is " + temp_f + "&#176" + "F" + " and it's " + weather.toLowerCase() + ".";
+		  $(window).trigger('resize');
 		}
 		  });
 		});
