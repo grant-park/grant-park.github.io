@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+//Grant Park, Outside Hacks
+<html>
+	<head>
+		<title>How's the Weather?</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	</head>
+	<body class="loading">
+		<div id="wrapper">
+			<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main">
+
+				<!-- Header -->
+					<header id="header">
+						<h1 id="mainz"><script>
+		jQuery(document).ready(function($) {
+		  $.ajax({
+		  url : "http://api.wunderground.com/api/c1ea49b3e06dc3b3/geolookup/conditions/q/CA/San_Francisco.json",
+		  dataType : "jsonp",
+		  success : function(parsed_json) {
+		  var weather = parsed_json['current_observation']['weather'];
+		  console.log(weather);
+		  if (weather == "Patches of Fog" || weather == "Shallow Fog" || weather == "Partial Fog" || weather == "Overcast" || weather == "Clear" || weather == "Partly Cloudy" || weather == "Mostly Cloudy" || weather == "Scattered Clouds" || weather == "Light Mist" || weather == "Heavy Mist") { 
+		  document.getElementById("mainz").innerHTML = "The weather at Outside Lands is OKAY!";
+		  }
+		  else {
+		  	document.getElementById("mainz").innerHTML = "The weather at Outside Lands sucks right now.";
+		  }
+		}
+		  });
+		});
+		</script></h1>
+						<p id="weather" style="font-size:30px;"><script>
+		jQuery(document).ready(function($) {
+		  $.ajax({
+		  url : "http://api.wunderground.com/api/c1ea49b3e06dc3b3/geolookup/conditions/q/CA/San_Francisco.json",
+		  dataType : "jsonp",
+		  success : function(parsed_json) {
+		  var location = parsed_json['location']['city'];
+		  var temp_f = parsed_json['current_observation']['temp_f'];
+		  var weather = parsed_json['current_observation']['weather'];
+		  document.getElementById("weather").innerHTML = "Current temperature in " + location + " is " + temp_f + "&#176" + "F" + " and it's " + weather.toLowerCase() + ".";
+		  }
+		  });
+		});
+		</script></p>
+						<nav>
+							<ul>
+								<li><a href="https://twitter.com/sfoutsidelands" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="https://www.facebook.com/SFOutsideLands" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+								<li><a href="https://instagram.com/outside_lands/" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="https://www.youtube.com/user/outsidelands" class="icon fa-youtube"><span class="label">Youtube</span></a></li>
+								<li><a href="http://www.sfoutsidelands.com/contact-us" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+							</ul>
+						</nav>
+					</header>
+
+
+			</div>
+		</div>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script>
+			window.onload = function() { document.body.className = ''; }
+			window.ontouchmove = function() { return false; }
+			window.onorientationchange = function() { document.body.scrollTop = 0; }
+		</script>
+	</body>
+</html>
