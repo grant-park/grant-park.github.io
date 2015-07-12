@@ -70,7 +70,7 @@
 
 	body {
 		background: #fff;
-		overflow: scroll;
+		overflow-x: hidden ;
 	}
 
 		body.loading * {
@@ -766,6 +766,7 @@
 		#bg {
 			background-size: 1500px auto;
 			width: 4500px;
+			position: fixed;
 		} }
 
 /* Normal */
@@ -848,6 +849,7 @@
 		#bg {
 			background-size: 750px auto;
 			width: 2250px;
+			position: fixed;
 		} }
 
 /* Mobile */
@@ -934,6 +936,7 @@
 		#bg {
 			background-size: 300px auto;
 			width: 900px;
+			position: fixed;
 		}
 
 	/* Header */
@@ -1032,6 +1035,7 @@
 		#bg {
 			background-size: 412.5px auto;
 			width: 1237.5px;
+			position: fixed;
 		}
 
 	/* Header */
