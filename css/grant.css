@@ -63,3 +63,23 @@ body {
 	}
 }
 
+.shadow {
+  display: inline-block;
+  position: relative;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+  -moz-box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+  box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+}
+
+.shadow img {
+	margin-top: 1px;
+  max-width: 100%;
+  position: relative;
+  z-index: -1;
+  margin-bottom: 5px;
+
+}
+
