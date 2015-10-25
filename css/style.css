@@ -205,6 +205,7 @@ a:hover {
 
   .iOS-container {
     overflow: scroll;
+    -webkit-overflow-scrolling:touch;
   }
 
 	#demo {
