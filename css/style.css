@@ -138,6 +138,36 @@ a:hover {
 	line-height: 15px;
 }
 
+.second {
+  margin-top: 30px;
+  margin-bottom: -50px;
+  margin-left: -35px;
+  text-align: center;
+  height: 40px;
+}
+
+.icons ul {
+  margin: auto;
+  width: 50%;
+  padding: 0;
+  list-style-type: none;
+}
+
+.icons li {
+  opacity: 0.9;
+  display: inline;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.icons img {
+  width: 3%;
+  border-radius: 50px;
+  -webkit-box-shadow: 1px 1px 22px 2px rgba(0,0,0,0.35);
+  -moz-box-shadow: 1px 1px 22px 2px rgba(0,0,0,0.35);
+  box-shadow: 1px 1px 22px 2px rgba(0,0,0,0.35);
+}
+
 @media only screen and (max-width: 900px) {
 	.flex-item {
 		width: 200px;
