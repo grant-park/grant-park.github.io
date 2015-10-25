@@ -1,0 +1,64 @@
+
+<!DOCTYPE HTML>
+\\ Grant Park, Outside Hacks \\ Copyright 2015 \\ All images licensed under Creative Commons
+<html>
+	<head>
+		<title>How's the Weather?</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="shortcut icon" href="http://www.sfoutsidelands.com/sites/default/files/favicon_osl.ico" type="image/vnd.microsoft.icon" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<script src="magic.js"></script>
+		<script src="jquery.resize-image-aspect-ratio.js"></script>
+	</head>
+	<body class="loading">
+		<div id="wrapper">
+			<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main">
+
+				<!-- Header -->
+					<header id="header">
+						<h1 id="mainz" style="margin-top:80px;"></h1>
+						<p id="weather" style="font-size:30px;"></p>
+						<nav>
+							<ul>
+								<li><a href="https://twitter.com/sfoutsidelands" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="https://www.facebook.com/SFOutsideLands" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+								<li><a href="https://instagram.com/outside_lands/" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="https://www.youtube.com/user/outsidelands" class="icon fa-youtube"><span class="label">Youtube</span></a></li>
+								<li><a href="http://www.sfoutsidelands.com/contact-us" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+							</ul>
+						</nav>
+					</br>
+						<p><b style="color: white; font-size: 25px;">Recommended clothing for today!</b></p>
+					</br>
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-6" id="mpics"></div>
+								<div class="col-sm-6" id="fpics"></div>
+							</div>
+						</div>
+					</header>
+				</br>
+			</br>
+			<p style="font-size:40px;"><b>Try the app today!</b></p>
+					<p><img src="weatheriphone.png" style="width: 35%; height: 35%; border-radius:10px;-webkit-box-shadow:0px 0px 10px 4px rgba(119, 119, 119, 0.75);margin-bottom:70px;"></p>
+
+
+			</div>
+		</div>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script>
+			window.onload = function() { document.body.className = ''; }
+			window.ontouchmove = function() { return false; }
+			window.onorientationchange = function() { document.body.scrollTop = 0; }
+		</script>
+	</body>
+</html>

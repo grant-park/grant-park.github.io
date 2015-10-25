@@ -1,0 +1,65 @@
+.title h1 {
+	text-align: center;
+	text-shadow: -1px -2px 5px rgba(150, 150, 150, 1);
+	font-size: 68px;
+}
+.profilepic {
+	text-align: center;
+}
+.profilepic img {
+	border: 3px solid white;
+	border-radius: 100px;
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+.profilepic p {
+	padding: 0 30% 0 30%;
+}
+
+.story {
+	text-align: center;
+	padding: 20px 0 0 0;
+}
+.story p {
+	padding: 15px 15% 0 15%;
+}
+.inline li {
+	list-style-type: none;
+	display: inline;
+	padding: 0 10px 0 10px;
+}
+body {
+	background-image: url(pattern.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+	color: white;
+	padding-top:70px; 
+}
+
+.only hr {
+	border: 1px solid white;
+}
+.blue {
+	color: rgba(55, 103, 162, 0.9);
+}
+/* navbar */
+.navbar-default {
+    background-color: rgba(55, 103, 162, 0.9);
+    border-color: rgba(55, 103, 162, 0.9);
+}
+/* title */
+.navbar-default .navbar-brand {
+    color: white;
+}
+/* link */
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
+@media (max-width: 768px) {
+	body {
+		background-image: url(triangle.svg);
+		padding-top:50px;
+	}
+}
+

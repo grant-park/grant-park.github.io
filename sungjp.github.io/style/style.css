@@ -1,0 +1,158 @@
+body {
+	background-color: white;
+	margin-bottom: -10px;
+
+}
+
+
+.header {
+	background-color: red;
+	display: flex;
+	margin: -10px -10px 0px -10px;
+	flex-flow: row wrap;
+	padding-top: 80px;
+	padding-left: 15%;
+	padding-bottom: 50px;
+
+}
+
+#normal {
+	font-size: 20px;
+	line-height: 35px;
+	color: rgb(255, 168, 152);}
+
+#subText {
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	text-align: center;
+	line-height: 35px;
+	color: rgb(255, 168, 152);
+}
+
+#bold1 {
+	font-size: 50px;
+	color: orange;
+}
+
+#bold {
+	font-size: 30px;
+	color: orange;
+}
+
+#app {
+	margin-left: 0%;
+	margin-top: 40px;
+}
+
+.header p {
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	font-size: 80px;
+	color: white;
+	margin-left: 20%;
+}
+
+.headerSub2 {
+	position: relative;
+	width: 55%;
+	height: 60%; 
+	text-align: center;
+}
+
+.headerSub2 img {
+	margin-left: 15%;
+	margin-right: -19%;
+}
+
+.body {
+	display: flex;
+	margin: -10px -10px 0px -10px;
+	flex-flow: row wrap;
+	padding-top: 80px;
+	padding-left: 15%;
+	padding-bottom: 25px;
+}
+
+.body2 {
+	font-family: 'Roboto', sans-serif;
+	color: white;
+	background-color: green;
+	margin-right: -10px;
+	margin-left: -10px;
+	margin-top: 50px;
+	padding-bottom: 50px;
+	padding-top: 50px;
+	font-size: 50px;
+	text-align: center;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.bodySub {
+	font-family: 'Roboto', sans-serif;
+	font-size: 25px;
+	width: 30%;
+	height: 60%; 
+	text-align: center;
+	margin-left: 0%;
+	margin-right: -19%;
+}
+
+.gif {
+	margin-left: 35%;
+}
+
+.gif2 {
+	margin-left: 15%;
+}
+
+
+.bodySub2 {
+	font-family: 'Roboto', sans-serif;
+	color: white;
+	font-size:25px;
+	position: relative;
+	width: 50%;
+	height: 60%; 
+	text-align: center;
+}
+
+.footer {
+	backgro
+}
+
+.shadow {
+  display: inline-block;
+  position: relative;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+  -moz-box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+  box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+}
+
+.shadow img {
+	margin-top: 1px;
+  max-width: 100%;
+  position: relative;
+  z-index: -1;
+  margin-bottom: 5px;
+
+}
+
+.inline {
+	display: inline;
+}
+
+.inline2 {
+	display: inline;
+}
+
+.last {
+	margin-top: 100px;
+}
+
+
+
+
