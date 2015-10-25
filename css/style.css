@@ -208,7 +208,6 @@ a:hover {
   }
 
   .iOS-container {
-    height: 101%;
     overflow: scroll;
     -webkit-overflow-scrolling:touch;
   }
