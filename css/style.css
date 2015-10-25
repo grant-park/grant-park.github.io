@@ -217,6 +217,10 @@ a:hover {
     padding-bottom: 0px;
   }
 
+  .inner-div {
+    width: 80%;
+  }
+
   body {
     height: 0%;
   }
