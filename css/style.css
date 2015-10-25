@@ -204,7 +204,7 @@ a:hover {
 @media only screen and (max-width: 400px) {
 
   .iOS-container {
-    height: 100%;
+    height: 101%;
     overflow: scroll;
     -webkit-overflow-scrolling:touch;
   }
