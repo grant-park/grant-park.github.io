@@ -203,13 +203,8 @@ a:hover {
 
 @media only screen and (max-width: 400px) {
 
-  html,body {
-    height: 100%;
-    overflow: scroll;
-  }
-
-  body {
-    overflow: auto;
+  .outer-div {
+    position: relative;
   }
 
   .iOS-container {
