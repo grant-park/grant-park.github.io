@@ -33,7 +33,9 @@ Y88b  d88P 888    888  888 888  888 Y88b.       888       888  888 888     888 "
 	<body ng-controller="MainController">
 		<div class="outer-div">
 			<div class="inner-div">
-				<p ng-hide="iOSWeb">Hi, I'm Grant. Here's my <a id="resume" href="grantParkResume.pdf" target="blank_">resume</a>.</p>
+				<section ng-hide="iOSWeb" id="typejs-section">
+					<p>Hi, I'm Grant. I'm <span id="element"></span></p>
+				</section>
 				<div class="second">
 					<ul ng-hide="iOSWeb" class="icons">
 						<li><a href="https://github.com/sungjp" target='_blank'><img src="webicon-github.svg"></a></li>
@@ -58,7 +60,7 @@ Y88b  d88P 888    888  888 888  888 Y88b.       888       888  888 888     888 "
 				  	<!--Web-->
 				  	<a class="webLink" href="http://grantpark.rocks" target="blank_" ng-show='web'>Grant Park 1.0</a>
 				  </li>
-				  <li class="flex-item"><a href="https://www.youtube.com/watch?v=9ZSjCHjyWZ8" target="blank_" ng-hide="iOSWeb">Rowing</a>
+				  <li class="flex-item"><a href="grantParkResume.pdf" target="blank_" ng-hide="iOSWeb">Resume</a>
 				  	<!--Web-->
 				  	<a class="webLink" href="http://hungrie.site/" target="blank_" ng-show='web'>Hungrie.site</a>
 				  </li>
@@ -93,4 +95,16 @@ Y88b  d88P 888    888  888 888  888 Y88b.       888       888  888 888     888 "
 	<script src="http://threejs.org/examples/obj/Bird.js"></script>
 	<script src="js/custom.js"></script>
 	<script src="js/birds.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="js/typed.min.js"></script>
+	<script>
+	  $('#element').typed({
+	        strings: ["a full-stack developer.","an indie artist.","an avid rower.","an eager learner."],
+	        typeSpeed: 20,
+	        backDelay: 2000,
+	        loop: true,
+	        loopCount: false,
+	    });
+	</script>
+
 </html>
