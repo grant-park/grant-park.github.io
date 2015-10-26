@@ -28,7 +28,7 @@ body {
     margin-top: 10%;
     opacity: 0.8;
     color: white;
-    background-color: skyblue;
+    background-color: cornflowerblue;
 
     border-radius: 25px;
 	-webkit-box-shadow: 1px 1px 22px 2px rgba(0,0,0,0.35);
@@ -60,7 +60,6 @@ a:hover {
 
 .webLink {
   font-size: 20px;
-  line-height: 25px;
 }
 
 @import "compass/css3";
@@ -140,9 +139,9 @@ a:hover {
 }
 
 .second {
-  margin-top: 30px;
+  margin-top: 45px;
   margin-bottom: -50px;
-  margin-left: -35px;
+  margin-left: -45px;
   text-align: center;
   height: 40px;
 }
