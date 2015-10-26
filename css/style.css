@@ -62,6 +62,12 @@ a:hover {
   font-size: 20px;
 }
 
+#backer {
+  text-align: left;
+  margin-top: 15px;
+  margin-left: 50px;
+}
+
 @import "compass/css3";
 
 .flex-container {
