@@ -24,12 +24,12 @@ body {
 
 .inner-div {
     margin: 0 auto;
-    width: 40%;
+    width: 42%;
     margin-top: 10%;
     opacity: 0.8;
     color: white;
     background-color: skyblue;
-    border: 1px solid white;
+
     border-radius: 25px;
 	-webkit-box-shadow: 1px 1px 22px 2px rgba(0,0,0,0.35);
 	-moz-box-shadow: 1px 1px 22px 2px rgba(0,0,0,0.35);
@@ -68,6 +68,7 @@ a:hover {
 .flex-container {
   padding: 0;
   margin: 0;
+  margin-left: -15px;
   padding-top: 70px;
   list-style: none;
   
