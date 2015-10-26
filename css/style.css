@@ -24,7 +24,7 @@ body {
 
 .inner-div {
     margin: 0 auto;
-    width: 42%;
+    width: 44%;
     margin-top: 10%;
     opacity: 0.8;
     color: white;
@@ -43,12 +43,6 @@ body {
 	margin-bottom: -10px;
 }
 
-#resume {
-	text-decoration: none;
-	color: black;
-	font-size: 22px;
-}
-
 a {
 	text-decoration: none;
 	color: white;
@@ -63,9 +57,9 @@ a:hover {
 }
 
 #backer {
-  text-align: left;
+  text-align: center;
   margin-top: 15px;
-  margin-left: 50px;
+  margin-right: 15px;
 }
 
 @import "compass/css3";
@@ -74,7 +68,7 @@ a:hover {
   padding: 0;
   margin: 0;
   margin-left: -15px;
-  padding-top: 70px;
+  padding-top: 80px;
   list-style: none;
   
   display: -webkit-box;
@@ -88,7 +82,7 @@ a:hover {
 }
 
 .flex-item {
-  width: 27%;
+  width: 26%;
   height: 10%;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -146,7 +140,7 @@ a:hover {
 
 .second {
   margin-top: 45px;
-  margin-bottom: -50px;
+  margin-bottom: -20px;
   margin-left: -45px;
   text-align: center;
   height: 40px;
@@ -167,7 +161,7 @@ a:hover {
 }
 
 .icons img {
-  width: 20px;
+  width: 40px;
   border-radius: 50px;
   -webkit-box-shadow: 1px 1px 22px 2px rgba(0,0,0,0.35);
   -moz-box-shadow: 1px 1px 22px 2px rgba(0,0,0,0.35);
@@ -205,12 +199,60 @@ a:hover {
 		margin-top: 30px;
 	}
 
+  .outer-div {
+    position: relative;
+    margin-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .inner-div {
+    width: 80%;
+  }
+
+  body {
+    height: 0%;
+  }
+
+  .iOS-container {
+    overflow: scroll;
+    -webkit-overflow-scrolling:touch;
+    padding-top: 0px;
+  }
+
+  .iOS-container {
+    margin-top: 20px;
+  }
+
 }
 
 @media only screen and (max-width: 626px) {
 
+  .outer-div {
+    position: relative;
+    margin-top: -40px;
+    padding-bottom: 0px;
+  }
+
+  .inner-div {
+    width: 80%;
+  }
+
+  body {
+    height: 0%;
+  }
+
+  .iOS-container {
+    overflow: scroll;
+    -webkit-overflow-scrolling:touch;
+    padding-top: 0px;
+  }
+
   #demo {
     margin-top: 60px;
+  }
+
+  .iOS-container {
+    margin-top: 20px;
   }
 
 }
