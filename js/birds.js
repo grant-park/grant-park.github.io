@@ -8,7 +8,7 @@ birds, bird;
 
 var boid, boids;
 
-
+var renderer;
 
 init();
 animate();
@@ -43,7 +43,8 @@ function init() {
 	}
 
 	renderer = new THREE.CanvasRenderer();
-	renderer.setClearColor( 0xffffff );
+	// yooo 0x222222
+	renderer.setClearColor( 0xFFFFFF );
 	renderer.setPixelRatio( window.devicePixelRatio );
 	renderer.setSize( SCREEN_WIDTH, SCREEN_HEIGHT );
 

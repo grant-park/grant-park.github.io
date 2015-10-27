@@ -31,10 +31,10 @@ Y88b  d88P 888    888  888 888  888 Y88b.       888       888  888 888     888 "
 		</script>
 	</head>
 	<body ng-controller="MainController">
-		<div class="outer-div">
+		<div id="bob" class="outer-div">
 			<div class="inner-div">
 				<section ng-hide="iOSWeb" id="typejs-section">
-					<p>Hi, I'm Grant. I'm <span id="element"></span></p>
+					<p><a id="secret" href="">Hi, I'm Grant.</a> I'm <span id="element"></span></p>
 				</section>
 				<div ng-hide="iOSWeb" class="second">
 					<ul ng-hide="iOSWeb" class="icons">
@@ -51,27 +51,33 @@ Y88b  d88P 888    888  888 888  888 Y88b.       888       888  888 888     888 "
 				<ul class="flex-container" ng-hide="panel">
 				  <li class="flex-item"><a href="" ng-hide="iOSWeb" ng-click='toiOS()'>iOS</a>
 				  	<!--Web-->
-				  	<a class="webLink" href="http://codepen.io/sungjp/" target="blank_" ng-show='web'>Angular.js</a>
+<!-- 				  	<img class="webLink" ng-show='web' width=100%; src="angular.svg">
+ -->				  	<a class="webLink" href="http://codepen.io/sungjp/" target="blank_" ng-show='web'>Angular.js</a>
 				  </li>
 				  <li class="flex-item"><a href="" ng-hide="iOSWeb" ng-click='toWeb()'>Web</a>
 				  	<!--Web-->
-				  	<a class="webLink" href="outside.html" target="blank" ng-show='web'>OutsideLands</a>
+<!-- 				  	<img class="webLink" ng-show='web' width=100%; src="angular.svg">
+ -->				  	<a class="webLink" href="outside.html" target="blank" ng-show='web'>OutsideLands</a>
 				  </li>
 				  <li class="flex-item"><a href="grantParkResume.pdf" target="blank_" ng-hide="iOSWeb">Resume</a>
 				  	<!--Web-->
-				  	<a class="webLink" href="http://grantpark.rocks" target="blank_" ng-show='web'>Grant Park 1.0</a>
+<!-- 				  	<img class="webLink" ng-show='web' width=100%; src="angular.svg">
+ -->				  	<a class="webLink" href="http://grantpark.rocks" target="blank_" ng-show='web'>Grant Park 1.0</a>
 				  </li>
 				  <li class="flex-item"><a href="https://www.behance.net/grantpark" target="blank_" ng-hide="iOSWeb">Design</a>
 				  	<!--Web-->
-				  	<a class="webLink" href="http://hungrie.site/" target="blank_" ng-show='web'>Hungrie.site</a>
+<!-- 				  	<img class="webLink" ng-show='web' width=100%; src="angular.svg">
+ -->				  	<a class="webLink" href="http://hungrie.site/" target="blank_" ng-show='web'>Hungrie.site</a>
 				  </li>
 				  <li class="flex-item"><a href="https://soundcloud.com/grant-park" target="blank_" ng-hide="iOSWeb">Music</a>
 				  	<!--Web-->
-				  	<a class="webLink" href="http://amherstec.github.io/" target="blank" ng-show='web'>AC Electronics</a>
+<!-- 				  	<img class="webLink" ng-show='web' width=100%; src="angular.svg">
+ -->				  	<a class="webLink" href="http://amherstec.github.io/" target="blank" ng-show='web'>AC Electronics</a>
 				  </li>
 				  <li class="flex-item"><a href="https://medium.com/@grantxs" target="_blank" ng-hide="iOSWeb">Blog</a>
 				  	<!--Web-->
-				  	<a class="webLink" href="http://readertoreader.org/" target="blank" ng-show='web'>ReaderToReader</a>
+<!-- 				  	<img class="webLink" ng-show='web' width=100%; src="angular.svg">
+ -->				  	<a class="webLink" href="http://readertoreader.org/" target="blank" ng-show='web'>ReaderToReader</a>
 				  </li>
 				  <li class="flex-item" ng-show='web'>
 				  	<a class="webLink" href="http://triviagrant.azurewebsites.net/" target="blank_" ng-show='web'>Trivia!</a>
@@ -87,7 +93,8 @@ Y88b  d88P 888    888  888 888  888 Y88b.       888       888  888 888     888 "
 					  </div>
 				</div>
 			</div>
-		</div>
+<!-- 			<a href="" id="secret" style="color:gray;text-align:right;"><p>secret</p></a>
+ -->		</div>
 	</body>
 	<script src="http://threejs.org/build/three.min.js"></script>
 	<script src="http://threejs.org/examples/js/renderers/Projector.js"></script>
@@ -107,5 +114,6 @@ Y88b  d88P 888    888  888 888  888 Y88b.       888       888  888 888     888 "
 	        loopCount: false,
 	    });
 	</script>
+	<script src="js/changeColor.js"></script>
 
 </html>
