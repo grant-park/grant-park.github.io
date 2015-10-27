@@ -9,7 +9,7 @@ var state = 0;
 var change = function(){
 
 	if (state == 0) {
-		$("#bob .inner-div").css("background-color","slategray");
+		$("#bob .inner-div").css("background-color","dodgerblue");
 		renderer.setClearColor( 0x222222 );
 		state = 1;
 	} else {
