@@ -104,6 +104,7 @@ a:hover {
   display: flex;
   
   -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
   justify-content: space-around;
 }
 
