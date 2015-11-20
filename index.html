@@ -16,9 +16,12 @@ Y88b  d88P 888    888  888 888  888 Y88b.       888       888  888 888     888 "
 		<meta name=viewport content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/load.css" />
+
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+		
 		<script src="js/app.js"></script>
+
 
 		<!--Google analytics-->
 		<script>
@@ -31,6 +34,7 @@ Y88b  d88P 888    888  888 888  888 Y88b.       888       888  888 888     888 "
 		  ga('send', 'pageview');
 		</script>
 	</head>
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 	<div id="loader-wrapper">
 			<div id="loader"></div>
 
@@ -101,43 +105,47 @@ Y88b  d88P 888    888  888 888  888 Y88b.       888       888  888 888     888 "
 				  	<a class="webLink" href="http://triviagrant.azurewebsites.net/" target="blank_" ng-show='web'>Trivia!</a>
 				  </li>
 				  <li class="flex-item" ng-show='web'>
-				  	<a class="webLink" href="BostonHacks/index.html" target="blank_" ng-show='web'>NoteSMS</a>
+				  	<a class="webLink" href="BostonHacks/index.html" rel="htmltooltip" target="blank_" ng-show='web'>NoteSMS</a>
 				  </li>
 				  <li class="flex-item" ng-show='web'>
-				  	<a class="webLink" href="http://yhackbyte.herokuapp.com/" target="blank_" ng-show='web'>Byte</a>
+				  	<a class="webLink" href="http://yhackbyte.herokuapp.com/" target="blank_" ng-show='web' id="qtip">Byte</a>
 				  </li>
 				</ul>
+				
 				<div class='iOS-container' ng-show="normal">
 					  <div class="iOS-description">
-					  	<img ng-show='normal' src="iphone.jpg" height=150%; style="border-radius: 10px; box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.75);margin-bottom:-100px;margin-top:50px;">
+					  	<div class="iOS-image-wrapper"><img class="iOS-image" ng-show='normal' src="iphone.jpg"></div>
+					  	<div class="info-container"><p ng-show='normal'><b style="font-size:16px;color:black;">Hungrie</b> lets users pick and find nearby food in a single tap.<br/><br/>
+	Once a user opens the app, Hungrie immediately grabs the user's current location and shows posts of food nearby. It's as simple as it gets.</p></div>
 					  </div>
 					  <div class="iOS-description">
-					  	<p id="demo" ng-show='normal'><b style="font-size:16px;color:black;">Hungrie</b> lets users pick and find nearby food in a single tap.<br/><br/>
-	Once a user opens the app, Hungrie immediately grabs the user's current location and shows posts of food nearby. It's as simple as it gets.</p>
+					  	<div class="iOS-image-wrapper"><img class="iOS-image" ng-show='normal' src="yhack.png"></div>
+					  	<div class="info-container"><p ng-show='normal'><b style="font-size:16px;color:black;">Byte</b> allows you to record your singing and/or music and share it for others to work on top of. You can also share it to Facebook for the world to see!</p></div>
 					  </div>
 				</div>
 			</div>
 <!-- 			<a href="" id="secret" style="color:gray;text-align:right;"><p>secret</p></a>
  -->		</div>
-	</body>
-	<script src="http://threejs.org/build/three.min.js"></script>
-	<script src="http://threejs.org/examples/js/renderers/Projector.js"></script>
-	<script src="http://threejs.org/examples/js/renderers/CanvasRenderer.js"></script>
-	<script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
-	<script src="http://threejs.org/examples/obj/Bird.js"></script>
-	<script src="js/custom.js"></script>
-	<script src="js/birds.js"></script>
-	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="js/typed.min.js"></script>
-	<script>
-	  $('#element').typed({
-	        strings: ["a full-stack developer.","an indie artist.","an avid rower.","an eager learner."],
-	        typeSpeed: 20,
-	        backDelay: 2000,
-	        loop: true,
-	        loopCount: false,
-	    });
-	</script>
-	<script src="js/changeColor.js"></script>
+	 	<script src="http://cdn.jsdelivr.net/qtip2/2.2.1/basic/jquery.qtip.min.js"></script>
+		<script src="http://threejs.org/build/three.min.js"></script>
+		<script src="http://threejs.org/examples/js/renderers/Projector.js"></script>
+		<script src="http://threejs.org/examples/js/renderers/CanvasRenderer.js"></script>
+		<script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+		<script src="http://threejs.org/examples/obj/Bird.js"></script>
+		<script src="js/custom.js"></script>
+		<script src="js/birds.js"></script>
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="js/typed.min.js"></script>
+		<script>
+		  $('#element').typed({
+		        strings: ["a full-stack developer.","an indie artist.","an avid rower.","an eager learner."],
+		        typeSpeed: 20,
+		        backDelay: 2000,
+		        loop: true,
+		        loopCount: false,
+		    });
+		</script>
+		<script src="js/changeColor.js"></script>
 
+	</body>
 </html>

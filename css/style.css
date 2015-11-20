@@ -14,6 +14,18 @@ body {
 
 }
 
+div.htmltooltip{
+position: absolute; /*leave this and next 3 values alone*/
+z-index: 1000;
+left: -1000px;
+top: -1000px;
+background: #272727;
+border: 10px solid black;
+color: white;
+padding: 3px;
+width: 250px; /*width of tooltip*/
+}
+
 .outer-div {
     position: fixed;
         top: 0;
@@ -26,12 +38,15 @@ body {
           -webkit-box-shadow: inset 1px 1px 192px 50px rgba(0,0,0,0.35);
   -moz-box-shadow: inset 1px 1px 192px 50px rgba(0,0,0,0.35);
   box-shadow: inset 1px 1px 192px 50px rgba(0,0,0,0.35);
+  overflow: scroll;
+
 }
 
 .inner-div {
     margin: 0 auto;
     width: 44%;
     margin-top: 10%;
+    padding-bottom: 20px;
     opacity: 0.9;
     
     color: white;
@@ -103,47 +118,88 @@ a:hover {
 }
 
 .iOS-container {
-  position: relative;
+/*  position: relative;
 	margin-top: 5px;
 	margin-bottom: 20px;
   padding-bottom: 100px;
    display: -webkit-flex;
    display: flex;
    -webkit-flex-direction: row /* works with row or column */
-   flex-direction: row;
+/*   flex-direction: row;
    -webkit-align-items: center;
    align-items: center;
    -webkit-justify-content: center;
    justify-content: center;
    -webkit-flex-flow: row wrap;
    flex-flow: row wrap;
+   overflow: auto;*/
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+
+   height: 450px;
+   width: 100%;
+   margin: 0 auto;
+   margin-top: 40px;
+   margin-bottom: 40px;
    overflow: auto;
+   flex-wrap: wrap;
+/*   background-color: white;
+*/   
+
 
 }
 
 .iOS-description {
-  width: 27%;
-  height: 20%;
-  margin-left: 50px;
-  margin-right: 50px;
-  padding-bottom: 25%;
-  margin-bottom: 10px;
-	
-  color: white;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: bold;
-  font-size: 2em;
-  text-align: center;
+  font-size: 10px;
+  height: 120px;
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 3px;
+  padding: 0px 0 250px 10px;
+}
+
+.info-container{
+    margin-top: 0;
+    height: 300px;
+    width: 46%;
+    margin-right: 20px;
+}
+
+.iOS-image-wrapper {
+  height: 100px;
+  width: 50%;
+}
+
+.info-container p{
+/*    background-color: yellow;
+*/    width: 80%;
+      font-size: 12px;
+}
+
+.iOS-image {
+  height: 300%;
+  border-radius: 15px;
+  -webkit-box-shadow: 1px 1px 22px 2px rgba(0,0,0,0.35);
+  -moz-box-shadow: 1px 1px 22px 2px rgba(0,0,0,0.35);
+  box-shadow: 1px 1px 22px 2px rgba(0,0,0,0.35);
 }
 
 #name {
 	margin-top: 60px;
 }
 
-#demo {
+/*#demo {
 	font-size: 13px;
 	line-height: 15px;
-}
+}*/
 
 .second {
   margin-top: 45px;
@@ -175,7 +231,7 @@ a:hover {
   box-shadow: 1px 1px 22px 2px rgba(0,0,0,0.35);
 }
 
-@media only screen and (max-width: 1126px) {
+@media only screen and (max-width: 1226px) {
 	.flex-item {
 		width: 200px;
 		height: 50px;
@@ -191,22 +247,37 @@ a:hover {
 		margin-top: 0px;
 	}
 
-	.iOS-description {
-		width: 200px;
-		height: 50px;
-		margin-top: -10px;
-    margin-bottom: -15px;
-	}
+	.iOS-image-wrapper {
+    margin-left: 24%;
+  }
+
+  .info-container {
+    margin-left: 30%;
+    margin-top: 170px;
+  }
+
+  .iOS-description:nth-child(n+2) {
+    margin-top: 190px;
+  }
 
 }
 
-@media only screen and (max-width: 890px) {
+@media only screen and (max-width: 780px) {
 
-	#demo {
-		margin-top: 30px;
-	}
+	 #demo {
+    margin-top: 30px;
+  }
 
-  .outer-div {
+  .iOS-image-wrapper {
+    margin-left: 22%;
+  }
+
+  .info-container {
+    margin-left: 28%;
+    margin-top: 170px;
+  }
+
+/*  .outer-div {
     position: relative;
     margin-top: 0px;
     padding-top: 1px;
@@ -221,7 +292,9 @@ a:hover {
   }
 
   body {
-    height: 0%;
+    position: absolute;
+    z-index: 1000000;
+
   }
 
   .iOS-container {
@@ -232,11 +305,11 @@ a:hover {
 
   .iOS-container {
     margin-top: 20px;
-  }
+  }*/
 
 }
 
-@media only screen and (max-width: 626px) {
+/*@media only screen and (max-width: 626px) {
 
   .outer-div {
     position: relative;
@@ -304,7 +377,7 @@ a:hover {
     margin-top: 20px;
   }
 
-}
+}*/
 
 .typed-cursor{
     opacity: 1;
@@ -327,3 +400,4 @@ a:hover {
     50% { opacity:0; }
     100% { opacity:1; }
 }
+
