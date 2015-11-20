@@ -176,6 +176,7 @@ a:hover {
 .iOS-image-wrapper {
   height: 100px;
   width: 50%;
+  margin-top: 15px; 
 }
 
 .info-container p{
