@@ -123,21 +123,6 @@ a:hover {
 }
 
 .iOS-container {
-/*  position: relative;
-	margin-top: 5px;
-	margin-bottom: 20px;
-  padding-bottom: 100px;
-   display: -webkit-flex;
-   display: flex;
-   -webkit-flex-direction: row /* works with row or column */
-/*   flex-direction: row;
-   -webkit-align-items: center;
-   align-items: center;
-   -webkit-justify-content: center;
-   justify-content: center;
-   -webkit-flex-flow: row wrap;
-   flex-flow: row wrap;
-   overflow: auto;*/
    display: -webkit-flex;
    display: flex;
    -webkit-flex-direction: row;
@@ -154,10 +139,6 @@ a:hover {
    margin-bottom: 40px;
    overflow: auto;
    flex-wrap: wrap;
-/*   background-color: white;
-*/   
-
-
 }
 
 .iOS-description {
