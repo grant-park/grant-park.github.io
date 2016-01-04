@@ -26,7 +26,7 @@
 						</form>
 					</div>
 				</div>
-				<div ng-hide="showApps" class="screen animates ng-cloak">
+				<div ng-hide="showApps" class="screen animates">
 					<div class="appsView">
 						<div class="anApp" ng-repeat="project in projects">
 							<a href={{project.link}} target="_blank">
@@ -41,6 +41,10 @@
 								<div class="tabImage"><img src={{tab.image}}></div>
 							</a>
 							<div class="tabDescription"><p>{{tab.description}}</p></div>
+						</div>
+						<div class="tabApp" ng-click="switch()">
+							<div class="tabImage"><img src="images/chat.png"></div>
+							<div class="tabDescription"><p>Message</p></div>
 						</div>
 					</div>
 				</div>

@@ -380,13 +380,13 @@ body {
 	width: 100%;
 	height: 100%;
 	border-radius: 10px;
-	background-color: darkred;
+	background-color: black;
 }
 
 .tabImage {
 	width: 54px;
 	height: 54px;
-	background-color: skyblue;
+	background-color: white;
 	margin: 0px 0px -7px 0px;
 	border-radius: 10px;
 }

@@ -150,8 +150,14 @@ app.controller("Messaging", function($scope, $timeout){
 		description: 'Amherst EC',
 		image: 'images/amherst.png',
 		link: 'http://amherstec.github.io/'
+	},
+	{
+		description: 'Codepen',
+		image: 'images/codepen.jpg',
+		link: 'http://codepen.io/sungjp/'
 	}
 	];
+
 
 	$scope.tabs = [
 	{
@@ -168,11 +174,6 @@ app.controller("Messaging", function($scope, $timeout){
 		description: 'Design',
 		image: 'images/behance.jpg',
 		link: 'https://www.behance.net/grantpark'
-	},
-	{
-		description: 'Codepen',
-		image: 'images/codepen.jpg',
-		link: 'http://codepen.io/sungjp/'
 	}
 	];
 });
