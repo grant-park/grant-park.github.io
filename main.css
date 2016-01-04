@@ -5,8 +5,6 @@ html {
 
 body {
 	height: 100%;
-	margin-top: -10px;
-	padding-bottom: 0px;
 	background: url(images/wood.jpg);
 	background-size: cover;
 	background-position: center;
@@ -428,9 +426,8 @@ body {
     -ms-transition: 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
     -o-transition: 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
     transition: 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    position: absolute;
     margin-left: 10px;
-
+    position: absolute;
 } 
 
 /* Initial state when showing */

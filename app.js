@@ -1,7 +1,7 @@
 var app = angular.module('App', ['ngSanitize', 'luegg.directives', 'ngAnimate']);
 
 app.controller("Messaging", function($scope, $timeout){
-	$scope.showApps = false;
+	$scope.showApps = true;
 	$scope.bubbles = [];
 	var y = '<p>Hi, I&#39;m Grant Park. Ask me anything you&#39;d like. <br/> For suggestions, try <span style="color:lemonchiffon;">&#39;?&#39;</span>';
 	var z = {mes: y, isMe: true}

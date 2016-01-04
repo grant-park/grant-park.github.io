@@ -11,7 +11,7 @@
 	<body>
 		<div class="iphone6-plus" ng-controller="Messaging">
 			<div class="casing">
-				<div ng-show="!showApps" class="screen animates">
+				<div ng-show="showApps" class="screen animates">
 					<div class="messenger" id="messenger" scroll-glue>
 						<div class="animate" ng-repeat="bubble in bubbles track by $index" ng-class="check(bubble.isMe)">
 							<div class="text">
@@ -26,7 +26,7 @@
 						</form>
 					</div>
 				</div>
-				<div ng-show="showApps" class="screen animates">
+				<div ng-hide="showApps" class="screen animates ng-cloak">
 					<div class="appsView">
 						<div class="anApp" ng-repeat="project in projects">
 							<a href={{project.link}} target="_blank">
