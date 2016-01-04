@@ -61,7 +61,7 @@ app.controller("Messaging", function($scope, $timeout){
 					}, 800);
 				} else if ($scope.bubbleText.toLowerCase().indexOf("hob") != -1) {
 					$scope.bubbleText = '';
-					var x = 'I&#39;m an <a href="https://soundcloud.com/grant-park">indie artist</a>, rowing athlete, and <a href="https://www.behance.net/grantpark">designer</a>. Check out my <a href="https://medium.com/@grantxs">blog</a>! &#128513;';
+					var x = 'I&#39;m an <a href="https://soundcloud.com/grant-park">indie artist</a>, rowing athlete, and <a href="https://www.behance.net/grantpark">designer</a>. Check out my <a href="https://medium.com/@grantxs">blog</a> &#128513;';
 					var w = {mes: x, isMe: true}
 					$timeout(function(){
 						$scope.bubbles.pop();
