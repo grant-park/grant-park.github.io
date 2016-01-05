@@ -103,6 +103,7 @@ body {
 	margin:0 auto;
 	border-radius:18px;
 	display: inline-block;
+	margin-top: 15px;
 	margin-left: 48px;
 	position: relative;
 	transition: 0.2s linear all;
@@ -132,8 +133,7 @@ body {
 	display: inline-block;
 	position: relative;
 	margin-left: 15px;
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-top: 15px;
 	transition: 0.2s linear all;
 }
 
@@ -287,9 +287,9 @@ body {
 	border-radius: 5px 5px 0px 0px;
 	overflow: scroll;
 
-	-webkit-box-shadow: inset 0px 0px 308px -19px rgba(50,50,50,1);
-	-moz-box-shadow: inset 0px 0px 308px -19px rgba(50,50,50,1);
-	box-shadow: inset 0px 0px 308px -19px rgba(50,50,50,1);
+	-webkit-box-shadow: inset 0px 0px 208px -19px rgba(50,50,50,1);
+	-moz-box-shadow: inset 0px 0px 208px -19px rgba(50,50,50,1);
+	box-shadow: inset 0px 0px 208px -19px rgba(50,50,50,1);
 
 	display: -ms-flexbox;
     display: -webkit-flex;

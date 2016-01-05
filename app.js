@@ -1,6 +1,6 @@
 var app = angular.module('App', ['ngSanitize', 'luegg.directives', 'ngAnimate']);
 
-app.controller("Messaging", function($scope, $timeout){
+app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 	$scope.showApps = true;
 	$scope.bubbles = [];
 	var y = '<p>Hi, I&#39;m Grant Park. Ask me anything you&#39;d like. <br/> For suggestions, try <span style="color:lemonchiffon;">&#39;?&#39;</span>';
@@ -85,7 +85,7 @@ app.controller("Messaging", function($scope, $timeout){
 					}, 800);
 				} else if ($scope.bubbleText.toLowerCase().indexOf("project") != -1) {
 					$scope.bubbleText = '';
-					var x = 'Tap this phone&#39;s home button to transition between here and my projects.';
+					var x = 'Tap this phone&#39;s home button or enter <span style="color:lemonchiffon">&#39;switch&#39;</span> to transition to projects.';
 					var w = {mes: x, isMe: true}
 					$timeout(function(){
 						$scope.bubbles.pop();
@@ -99,6 +99,10 @@ app.controller("Messaging", function($scope, $timeout){
 						$scope.bubbles.pop();
 					$scope.bubbles.push(w);
 					}, 800);
+				} else if ($scope.bubbleText.toLowerCase() === "switch") {
+					$scope.bubbleText = '';
+					$scope.bubbles.pop();
+					$scope.switch();
 				} else {
 					$scope.bubbleText = '';
 					var x = "Sorry, I can&#39;t respond to that.";
@@ -176,7 +180,7 @@ app.controller("Messaging", function($scope, $timeout){
 		link: 'https://www.behance.net/grantpark'
 	}
 	];
-});
+}]);
 
 app.filter('unsafe', function($sce) {
 	return function(val) {

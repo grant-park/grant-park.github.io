@@ -7,6 +7,11 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-sanitize.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-animate.min.js"></script>
 		<script src="app.js"></script>
+		<script>
+			window.onload = function() {
+				document.getElementById("thefield").focus();
+			};
+		</script>
 	</head>
 	<body>
 		<div class="iphone6-plus" ng-controller="Messaging">
@@ -21,7 +26,7 @@
 					</div>
 					<div class="textfield">
 						<form id="form" ng-submit="send()">
-							<input type="text" name="texting" placeholder="Write here...."  class="field" ng-model="bubbleText" autocomplete="off"></input>
+							<input type="text" name="texting" placeholder="Write here...."  class="field" ng-model="bubbleText" autocomplete="off" id="thefield"></input>
 							<button type="submit" class="send">Send</button>
 						</form>
 					</div>
