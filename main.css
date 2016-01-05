@@ -2,6 +2,7 @@ html {
 	-webkit-box-shadow: inset 1px 1px 192px 50px rgba(0,0,0,0.35);
   	-moz-box-shadow: inset 1px 1px 192px 50px rgba(0,0,0,0.35);
   	box-shadow: inset 1px 1px 192px 50px rgba(0,0,0,0.35);
+  	height: 100%;
 }
 
 body {
@@ -12,6 +13,7 @@ body {
 	background-repeat: no-repeat;
 	overflow-x: hidden;
 	overflow-y: auto;
+	height: 90%;
 }
 
 ::-webkit-scrollbar {
@@ -23,9 +25,11 @@ body {
 	width: 285px;
 	height: 520px;
 	padding-top: 45px;
+	position: relative;
 	background-color: white;
 	border-radius: 30px;
 	margin: 0 auto;
+	margin-top: 45px;
 	-webkit-box-shadow: 1px 1px 60px 5px rgba(0,0,0,0.25);
 	-moz-box-shadow: 1px 1px 60px 5px rgba(0,0,0,0.25);
 	box-shadow: 1px 1px 60px 5px rgba(0,0,0,0.25);
@@ -63,14 +67,16 @@ body {
 	border-radius: 50%;
 	border: 1px solid lightslategray;
 	margin: 0 auto;
+	position: relative;
+	z-index: 1;
 	margin-top: -40px;
 	-webkit-box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.15);
 	-moz-box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.15);
 	box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.15);
 
 	background: radial-gradient(circle, white 55%, transparent 100%), lightslategray;
-  background: -webkit-radial-gradient(circle, white 55%, transparent 100%), lightslategray;
-  background: -moz-radial-gradient(circle, white 55%, transparent 100%), lightslategray;
+  	background: -webkit-radial-gradient(circle, white 55%, transparent 100%), lightslategray;
+  	background: -moz-radial-gradient(circle, white 55%, transparent 100%), lightslategray;
 }
 
 .button:active {
@@ -79,9 +85,7 @@ body {
 
 .iphone6-plus {
 	width: 300px;
-	height: auto;
 	margin: 0 auto;
-	margin-top: 45px;
 }
 
 .messenger{
