@@ -4,6 +4,7 @@ html {
 }
 
 body {
+	zoom: 1.3;
 	height: 100%;
 	background: url(images/wood.jpg);
 	background-size: cover;
@@ -451,4 +452,16 @@ body {
 
 .nobar {
 	overflow-y: hidden !important;
+}
+
+@media (max-width: 600px) {
+  body {
+  	zoom: 1;
+  }
+}
+
+@media (max-width: 384px) {
+  body {
+  	zoom: 0.7;
+  }
 }
