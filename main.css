@@ -459,6 +459,10 @@ body {
   	zoom: 1;
   }
 
+  .send {
+  	margin-left: 190px;
+  }
+
   .casing {
 	margin-top: 0px;
   }
