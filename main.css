@@ -11,6 +11,10 @@ body {
 	background-repeat: no-repeat;
 	overflow-x: hidden;
 	overflow-y: hidden;
+
+	-webkit-box-shadow: inset 1px 1px 192px 50px rgba(0,0,0,0.35);
+  -moz-box-shadow: inset 1px 1px 192px 50px rgba(0,0,0,0.35);
+  box-shadow: inset 1px 1px 192px 50px rgba(0,0,0,0.35);
 }
 
 ::-webkit-scrollbar {

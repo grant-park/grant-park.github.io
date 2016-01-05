@@ -178,6 +178,11 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 		description: 'Codepen',
 		image: 'images/codepen.jpg',
 		link: 'http://codepen.io/sungjp/'
+	},
+	{
+		description: 'Resume',
+		image: 'images/paper.jpg',
+		link: 'https://represent.io/grantxs'
 	}
 	];
 
