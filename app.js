@@ -23,7 +23,7 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 				{response: 'Bay Area', possibleInputs: ["place"]},
 				{response: 'Tonkatsu', possibleInputs: ["food"]},
 				{response: 'Dog', possibleInputs: ["animal"]},
-				{response: 'Teal', possibleInputs: ["color, colour"]},
+				{response: 'Teal', possibleInputs: ["color", "colour"]},
 				{response: 'I&#39;d like to someday work full-time at either a start-up or a large company as a software engineer.', possibleInputs: ["want to do","plan","future","would you like to do"]},
 				{response: 'I like jazz, hip-hop, and classical music.', possibleInputs: ["music","listen","genre"]},
 				{response: 'I play the piano and violin.', possibleInputs: ["instruments","play"]},
