@@ -457,6 +457,8 @@ body {
 @media (max-width: 600px) {
   body {
   	zoom: 1;
+  	background: none;
+  	background-color: lightslategray; 
   }
 
   .send {
@@ -471,6 +473,8 @@ body {
 @media (max-width: 384px) {
   body {
   	zoom: 0.7;
+  	background: none;
+  	background-color: lightslategray; 
   	height: 100%;
   }
 }
