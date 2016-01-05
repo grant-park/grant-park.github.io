@@ -455,10 +455,17 @@ body {
 }
 
 @media (max-width: 600px) {
+  html {
+  	-webkit-box-shadow: none;
+  	-moz-box-shadow: none;
+  	box-shadow: none;
+  }
+
   body {
   	zoom: 1;
   	background: none;
   	background-color: lightslategray; 
+
   }
 
   .send {
