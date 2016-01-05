@@ -177,7 +177,7 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 	{
 		description: 'Resume',
 		image: 'images/paper.jpg',
-		link: 'https://represent.io/grantxs'
+		link: 'resume.pdf'
 	},
 	{
 		description: 'Github',
