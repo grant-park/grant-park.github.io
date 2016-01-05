@@ -19,9 +19,15 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 	$scope.send = function() {
 		if ($scope.bubbleText != "" && $scope.bubbleText) {
 			var convos = [
+				{response: 'Nikola Tesla', possibleInputs: ["person in history","historical person"]},
+				{response: 'Bay Area', possibleInputs: ["place"]},
+				{response: 'Tonkatsu', possibleInputs: ["food"]},
+				{response: 'Dog', possibleInputs: ["animal"]},
+				{response: 'Teal', possibleInputs: ["color, colour"]},
+				{response: 'I&#39;d like to someday work full-time at either a start-up or a large company as a software engineer.', possibleInputs: ["want to do","plan","future","would you like to do"]},
 				{response: 'I like jazz, hip-hop, and classical music.', possibleInputs: ["music","listen","genre"]},
 				{response: 'I play the piano and violin.', possibleInputs: ["instruments","play"]},
-				{response: 'I&#39;m currently majoring in computer science and music at Amherst College.', possibleInputs: ["study","major","subject","degree","bachelor"]},
+				{response: 'I&#39;m currently majoring in computer science and music at Amherst College.', possibleInputs: ["study","major","subject","degree","bachelor","college","school"]},
 				{response: $scope.age, possibleInputs: ["age","old"]},
 				{response: 'Grant Park', possibleInputs: ["name"]},
 				{response: 'I currently live in Amherst, MA.', possibleInputs: ["where","live"]},
@@ -31,8 +37,8 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 				{response: $scope.weather, possibleInputs: ["weather","cold","climate","temp","hot","warm","chill"]},
 				{response: 'Tap this phone&#39;s home button or enter <span style="color:lemonchiffon">&#39;switch&#39;</span> to transition to my projects.', possibleInputs: ["project","example","done"]},
 				{response: 'You can email me at <a href="mailto:gpark18@amherst.edu">gpark18@amherst.edu</a>. &#128522;', possibleInputs: ["contact","email","reach"]},
-				{response: 'I&#39;m a sophomore at Amherst College and I freelance iOS. I&#39;m also a full-stack dev working with MEAN, Python, and Swift/Obj-C.', possibleInputs: ["about","you do","job","occupation","now","language","work"]},
-				{response: 'I&#39;m an <a href="https://soundcloud.com/grant-park">indie artist</a>, rowing athlete, and <a href="https://www.behance.net/grantpark">designer</a>. Check out my <a href="https://medium.com/@grantxs">blog</a> &#128513;', possibleInputs: ["hob","design","extracurricular","outside","fun"]},
+				{response: 'I&#39;m a sophomore at Amherst College and I freelance iOS. I&#39;m also a full-stack dev working with MEAN, Python, and Swift/Obj-C.', possibleInputs: ["about","you do","job","occupation","now","language","work","who are you"]},
+				{response: 'I&#39;m an <a href="https://soundcloud.com/grant-park">indie artist</a>, rowing athlete, and <a href="https://www.behance.net/grantpark">designer</a>. Check out my <a href="https://medium.com/@grantxs">blog</a> &#128513;', possibleInputs: ["do you like to do","hob","design","extracurricular","outside","fun"]},
 				{response: 'Here is my <a href="https://www.linkedin.com/in/granthpark">LinkedIn</a>.', possibleInputs: ["linkedin"]},
 				{response: 'Here is my <a href="https://github.com/sungjp">Github</a>.', possibleInputs: ["git"]},
 				{response: 'Here is my <a href="resume.pdf">resume</a>.', possibleInputs: ["resume"]},
