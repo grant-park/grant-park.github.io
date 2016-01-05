@@ -1,6 +1,6 @@
 var app = angular.module('App', ['ngSanitize', 'luegg.directives', 'ngAnimate']);
 
-app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
+function theMessenger($scope, $timeout){
 	$scope.showApps = true;
 	getWeather();
 	getAge();
@@ -22,6 +22,8 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 	$scope.send = function() {
 		if ($scope.bubbleText != "" && $scope.bubbleText) {
 			var convos = [
+				{response: 'Yup', possibleInputs: ["okay","oh"]},
+				{response: 'Why, thank-you &#128522;', possibleInputs: ["you're","youre","you are"]},
 				{response: 'My favorite movie is <i>The Imitation Game</i>.', possibleInputs: ["movie"]},
 				{response: 'My favorite novel is <i>The Brothers Karamazov</i> by Fyodor Dostoevsky.', possibleInputs: ["book"]},
 				{response: 'Nikola Tesla', possibleInputs: ["person in history","historical person","favorite person"]},
@@ -40,6 +42,7 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 				{response: 'Sweet. &#128522;', possibleInputs: ["good","fine","well","awesome","fantastic","amazing"]},
 				{response: 'I&#39;m doing pretty well, thanks! How about you?', possibleInputs: ["how are you","how are you doing","how are you feeling"]},
 				{response: $scope.weather, possibleInputs: ["weather","cold","climate","temp","hot","warm","chill"]},
+				{response: '&#128522;', possibleInputs: ["lol","what","wat","lmao","rofl","wtf","fuck","wow","woah","dam","damn","dang","huh","eh","hm","jeez","geez","cool"]},
 				{response: 'Tap this phone&#39;s home button or enter <span style="color:lemonchiffon">&#39;switch&#39;</span> to transition to my projects.', possibleInputs: ["project","example","done"]},
 				{response: 'You can email me at <a href="mailto:gpark18@amherst.edu">gpark18@amherst.edu</a>. &#128522;', possibleInputs: ["contact","email","reach"]},
 				{response: 'I&#39;m a sophomore at Amherst College and I freelance iOS. I&#39;m also a full-stack dev working with MEAN, Python, and Swift/Obj-C.', possibleInputs: ["about","you do","job","occupation","now","language","work","who are you"]},
@@ -213,7 +216,11 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 		link: 'https://www.behance.net/grantpark'
 	}
 	];
-}]);
+}
+
+theMessenger.$inject = ['$scope','$timeout'];
+
+app.controller("Messaging", theMessenger);
 
 app.filter('unsafe', function($sce) {
 	return function(val) {
