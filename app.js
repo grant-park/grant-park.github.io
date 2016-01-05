@@ -7,8 +7,10 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 	$scope.age = '20'
 	$scope.weather = 'Dunno!'
 	$scope.bubbles = [];
+	$scope.audio = new Audio('pop.wav');
 	var y = '<p>Hi, I&#39;m Grant Park. Ask me anything you&#39;d like. <br/> For suggestions, try <span style="color:lemonchiffon;">&#39;?&#39;</span>';
 	$scope.bubbles.push({mes: y, isMe: true});
+	$scope.audio.play();
 	$scope.check = function(checkee){
 		if (checkee) {
 			return "oddBubble"
@@ -16,6 +18,7 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 			return "evenBubble"
 		}
 	}
+
 	$scope.send = function() {
 		if ($scope.bubbleText != "" && $scope.bubbleText) {
 			var convos = [
@@ -52,6 +55,7 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 			];
 			document.getElementById("thesend").disabled = true;
 			$scope.bubbles.push({mes: $scope.bubbleText, isMe: false});
+			$scope.audio.play();
 			var g = {mes: '<div class="loading"></div>', isMe: true};
 			$timeout(function(){$scope.bubbles.push(g)},400).then(function(){
 				for(var i=0; i<convos.length; i++) {
@@ -95,6 +99,7 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 			$scope.bubbles.pop();
 			$scope.bubbles.push(x);
 			document.getElementById("thesend").disabled = false;
+			$scope.audio.play();
 		},800);
 	};
 
