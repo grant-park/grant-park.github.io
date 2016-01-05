@@ -458,6 +458,10 @@ body {
   body {
   	zoom: 1;
   }
+
+  .casing {
+	margin-top: 0px;
+  }
 }
 
 @media (max-width: 384px) {
