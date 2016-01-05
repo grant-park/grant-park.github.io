@@ -19,7 +19,7 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 	$scope.send = function() {
 		if ($scope.bubbleText != "" && $scope.bubbleText) {
 			var convos = [
-				{response: 'Nikola Tesla', possibleInputs: ["person in history","historical person"]},
+				{response: 'Nikola Tesla', possibleInputs: ["person in history","historical person","favorite person"]},
 				{response: 'Bay Area', possibleInputs: ["place"]},
 				{response: 'Tonkatsu', possibleInputs: ["food"]},
 				{response: 'Dog', possibleInputs: ["animal"]},
