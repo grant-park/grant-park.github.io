@@ -166,7 +166,7 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 	},
 	{
 		description: 'OutsideHacks',
-		image: 'images/outside.jpg',
+		image: 'images/outside.png',
 		link: 'outside.html'
 	},
 	{
