@@ -103,6 +103,7 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 					}, 800);
 				} else if ($scope.bubbleText.toLowerCase() === "clear") {
 					$scope.bubbleText = '';
+					$scope.bubbles = [];
 					var x = '<p>Hi, I&#39;m Grant Park. Ask me anything you&#39;d like. <br/> For suggestions, try <span style="color:lemonchiffon;">&#39;?&#39;</span>';
 					var w = {mes: x, isMe: true}
 					$timeout(function(){
