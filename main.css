@@ -350,7 +350,7 @@ body {
 .anApp {
 	width: 88px;
 	height: 80px;
-	color: lightcyan;
+	color: white;
 	font-family: 'Roboto', sans-serif;
 	margin-top: 5px;
 	margin-bottom: 5px;
@@ -373,10 +373,9 @@ body {
 .anImage {
 	width: 60px;
 	height: 60px;
-	background-color: skyblue;
+	background-color: lightslategray;
 	margin: 5px 0px -9px 12.5px;
 	border-radius: 10px;
-	border: 2px solid white;
 }
 
 .anImage img {
@@ -384,7 +383,7 @@ body {
 	width: 100%;
 	height: 100%;
 	border-radius: 10px;
-	background-color: white;
+	background-color: transparent;
 }
 
 .tabImage {
