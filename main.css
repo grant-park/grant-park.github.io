@@ -349,7 +349,7 @@ body {
 
 .anApp {
 	width: 88px;
-	height: 75px;
+	height: 80px;
 	color: lightcyan;
 	font-family: 'Roboto', sans-serif;
 	margin-top: 5px;
@@ -366,7 +366,7 @@ body {
 }
 
 .anApp p {
-	font-size: 12px;
+	font-size: 13px;
 	text-align: center;
 }
 
@@ -374,7 +374,7 @@ body {
 	width: 60px;
 	height: 60px;
 	background-color: skyblue;
-	margin: 5px 0px -10px 15px;
+	margin: 5px 0px -5px 15px;
 	border-radius: 10px;
 }
 
