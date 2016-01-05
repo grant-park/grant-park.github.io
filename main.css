@@ -1,3 +1,9 @@
+html {
+	-webkit-box-shadow: inset 1px 1px 192px 50px rgba(0,0,0,0.35);
+  	-moz-box-shadow: inset 1px 1px 192px 50px rgba(0,0,0,0.35);
+  	box-shadow: inset 1px 1px 192px 50px rgba(0,0,0,0.35);
+}
+
 body {
 	zoom: 1.1;
 	background: url(images/wood.jpg);
@@ -6,9 +12,6 @@ body {
 	background-repeat: no-repeat;
 	overflow-x: hidden;
 	overflow-y: auto;
-	-webkit-box-shadow: inset 1px 1px 192px 50px rgba(0,0,0,0.35);
-  	-moz-box-shadow: inset 1px 1px 192px 50px rgba(0,0,0,0.35);
-  	box-shadow: inset 1px 1px 192px 50px rgba(0,0,0,0.35);
 }
 
 ::-webkit-scrollbar {
@@ -76,9 +79,9 @@ body {
 
 .iphone6-plus {
 	width: 300px;
-	height: 100%;
+	height: auto;
 	margin: 0 auto;
-	padding-top: 30px;
+	margin-top: 45px;
 }
 
 .messenger{
