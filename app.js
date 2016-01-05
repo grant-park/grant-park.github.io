@@ -19,8 +19,8 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 	$scope.send = function() {
 		if ($scope.bubbleText != "" && $scope.bubbleText) {
 			var convos = [
-				{response: 'My favorite movie is <i>The Imitation Game</i>', possibleInputs: ["movie"]},
-				{response: 'My favorite novel is <i>The Brothers Karamazov</i> by Fyodor Dostoevsky', possibleInputs: ["book"]},
+				{response: 'My favorite movie is <i>The Imitation Game</i>.', possibleInputs: ["movie"]},
+				{response: 'My favorite novel is <i>The Brothers Karamazov</i> by Fyodor Dostoevsky.', possibleInputs: ["book"]},
 				{response: 'Nikola Tesla', possibleInputs: ["person in history","historical person","favorite person"]},
 				{response: 'Bay Area', possibleInputs: ["place"]},
 				{response: 'Tonkatsu', possibleInputs: ["food"]},
