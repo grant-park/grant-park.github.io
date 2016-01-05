@@ -183,6 +183,16 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 		description: 'Resume',
 		image: 'images/paper.jpg',
 		link: 'https://represent.io/grantxs'
+	},
+	{
+		description: 'Github',
+		image: 'images/github.jpeg',
+		link: 'https://github.com/sungjp'
+	},
+	{
+		description: 'LinkedIn',
+		image: 'images/linked.png',
+		link: 'https://www.linkedin.com/in/granthpark'
 	}
 	];
 

@@ -355,7 +355,7 @@ body {
 
 .anApp {
 	width: 88px;
-	height: 88px;
+	height: 75px;
 	color: lightcyan;
 	font-family: 'Roboto', sans-serif;
 	margin-top: 5px;
@@ -377,10 +377,10 @@ body {
 }
 
 .anImage {
-	width: 70px;
-	height: 70px;
+	width: 60px;
+	height: 60px;
 	background-color: skyblue;
-	margin: 10px 0px -7px 9px;
+	margin: 5px 0px -10px 15px;
 	border-radius: 10px;
 }
 
