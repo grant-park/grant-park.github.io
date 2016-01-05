@@ -15,6 +15,7 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 	}
 	$scope.send = function(){
 		if ($scope.bubbleText != "" && $scope.bubbleText) {
+			document.getElementById("thesend").disabled = true;
 			var l = {mes: $scope.bubbleText, isMe: false};
 			$scope.bubbles.push(l);
 			var g = {mes: '<div class="loading"></div>', isMe: true};
@@ -26,6 +27,7 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 					var x = 'Try including: <span style="color:lemonchiffon"> <br/> &#39;links&#39; <br/> &#39;projects&#39; <br/> &#39;hobbies&#39; <br/> &#39;contact&#39; <br/> &#39;about&#39; </span> ';
 					var w = {mes: x, isMe: true}
 					$scope.bubbles.push(w);
+					document.getElementById("thesend").disabled = false;
 					}, 800);
 				} else if ($scope.bubbleText.toLowerCase().indexOf("links") != -1) {
 					$scope.bubbleText = '';
@@ -34,6 +36,7 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 					var x = 'Here is my <a href="resume.pdf">resume</a>, <a href="https://github.com/sungjp">Github</a>, and <a href="https://www.linkedin.com/in/granthpark">LinkedIn</a>.';
 					var w = {mes: x, isMe: true}
 					$scope.bubbles.push(w);
+					document.getElementById("thesend").disabled = false;
 					}, 800);
 				} else if ($scope.bubbleText.toLowerCase().indexOf("resume") != -1) {
 					$scope.bubbleText = '';
@@ -42,6 +45,7 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 						var x = 'Here is my <a href="resume.pdf">resume</a>.';
 					var w = {mes: x, isMe: true}
 					$scope.bubbles.push(w);
+					document.getElementById("thesend").disabled = false;
 					}, 800);
 				} else if ($scope.bubbleText.toLowerCase().indexOf("git") != -1) {
 					$scope.bubbleText = '';
@@ -50,6 +54,7 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 						var x = 'Here is my <a href="https://github.com/sungjp">Github</a>.';
 						var w = {mes: x, isMe: true}
 					$scope.bubbles.push(w);
+					document.getElementById("thesend").disabled = false;
 					}, 800);
 				} else if ($scope.bubbleText.toLowerCase().indexOf("linkedin") != -1) {
 					$scope.bubbleText = '';
@@ -58,6 +63,7 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 					var x = 'Here is my <a href="https://www.linkedin.com/in/granthpark">LinkedIn</a>.';
 					var w = {mes: x, isMe: true}
 					$scope.bubbles.push(w);
+					document.getElementById("thesend").disabled = false;
 					}, 800);
 				} else if ($scope.bubbleText.toLowerCase().indexOf("hob") != -1) {
 					$scope.bubbleText = '';
@@ -66,6 +72,7 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 					$timeout(function(){
 						$scope.bubbles.pop();
 					$scope.bubbles.push(w);
+					document.getElementById("thesend").disabled = false;
 					}, 800);
 				} else if ($scope.bubbleText.toLowerCase() === "about") {
 					$scope.bubbleText = '';
@@ -74,6 +81,7 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 					$timeout(function(){
 						$scope.bubbles.pop();
 					$scope.bubbles.push(w);
+					document.getElementById("thesend").disabled = false;
 					}, 800);
 				} else if ($scope.bubbleText.toLowerCase().indexOf("contact") != -1) {
 					$scope.bubbleText = '';
@@ -82,6 +90,7 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 					$timeout(function(){
 						$scope.bubbles.pop();
 					$scope.bubbles.push(w);
+					document.getElementById("thesend").disabled = false;
 					}, 800);
 				} else if ($scope.bubbleText.toLowerCase().indexOf("project") != -1) {
 					$scope.bubbleText = '';
@@ -90,6 +99,7 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 					$timeout(function(){
 						$scope.bubbles.pop();
 					$scope.bubbles.push(w);
+					document.getElementById("thesend").disabled = false;
 					}, 800);
 				} else if ($scope.bubbleText.toLowerCase() === "clear") {
 					$scope.bubbleText = '';
@@ -98,11 +108,18 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 					$timeout(function(){
 						$scope.bubbles.pop();
 					$scope.bubbles.push(w);
+					document.getElementById("thesend").disabled = false;
 					}, 800);
 				} else if ($scope.bubbleText.toLowerCase() === "switch") {
 					$scope.bubbleText = '';
-					$scope.bubbles.pop();
+					var x = 'Switching!';
+					var w = {mes: x, isMe: true}
+					$timeout(function(){
+						$scope.bubbles.pop();
+					$scope.bubbles.push(w);
 					$scope.switch();
+					document.getElementById("thesend").disabled = false;
+					}, 200);
 				} else {
 					$scope.bubbleText = '';
 					var x = "Sorry, I can&#39;t respond to that.";
@@ -110,6 +127,7 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 					$timeout(function(){
 						$scope.bubbles.pop();
 					$scope.bubbles.push(w);
+					document.getElementById("thesend").disabled = false;
 					}, 800);
 				}
 
