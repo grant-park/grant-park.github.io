@@ -467,5 +467,6 @@ body {
 @media (max-width: 384px) {
   body {
   	zoom: 0.7;
+  	height: 100%;
   }
 }
