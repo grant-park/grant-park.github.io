@@ -1,6 +1,6 @@
 var app = angular.module('App', ['ngSanitize', 'luegg.directives', 'ngAnimate']);
 
-function theMessenger($scope, $timeout){
+app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 	$scope.showApps = true;
 	getWeather();
 	getAge();
@@ -216,11 +216,7 @@ function theMessenger($scope, $timeout){
 		link: 'https://www.behance.net/grantpark'
 	}
 	];
-}
-
-theMessenger.$inject = ['$scope','$timeout'];
-
-app.controller("Messaging", theMessenger);
+}]);
 
 app.filter('unsafe', function($sce) {
 	return function(val) {
