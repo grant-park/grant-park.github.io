@@ -36,7 +36,7 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 				{response: 'I like jazz, hip-hop, and classical music.', possibleInputs: ["music","listen","genre","what do you like","what kind of stuff do you like"]},
 				{response: 'I play the piano and violin.', possibleInputs: ["instruments","play"]},
 				{response: 'I&#39;m currently majoring in computer science and music at Amherst College.', possibleInputs: ["study","major","subject","degree","bachelor","college","school"]},
-				{response: $scope.age, possibleInputs: ["age","old"]},
+				{response: $scope.age, possibleInputs: [" age","old"]},
 				{response: 'Grant Park', possibleInputs: ["name"]},
 				{response: 'I currently live in Amherst, MA.', possibleInputs: ["where","live"]},
 				{response: 'Sorry to hear that. &#128533;', possibleInputs: ["not","bad","terrible"]},
