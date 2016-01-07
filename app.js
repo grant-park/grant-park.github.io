@@ -48,7 +48,7 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 				{response: '&#128522;', possibleInputs: ["lol","rofl","wow","woah","dang","huh","eh","hm","jeez","geez","cool"]},
 				{response: 'Tap this phone&#39;s home button or enter <span style="color:lemonchiffon">&#39;switch&#39;</span> to transition to my projects.', possibleInputs: ["project","example","done"]},
 				{response: 'You can email me at <a href="mailto:gpark18@amherst.edu">gpark18@amherst.edu</a>. &#128522;', possibleInputs: ["contact","email","reach"]},
-				{response: 'I&#39;m a sophomore at Amherst College and I freelance iOS. I&#39;m also a full-stack dev working with MEAN, Python, and Swift/Obj-C.', possibleInputs: ["about","you do","job","occupation","now","language","work","who are you"]},
+				{response: 'I&#39;m a sophomore at Amherst College and I freelance iOS. I&#39;m also a full-stack dev working with MEAN, Python, and Swift/Obj-C.', possibleInputs: ["about","you do","job","occupation","now","language","work","who are you","who"]},
 				{response: 'I&#39;m an <a href="https://soundcloud.com/grant-park">indie artist</a>, rowing athlete, and <a href="https://www.behance.net/grantpark">designer</a>. Check out my <a href="https://medium.com/@grantxs">blog</a> &#128513;', possibleInputs: ["do you like to do","hob","design","extracurricular","outside","fun"]},
 				{response: 'Here is my <a href="https://www.linkedin.com/in/granthpark">LinkedIn</a>.', possibleInputs: ["linkedin"]},
 				{response: 'Here is my <a href="https://github.com/sungjp">Github</a>.', possibleInputs: ["git"]},
