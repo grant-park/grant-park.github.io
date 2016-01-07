@@ -22,6 +22,8 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 	$scope.send = function() {
 		if ($scope.bubbleText != "" && $scope.bubbleText) {
 			var convos = [
+				{response: "Hello &#128522;", possibleInputs: ["hello","greetings","hi","hey","wassup","whats up","ayy","hola","ni hao","hoy","eyy"]},
+	
 				{response: 'I was born in Chattanooga, TN and raised in Huntsville, AL.', possibleInputs: ["where are you from","you from","born"]},
 				{response: 'Yup', possibleInputs: ["okay","oh"]},
 				{response: 'Why, thank-you &#128522;', possibleInputs: ["you're","youre","you are"]},
@@ -40,7 +42,7 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 				{response: 'Grant Park', possibleInputs: ["name"]},
 				{response: 'I currently live in Amherst, MA.', possibleInputs: ["where","live"]},
 				{response: 'Sorry to hear that. &#128533;', possibleInputs: ["not","bad","terrible"]},
-				{response: 'Sweet. &#128522;', possibleInputs: ["good","fine","well","awesome","fantastic","amazing"]},
+				{response: 'Sweet. &#128522;', possibleInputs: ["good","fine","well","awesome","fantastic","amazing","same","me too","as well"]},
 				{response: 'I&#39;m doing pretty well, thanks! How about you?', possibleInputs: ["how are you","how are you doing","how are you feeling"]},
 				{response: $scope.weather, possibleInputs: ["weather","cold","climate","temp","hot","warm","chill"]},
 				{response: '&#128522;', possibleInputs: ["lol","rofl","wow","woah","dang","huh","eh","hm","jeez","geez","cool"]},
@@ -54,7 +56,7 @@ app.controller("Messaging", ['$scope','$timeout', function($scope, $timeout){
 				{response: 'Here is my <a href="resume.pdf">resume</a>, <a href="https://github.com/sungjp">Github</a>, and <a href="https://www.linkedin.com/in/granthpark">LinkedIn</a>.', possibleInputs: ["links"]}
 			];
 			var convosEq = [
-				{response: "Hello &#128522;", possibleInputs: ["hello","greetings","hi","hey","wassup","whats up","ayy","hola","ni hao","hoy","yo","oi","eyy"]},
+				{response: "Hello &#128522;", possibleInputs: ["yo","oi"]},
 				{response: 'Try including: <span style="color:lemonchiffon"> <br/> &#39;links&#39; <br/> &#39;projects&#39; <br/> &#39;hobbies&#39; <br/> &#39;contact&#39; <br/> &#39;about&#39; </span> ', possibleInputs: ["?","help"]}
 			];
 			document.getElementById("thesend").disabled = true;
