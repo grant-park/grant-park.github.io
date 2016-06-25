@@ -7,26 +7,27 @@ var gulp = require('gulp'),
     jade = require('gulp-jade'),
     jshint = require('gulp-jshint'),
     stylish = require('jshint-stylish'),
-    browserify = require('browserify');
+    browserify = require('browserify'),
+    concat = require('gulp-concat');
 
 var tasks = {
     styles: function(){
-      gulp.src('sass/**/*.scss')
+      gulp.src('dev/sass/**/*.scss')
         .pipe(sass().on('error',sass.logError))
-        .pipe(gulp.dest('css'));
+        .pipe(gulp.dest('dev/compile'));
     },
     minifyCSS: function(){
-      return gulp.src('css/**/*.css')
+      return gulp.src('dev/compile/*.css')
         .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest('./prod/css/'));
     },
     templates: function(){
-      gulp.src('jade/**/*.jade')
+      gulp.src('dev/jade/**/*.jade')
         .pipe(jade({}))
         .pipe(gulp.dest('.'));
     },
     lintjs: function(){
-      return gulp.src(['Gulpfile.js','js/**/*.js'])
+      return gulp.src(['gulpfile.js','dev/js/**/*.js'])
         .pipe(jshint())
         .pipe(jshint.reporter(stylish))
         .on('error', function(){
@@ -39,6 +40,11 @@ var tasks = {
       var b = browserify();
       b.add('prod/js/app.js');
       b.bundle().pipe(process.stdout);
+    },
+    scripts: function(){
+      return gulp.src('dev/js/*.js')
+        .pipe(concat('app.js'))
+        .pipe(gulp.dest('prod/js/')); 
     }
 };
 
@@ -47,12 +53,13 @@ gulp.task('styles',tasks.styles);
 gulp.task('minifyCSS',tasks.minifyCSS);
 gulp.task('templates',tasks.templates);
 gulp.task('lintjs',tasks.lintjs);
+gulp.task('scripts',tasks.scripts);
 
-// Work from sass, Production from prod/css
+// Dev > Prod (+ linting)
 gulp.task('watch',function() {
-  gulp.watch('sass/**/*.scss',['styles']);
-  gulp.watch('css/**/*.css',['minify-css']);
-  gulp.watch('jade/**/*.jade',['templates']);
-  gulp.watch(['Gulpfile.js','js/**/*.js'],['lintjs']);
+  gulp.watch('dev/sass/**/*.scss',['styles']);
+  gulp.watch('dev/compile/*.css',['minify-css']);
+  gulp.watch('dev/jade/**/*.jade',['templates']);
+  gulp.watch(['gulpfile.js','dev/js/**/*.js'],['lintjs','scripts']);
 });
 })();
