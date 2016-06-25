@@ -26,6 +26,9 @@
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.0.10",
     "gulp-jade": "^1.1.0",
-    "gulp-sass": "^2.3.2"
+    "gulp-jshint": "^2.0.1",
+    "gulp-sass": "^2.3.2",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0"
   }
 }
