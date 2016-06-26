@@ -3,19 +3,40 @@
 
 angular.module('Site', ['times.tabletop'])
 
-.config(["TabletopProvider", function(TabletopProvider){
+.config(['TabletopProvider', function(TabletopProvider){
     // Tabletop setup
     TabletopProvider.setTabletopOptions({
-            key: '1uvHeB66RrTJ87hmna5SnSvBeiuCQ3PE84OLcTL6iwdI',
-            simpleSheet: true
+            key: 'https://docs.google.com/spreadsheets/d/1uvHeB66RrTJ87hmna5SnSvBeiuCQ3PE84OLcTL6iwdI/pubhtml',
+            simple_url: true
     });
-}])
+}])        
 
-.controller('Dialogue', ['$scope','Tabletop', function($scope,Tabletop) {
+.factory('DialoguePortfolioParser',[function(){
+        var api = {
+                parse: function(data){
+                        var parsedObj = {};
+                        parsedObj.dialogue = [];
+                        _.each(data[0].Dialogue.elements,function(el) {
+                                parsedObj.dialogue.push({
+                                    // remember to eval later as this is a string and not an array
+                                    possibleInput: el.possibleInput,
+                                    response: el.response
+                                });
+                        });
+                        parsedObj.portfolio = data[0].Portfolio.elements;
+                        return parsedObj;
+                }
+        };
+        return api;
+}])
+    
+.controller('Dialogue', ['$scope','Tabletop','DialoguePortfolioParser',function($scope,Tabletop,DialoguePortfolioParser) {
+    var parsedData;
+    // Waking Grant up...
     Tabletop.then(function(data){
-            $scope.bob = data[0];
+        parsedData = DialoguePortfolioParser.parse(data);
     }); 
     $scope.lol = "test";
 }]);
 
-})();
+})(); 
