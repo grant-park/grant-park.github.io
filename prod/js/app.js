@@ -608,7 +608,7 @@ angular.module('Site', ['times.tabletop'])
 .config(['TabletopProvider', function(TabletopProvider){
     // Tabletop setup
     TabletopProvider.setTabletopOptions({
-            key: 'https://docs.google.com/spreadsheets/d/1uvHeB66RrTJ87hmna5SnSvBeiuCQ3PE84OLcTL6iwdI/pubhtml',
+            key: '1uvHeB66RrTJ87hmna5SnSvBeiuCQ3PE84OLcTL6iwdI',
             simple_url: true
     });
 }])        
@@ -620,8 +620,7 @@ angular.module('Site', ['times.tabletop'])
                         parsedObj.dialogue = [];
                         _.each(data[0].Dialogue.elements,function(el) {
                                 parsedObj.dialogue.push({
-                                    // remember to eval later as this is a string and not an array
-                                    possibleInput: el.possibleInput,
+                                    possibleInput: el.possibleInput.split(','),
                                     response: el.response
                                 });
                         });
@@ -633,12 +632,18 @@ angular.module('Site', ['times.tabletop'])
 }])
     
 .controller('Dialogue', ['$scope','Tabletop','DialoguePortfolioParser',function($scope,Tabletop,DialoguePortfolioParser) {
-    var parsedData;
     // Waking Grant up...
     Tabletop.then(function(data){
-        parsedData = DialoguePortfolioParser.parse(data);
+        var parsedData = DialoguePortfolioParser.parse(data);
+        console.log(parsedData.dialogue);
+        //console.log(parsedData.portfolio);
     }); 
-    $scope.lol = "test";
+}])
+
+.filter('html',['$sce',function($sce){
+    return function(val){
+            return $sce.trustAsHtml(val);
+    };
 }]);
 
 })(); 
