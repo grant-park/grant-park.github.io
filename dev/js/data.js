@@ -35,13 +35,95 @@ angular.module('Site', ['times.tabletop'])
             portfolio: [{}]
     };
 }])
+
+.factory('GrantsAge',[function(){
+    var date = new Date,
+    month = date.getMonth() + 1,
+    year = date.getFullYear(),
+    day = date.getDay(),
+    diff = year - 1995;
+    var age;
+    12 > month ? diff -= 1 : 2 > day && (diff -= 1), age = diff;
+    return diff.toString();
+}])
+
+.factory('Weather',['$http','$q',function($http,$q){
+    var deferred = $q.defer();
+    var weather;
+    var weatherPromise = $http.get("http://api.wunderground.com/api/c1ea49b3e06dc3b3/geolookup/conditions/q/MA/Amherst.json").then(function(response){
+            var data = response.data;
+            var location = data.location.city,
+                currentTemp = data.current_observation.temp_f,
+                msg = "The current temperature in " + location + " is: " + currentTemp + "&deg;F &#128513;";
+            50 > currentTemp && (msg = "Brrr! The current temperature in " + location + " is: " + currentTemp + "&deg:F &#128559;");
+            weather = msg;
+         },function(errorMsg){
+            console.error(errorMsg);
+            weather = "I don't have a clue actually...";
+         });
+    var resolve = function(){
+        deferred.resolve(weather);
+    };
+    if (weather) {
+        resolve();
+    } else {
+        weatherPromise.then(function(){
+            resolve();
+        });
+    }
+    return deferred.promise;
+}])
     
-.controller('Dialogue', ['$q','$scope','Tabletop','DialoguePortfolioParser','DialogueCache',function($q,$scope,Tabletop,DialoguePortfolioParser,DialogueCache) {
+.controller('Dialogue', ['$timeout','$q','$scope','Tabletop','DialoguePortfolioParser','DialogueCache','Weather','GrantsAge',function($timeout,$q,$scope,Tabletop,DialoguePortfolioParser,DialogueCache,Weather,GrantsAge) {
+
     // In case spreadsheets are too slow
     var parsedData = DialogueCache, 
         dialogue = DialogueCache.dialogue, 
         portfolio = DialogueCache.portfolio;
 
+    // Returns response promise based on input
+    var dialogueResponse = function(input){
+        var deferred = $q.defer();
+        for (var i=0;i<dialogue.length;i++){
+            for (var j=0;j<dialogue[i].possibleInput.length;j++){
+                if (input.toLowerCase().indexOf(dialogue[i].possibleInput[j].toLowerCase()) !== -1) {
+                        deferred.resolve({ response: dialogue[i].response, i: i, j: j });
+                        return deferred.promise;
+                }
+            }
+        }
+        deferred.reject("Sorry, I can't respond to that.");
+        return deferred.promise;
+    };
+
+    $scope.messageQueue = [];
+    $scope.send = function(input) {
+        dialogueResponse(input).then(function(data){
+                switch (data.response) {
+                        case "E.AGE":
+                                $scope.messageQueue.push(GrantsAge);
+                                break;
+                        case "E.WEATHER":
+                                //weather function
+                                Weather.then(function(resp){
+                                        $scope.messageQueue.push(resp);
+                                        console.log($scope.messageQueue);
+                                });
+                                break;
+                        default:
+                                //push to queue
+                                $scope.messageQueue.push(data.response);
+                }
+        },function(notFoundMsg){
+            $scope.messageQueue.push(notFoundMsg);
+            console.log($scope.messageQueue);
+        });
+    };
+
+    $timeout(function(){
+            $scope.send("hows the weather?");
+    },10000);
+    
     // Waking Google spreadsheets up...
     Tabletop.then(function(data){
         var deferred = $q.defer();
@@ -56,39 +138,6 @@ angular.module('Site', ['times.tabletop'])
         dialogue = parsedData.dialogue;
         portfolio = parsedData.portfolio;
     },function(msg){console.error(msg);});
-
-    // Returns response promise based on input
-    var dialogueResponse = function(input){
-        var deferred = $q.defer();
-        for (var i=0;i<dialogue.length;i++){
-            for (var j=0;j<dialogue[i].possibleInputs.length;j++){
-                if (dialogue[i].possibleInputs[j].toLowerCase().indexOf(input.toLowerCase()) !== -1) {
-                        deferred.resolve({ response: dialogue[i].response, i: i, j: j });
-                        return deferred.promise;
-                }
-            }
-        }
-        deferred.reject("Sorry, I can't respond to that.");
-        return deferred.promise;
-    };
-
-    $scope.send = function(input) {
-        dialogueResponse(input).then(function(data){
-                switch (data.response) {
-                        case "E.AGE":
-                                //age function
-                                break;
-                        case "E.WEATHER":
-                                //weather function
-                                break;
-                        default:
-                                //push to queue
-                }
-        },function(msg){
-            //push msg to queue
-        });
-    };
-
 
 }])
 
