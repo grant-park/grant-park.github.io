@@ -29,6 +29,7 @@
     "gulp-concat": "^2.6.0",
     "gulp-jade": "^1.1.0",
     "gulp-jshint": "^2.0.1",
+    "gulp-minify": "0.0.12",
     "gulp-sass": "^2.3.2",
     "jshint": "^2.9.2",
     "jshint-stylish": "^2.2.0"

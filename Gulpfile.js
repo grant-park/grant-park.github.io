@@ -7,16 +7,13 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     stylish = require('jshint-stylish'),
     browserify = require('browserify'),
-    concat = require('gulp-concat');
+    concat = require('gulp-concat'),
+    minify = require('gulp-minify');
 
 var tasks = {
     styles: function(){
       gulp.src('dev/sass/**/*.scss')
         .pipe(sass().on('error',sass.logError))
-        .pipe(gulp.dest('dev/compile'));
-    },
-    minifyCSS: function(){
-      return gulp.src('dev/compile/*.css')
         .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest('./prod/css/'));
     },
@@ -43,13 +40,13 @@ var tasks = {
     scripts: function(){
       return gulp.src(['dev/js/tabletop.js','dev/js/TabletopProvider.js','dev/js/data.js'])
         .pipe(concat('app.js'))
-        .pipe(gulp.dest('prod/js/')); 
+        .pipe(minify({min:'.js'}))
+        .pipe(gulp.dest('dev/prod/js/')); 
     }
 };
 
 // Tasks
 gulp.task('styles',tasks.styles);
-gulp.task('minifyCSS',tasks.minifyCSS);
 gulp.task('templates',tasks.templates);
 gulp.task('lintjs',tasks.lintjs);
 gulp.task('scripts',tasks.scripts);
@@ -57,7 +54,6 @@ gulp.task('scripts',tasks.scripts);
 // Dev > Prod (+ linting)
 gulp.task('watch',function() {
   gulp.watch('dev/sass/**/*.scss',['styles']);
-  gulp.watch('dev/compile/*.css',['minify-css']);
   gulp.watch('dev/jade/**/*.jade',['templates']);
   gulp.watch(['gulpfile.js','dev/js/**/*.js'],['lintjs','scripts']);
 });
