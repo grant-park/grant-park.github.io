@@ -41,7 +41,7 @@ var tasks = {
       return gulp.src(['dev/js/tabletop.js','dev/js/TabletopProvider.js','dev/js/data.js'])
         .pipe(concat('app.js'))
         .pipe(minify({min:'.js'}))
-        .pipe(gulp.dest('dev/prod/js/')); 
+        .pipe(gulp.dest('prod/js/')); 
     }
 };
 
