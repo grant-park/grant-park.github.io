@@ -704,27 +704,31 @@ angular.module('Site', ['times.tabletop'])
         return deferred.promise;
     };
 
+    // Add to message queue
+    var registerMessage = function(msg,sender){
+        $scope.messageQueue.push({ sender: sender ? sender : 'Grant', message: msg }); 
+        console.log(msg);
+    };
+
+    // Send filtered response
     $scope.messageQueue = [];
     $scope.send = function(input) {
         dialogueResponse(input).then(function(data){
                 switch (data.response) {
                         case "E.AGE":
-                                $scope.messageQueue.push(GrantsAge);
-                                //console.log($scope.messageQueue);
+                                registerMessage(GrantsAge);
                                 break;
                         case "E.WEATHER":
                                 Weather.then(function(resp){
-                                        $scope.messageQueue.push(resp);
-                                        //console.log($scope.messageQueue);
+                                        registerMessage(resp);
                                 });
                                 break;
                         default:
-                                $scope.messageQueue.push(data.response);
-                                //console.log($scope.messageQueue);
+                                registerMessage(data.response);
                 }
         },function(notFoundMsg){
             $scope.messageQueue.push(notFoundMsg);
-            //console.log($scope.messageQueue);
+            registerMessage(notFoundMsg);
         });
     };
 
@@ -743,9 +747,11 @@ angular.module('Site', ['times.tabletop'])
         portfolio = parsedData.portfolio;
     },function(msg){console.error(msg);});
 
+    registerMessage("Hi, I'm Grant Park. Ask me anything you'd like. For suggestions, try '?'");
 
 }])
 
+// Responses are raw html
 .filter('html',['$sce',function($sce){
     return function(val){
             return $sce.trustAsHtml(val);

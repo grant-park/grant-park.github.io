@@ -8,19 +8,22 @@ var gulp = require('gulp'),
     stylish = require('jshint-stylish'),
     browserify = require('browserify'),
     concat = require('gulp-concat'),
-    minify = require('gulp-minify');
+    minify = require('gulp-minify'),
+    livereload = require('gulp-livereload');
 
 var tasks = {
     styles: function(){
       gulp.src('dev/sass/**/*.scss')
         .pipe(sass().on('error',sass.logError))
         .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(gulp.dest('./prod/css/'));
+        .pipe(gulp.dest('./prod/css/'))
+        .pipe(livereload());
     },
     templates: function(){
       gulp.src('dev/jade/**/*.jade')
         .pipe(jade({}))
-        .pipe(gulp.dest('.'));
+        .pipe(gulp.dest('.'))
+        .pipe(livereload());
     },
     lintjs: function(){
       return gulp.src(['gulpfile.js','dev/js/**/*.js'])
@@ -41,7 +44,8 @@ var tasks = {
       return gulp.src(['dev/js/tabletop.js','dev/js/TabletopProvider.js','dev/js/data.js'])
         .pipe(concat('app.js'))
         .pipe(minify({min:'.js'}))
-        .pipe(gulp.dest('prod/js/')); 
+        .pipe(gulp.dest('prod/js/'))
+        .pipe(livereload());
     }
 };
 
@@ -53,6 +57,7 @@ gulp.task('scripts',tasks.scripts);
 
 // Dev > Prod (+ linting)
 gulp.task('watch',function() {
+  livereload.listen();
   gulp.watch('dev/sass/**/*.scss',['styles']);
   gulp.watch('dev/jade/**/*.jade',['templates']);
   gulp.watch(['gulpfile.js','dev/js/**/*.js'],['lintjs','scripts']);
