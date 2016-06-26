@@ -631,13 +631,21 @@ angular.module('Site', ['times.tabletop'])
         return api;
 }])
     
-.controller('Dialogue', ['$scope','Tabletop','DialoguePortfolioParser',function($scope,Tabletop,DialoguePortfolioParser) {
+.controller('Dialogue', ['$q','$scope','Tabletop','DialoguePortfolioParser',function($q,$scope,Tabletop,DialoguePortfolioParser) {
     // Waking Grant up...
     Tabletop.then(function(data){
+        var deferred = $q.defer();
+        if (data) {
+                deferred.resolve(data);
+        } else {
+                deferred.reject("Could not retrieve data");
+        }
+        return deferred.promise;
+    }).then(function(data){
         var parsedData = DialoguePortfolioParser.parse(data);
-        console.log(parsedData.dialogue);
-        //console.log(parsedData.portfolio);
-    }); 
+        var dialogue = parsedData.dialogue;
+        var portfolio = parsedData.portfolio;
+    },function(msg){console.error(msg);});
 }])
 
 .filter('html',['$sce',function($sce){
