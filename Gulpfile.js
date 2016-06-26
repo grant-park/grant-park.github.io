@@ -3,7 +3,6 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     cleanCSS = require('gulp-clean-css'),  
-    watch = require('gulp-watch'),
     jade = require('gulp-jade'),
     jshint = require('gulp-jshint'),
     stylish = require('jshint-stylish'),
@@ -42,7 +41,7 @@ var tasks = {
       b.bundle().pipe(process.stdout);
     },
     scripts: function(){
-      return gulp.src('dev/js/*.js')
+      return gulp.src(['dev/js/tabletop.js','dev/js/TabletopProvider.js','dev/js/data.js'])
         .pipe(concat('app.js'))
         .pipe(gulp.dest('prod/js/')); 
     }
