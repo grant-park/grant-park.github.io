@@ -620,7 +620,7 @@ angular.module('Site', ['times.tabletop'])
                         parsedObj.dialogue = [];
                         _.each(data[0].Dialogue.elements,function(el) {
                                 parsedObj.dialogue.push({
-                                    possibleInput: el.possibleInput.split(','),
+                                    possibleInputs: el.possibleInputs.split(','),
                                     response: el.response
                                 });
                         });
@@ -639,14 +639,19 @@ angular.module('Site', ['times.tabletop'])
 }])
 
 .factory('GrantsAge',[function(){
-    var date = new Date,
+    var date = new Date(),
     month = date.getMonth() + 1,
     year = date.getFullYear(),
     day = date.getDay(),
     diff = year - 1995;
-    var age;
-    12 > month ? diff -= 1 : 2 > day && (diff -= 1), age = diff;
-    return diff.toString();
+    if (12 > month) {
+            diff -= 1;
+    } else {
+            if (2 > day) {
+                    diff -= 1;
+            }
+    }
+    return diff;
 }])
 
 .factory('Weather',['$http','$q',function($http,$q){
@@ -655,10 +660,11 @@ angular.module('Site', ['times.tabletop'])
     var weatherPromise = $http.get("http://api.wunderground.com/api/c1ea49b3e06dc3b3/geolookup/conditions/q/MA/Amherst.json").then(function(response){
             var data = response.data;
             var location = data.location.city,
-                currentTemp = data.current_observation.temp_f,
-                msg = "The current temperature in " + location + " is: " + currentTemp + "&deg;F &#128513;";
-            50 > currentTemp && (msg = "Brrr! The current temperature in " + location + " is: " + currentTemp + "&deg:F &#128559;");
-            weather = msg;
+                currentTemp = data.current_observation.temp_f;
+                weather = "The current temperature in " + location + " is: " + currentTemp + "&deg;F &#128513;";
+            if (50 > currentTemp) {
+                    weather = "Brrr! The current temperature in " + location + " is: " + currentTemp + "&deg:F &#128559;";
+            }
          },function(errorMsg){
             console.error(errorMsg);
             weather = "I don't have a clue actually...";
@@ -687,8 +693,8 @@ angular.module('Site', ['times.tabletop'])
     var dialogueResponse = function(input){
         var deferred = $q.defer();
         for (var i=0;i<dialogue.length;i++){
-            for (var j=0;j<dialogue[i].possibleInput.length;j++){
-                if (input.toLowerCase().indexOf(dialogue[i].possibleInput[j].toLowerCase()) !== -1) {
+            for (var j=0;j<dialogue[i].possibleInputs.length;j++){
+                if (input.toLowerCase().indexOf(dialogue[i].possibleInputs[j].toLowerCase()) !== -1) {
                         deferred.resolve({ response: dialogue[i].response, i: i, j: j });
                         return deferred.promise;
                 }
@@ -704,28 +710,24 @@ angular.module('Site', ['times.tabletop'])
                 switch (data.response) {
                         case "E.AGE":
                                 $scope.messageQueue.push(GrantsAge);
+                                //console.log($scope.messageQueue);
                                 break;
                         case "E.WEATHER":
-                                //weather function
                                 Weather.then(function(resp){
                                         $scope.messageQueue.push(resp);
-                                        console.log($scope.messageQueue);
+                                        //console.log($scope.messageQueue);
                                 });
                                 break;
                         default:
-                                //push to queue
                                 $scope.messageQueue.push(data.response);
+                                //console.log($scope.messageQueue);
                 }
         },function(notFoundMsg){
             $scope.messageQueue.push(notFoundMsg);
-            console.log($scope.messageQueue);
+            //console.log($scope.messageQueue);
         });
     };
 
-    $timeout(function(){
-            $scope.send("hows the weather?");
-    },10000);
-    
     // Waking Google spreadsheets up...
     Tabletop.then(function(data){
         var deferred = $q.defer();
@@ -740,6 +742,7 @@ angular.module('Site', ['times.tabletop'])
         dialogue = parsedData.dialogue;
         portfolio = parsedData.portfolio;
     },function(msg){console.error(msg);});
+
 
 }])
 
