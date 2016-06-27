@@ -108,6 +108,13 @@ angular.module('Site', ['times.tabletop'])
         console.log(msg);
     };
 
+    // Initial screen is dialogue
+    $scope.dialogue = true;
+    $scope.buttonClicked = function(){
+        $scope.dialogue = !$scope.dialogue;
+    };
+    $scope.currentUserText;
+
     // Send filtered response
     $scope.messageQueue = [];
     $scope.send = function(input) {
