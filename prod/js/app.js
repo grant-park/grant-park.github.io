@@ -603,7 +603,7 @@ angular.module('times.tabletop', [])
 (function(){
 "use strict";
 
-angular.module('Site', ['times.tabletop','ngSanitize','luegg.directives'])
+angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directives'])
 
 .config(['TabletopProvider', function(TabletopProvider){
     // Tabletop setup
@@ -682,7 +682,7 @@ angular.module('Site', ['times.tabletop','ngSanitize','luegg.directives'])
     return deferred.promise;
 }])
     
-.controller('Dialogue', ['$element','$timeout','$q','$scope','Tabletop','DialoguePortfolioParser','DialogueCache','Weather','GrantsAge',function($element,$timeout,$q,$scope,Tabletop,DialoguePortfolioParser,DialogueCache,Weather,GrantsAge) {
+.controller('Dialogue', ['$sce','$element','$timeout','$q','$scope','Tabletop','DialoguePortfolioParser','DialogueCache','Weather','GrantsAge',function($sce,$element,$timeout,$q,$scope,Tabletop,DialoguePortfolioParser,DialogueCache,Weather,GrantsAge) {
 
     // In case spreadsheets are too slow
     var parsedData = DialogueCache, 
@@ -704,9 +704,43 @@ angular.module('Site', ['times.tabletop','ngSanitize','luegg.directives'])
         return deferred.promise;
     };
 
+    var lock = false;
     // Add to message queue
     var registerMessage = function(msg,sender){
+            if (!sender && !lock) {
+                    lock = true;
+                        pendingMessage('Grant');
+                $timeout(function(){
         $scope.messageQueue.push({ sender: sender ? sender : 'Grant', message: msg }); 
+                },300).then(function(){
+                    lock = false;
+                }); 
+            } else {
+                    if (!lock) {
+        $scope.messageQueue.push({ sender: sender ? sender : 'Grant', message: msg }); 
+                    }
+            }
+    };
+
+    var pendingMessage = function(sender){
+            //add class
+            $scope.messageQueue.push({ sender: sender, message: '<div style="font-size:25px;">.</div>' });
+            $timeout(function(){
+                $scope.messageQueue.pop();
+                $scope.messageQueue.push({ sender: sender, message: '<div style="font-size:25px;">..</div>' });
+            },100);
+            $timeout(function(){
+                $scope.messageQueue.pop();
+                $scope.messageQueue.push({ sender: sender, message: '<div style="font-size:25px;">...</div>' });
+            },200);
+            $timeout(function(){
+                    //remove class
+                $scope.messageQueue.pop(); 
+            },300);
+    };
+
+    $scope.trustAsHtml = function(string){
+        return $sce.trustAsHtml(string); 
     };
 
     // Initial screen is dialogue
@@ -719,25 +753,27 @@ angular.module('Site', ['times.tabletop','ngSanitize','luegg.directives'])
     // Send filtered response
     $scope.messageQueue = [];
     $scope.send = function(input) {
-        registerMessage(input, 'user');
-        $element.find('input').val('');
-        $scope.currentUserText = null;
-        dialogueResponse(input).then(function(data){
-                switch (data.response) {
-                        case "E.AGE":
-                                registerMessage(GrantsAge);
-                                break;
-                        case "E.WEATHER":
-                                Weather.then(function(resp){
-                                        registerMessage(resp);
-                                });
-                                break;
-                        default:
-                                registerMessage(data.response);
-                }
-        },function(notFoundMsg){
-            registerMessage(notFoundMsg);
-        });
+            if (!lock) {
+                registerMessage(input, 'user');
+                $element.find('input').val('');
+                $scope.currentUserText = null;
+                dialogueResponse(input).then(function(data){
+                        switch (data.response) {
+                                case "E.AGE":
+                                        registerMessage(GrantsAge);
+                                        break;
+                                case "E.WEATHER":
+                                        Weather.then(function(resp){
+                                                registerMessage(resp);
+                                        });
+                                        break;
+                                default:
+                                        registerMessage(data.response);
+                        }
+                },function(notFoundMsg){
+                    registerMessage(notFoundMsg);
+                });
+            }
     };
 
     // Waking Google spreadsheets up...
@@ -756,6 +792,10 @@ angular.module('Site', ['times.tabletop','ngSanitize','luegg.directives'])
     },function(msg){console.error(msg);});
 
     registerMessage("Hi, I'm Grant Park. Ask me anything you'd like. For suggestions, try '?'");
+
+    $timeout(function(){
+        $element.addClass('loaded'); 
+    },750);
 
 }]);
 })(); 

@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/sungjp/sungjp.github.io#readme",
   "devDependencies": {
+    "angular-animate": "^1.5.7",
     "angular-sanitize": "^1.5.7",
     "angularjs-scroll-glue": "^2.0.7",
     "browserify": "^13.0.1",

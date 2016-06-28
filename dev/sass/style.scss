@@ -14,6 +14,12 @@ body {
         background-color: white;
         margin: 40 auto;
         border-radius: 25px;
+        opacity: 0;
+        transition: 0.5s ease-in-out;
+        &.loaded {
+                opacity: 1;
+                transition: 1s ease-in-out;
+        }
 }
 
 .screen {
@@ -77,7 +83,7 @@ body {
         text-align: left;
         font-size: 15px;
         color: white;
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Work Sans', sans-serif;
         clear: both;
         margin-bottom: 20px;
         word-wrap: break-word;
@@ -115,7 +121,7 @@ body {
 }
 
 .chat-window {
-        overflow: scroll;
+        overflow: hidden;
         height: calc(90% - 10px);
         padding: 10px 10px 0px 10px;
 }
@@ -144,6 +150,7 @@ input {
         color: slategray;
         outline: none;
         font-size: 15px;
+        font-family: 'Work Sans', sans-serif;
 }
 
 .send-button {
@@ -157,5 +164,5 @@ input {
         line-height: 30px;
         text-align: center;
         font-size: 15px;
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Work Sans', sans-serif;
 }
