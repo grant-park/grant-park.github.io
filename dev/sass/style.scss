@@ -1,23 +1,43 @@
+a {
+        color: navajowhite;
+        text-decoration: none;
+}
+
 body {
-        background-color: green;
+        background-color: tomato;
 }
 
 .mobile-device {
-        height: 750px;
-        width: 400px;
-        background-color: turquoise;
-        margin: auto;
+        position: relative;
+        height: 600px;
+        width: 310px;
+        background-color: white;
+        margin: 40 auto;
+        border-radius: 25px;
+}
+
+.screen {
+        position: absolute;
+        left: 50%;
+        top: 40px;
+        transform: translateX(-50%);
+        height: 500px;
+        width: 300px; 
+        background-color: yellow;
+        border-radius: 5px;
 }
 
 .dialogue, .portfolio {
-        height: 600px;
-        width: 300px; 
-        margin: 40 auto;
-        position: relative;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 5px;
 }
 
 .dialogue {
-        background-color: tomato;
+        background-color: lightblue;
 }
 
 .portfolio {
@@ -25,40 +45,117 @@ body {
 }
 
 .button {
-        height: 20px;
-        width: 20px;
-        background-color: cornflowerblue;
-        margin: 20 auto;
+        position: absolute;
+        bottom: 10px;
+        height: 40px;
+        width: 40px;
+        background-color: lightblue;
+        border-radius: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        //-webkit-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.75);
+        //-moz-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.75);
+        //box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.75);
+        // dashed and rotating, then add shadow and fade-remove dashes
+        //border: 1px dashed lightslategray;
+}
+
+.button:active {
+        //-webkit-box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.75);
+        //-moz-box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.75);
+        //box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.75);
+        border: none;
 }
 
 .chat-bubble {
-        height: 100px;
-        width: 100px;
+        position: relative;
+        height: auto;
+        max-width: 200px;
         background-color: cornflowerblue;
+        border-radius: 20px;
+        padding: 10px 15px 10px 15px;
+        text-align: left;
+        font-size: 15px;
+        color: white;
+        font-family: 'Open Sans', sans-serif;
+        clear: both;
+        margin-bottom: 20px;
+        word-wrap: break-word;
+}
+
+.chat-bubble.Grant {
+        float: left;
+}
+
+.chat-bubble.user {
+        float: right;
+        background-color: steelblue;
+}
+
+.chat-bubble.Grant::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        bottom: -10px;
+        left: 5px;
+        border: 10px solid;
+        border-color: cornflowerblue transparent transparent cornflowerblue;
+}
+
+.chat-bubble.user::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        bottom: -10px;
+        right: 5px;
+        border: 10px solid;
+        border-color: steelblue steelblue transparent transparent;
 }
 
 .chat-window {
         overflow: scroll;
-        height: 90%;
+        height: calc(90% - 10px);
+        padding: 10px 10px 0px 10px;
 }
 
 .chat-bar {
         position: absolute;
         bottom: 0;
-        background-color: green;
+        background-color: lightslategray;
         height: 10%;
         width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        border-radius: 0 0 5px 5px;
 }
 
 input {
         height: 30px;
+        width: 220px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 10px;
+        border-radius: 5px;
+        border: transparent;
+        color: slategray;
+        outline: none;
+        font-size: 15px;
 }
 
 .send-button {
-        width: 100px;
-        height: 50px;
-        background-color: navy;
+        width: 60px;
+        margin-left: -15px;
+        height: 30px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white;
+        line-height: 30px;
+        text-align: center;
+        font-size: 15px;
+        font-family: 'Open Sans', sans-serif;
 }

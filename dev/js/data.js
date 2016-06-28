@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 
-angular.module('Site', ['times.tabletop'])
+angular.module('Site', ['times.tabletop','ngSanitize','luegg.directives'])
 
 .config(['TabletopProvider', function(TabletopProvider){
     // Tabletop setup
@@ -80,7 +80,7 @@ angular.module('Site', ['times.tabletop'])
     return deferred.promise;
 }])
     
-.controller('Dialogue', ['$timeout','$q','$scope','Tabletop','DialoguePortfolioParser','DialogueCache','Weather','GrantsAge',function($timeout,$q,$scope,Tabletop,DialoguePortfolioParser,DialogueCache,Weather,GrantsAge) {
+.controller('Dialogue', ['$element','$timeout','$q','$scope','Tabletop','DialoguePortfolioParser','DialogueCache','Weather','GrantsAge',function($element,$timeout,$q,$scope,Tabletop,DialoguePortfolioParser,DialogueCache,Weather,GrantsAge) {
 
     // In case spreadsheets are too slow
     var parsedData = DialogueCache, 
@@ -105,7 +105,6 @@ angular.module('Site', ['times.tabletop'])
     // Add to message queue
     var registerMessage = function(msg,sender){
         $scope.messageQueue.push({ sender: sender ? sender : 'Grant', message: msg }); 
-        console.log(msg);
     };
 
     // Initial screen is dialogue
@@ -118,6 +117,9 @@ angular.module('Site', ['times.tabletop'])
     // Send filtered response
     $scope.messageQueue = [];
     $scope.send = function(input) {
+        registerMessage(input, 'user');
+        $element.find('input').val('');
+        $scope.currentUserText = null;
         dialogueResponse(input).then(function(data){
                 switch (data.response) {
                         case "E.AGE":
@@ -132,7 +134,6 @@ angular.module('Site', ['times.tabletop'])
                                 registerMessage(data.response);
                 }
         },function(notFoundMsg){
-            $scope.messageQueue.push(notFoundMsg);
             registerMessage(notFoundMsg);
         });
     };
@@ -154,13 +155,5 @@ angular.module('Site', ['times.tabletop'])
 
     registerMessage("Hi, I'm Grant Park. Ask me anything you'd like. For suggestions, try '?'");
 
-}])
-
-// Responses are raw html
-.filter('html',['$sce',function($sce){
-    return function(val){
-            return $sce.trustAsHtml(val);
-    };
 }]);
-
 })(); 
