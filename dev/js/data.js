@@ -102,39 +102,21 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
         return deferred.promise;
     };
 
-    var lock = false;
+    $scope.lock = false;
     // Add to message queue
     var registerMessage = function(msg,sender){
-            if (!sender && !lock) {
-                    lock = true;
-                        pendingMessage('Grant');
+            if (!sender && !$scope.lock) {
+                $scope.lock = true;
                 $timeout(function(){
         $scope.messageQueue.push({ sender: sender ? sender : 'Grant', message: msg }); 
-                },300).then(function(){
-                    lock = false;
+                },750).then(function(){
+                    $scope.lock = false;
                 }); 
             } else {
-                    if (!lock) {
+                    if (!$scope.lock) {
         $scope.messageQueue.push({ sender: sender ? sender : 'Grant', message: msg }); 
                     }
             }
-    };
-
-    var pendingMessage = function(sender){
-            //add class
-            $scope.messageQueue.push({ sender: sender, message: '<div style="font-size:25px;">.</div>' });
-            $timeout(function(){
-                $scope.messageQueue.pop();
-                $scope.messageQueue.push({ sender: sender, message: '<div style="font-size:25px;">..</div>' });
-            },100);
-            $timeout(function(){
-                $scope.messageQueue.pop();
-                $scope.messageQueue.push({ sender: sender, message: '<div style="font-size:25px;">...</div>' });
-            },200);
-            $timeout(function(){
-                    //remove class
-                $scope.messageQueue.pop(); 
-            },300);
     };
 
     $scope.trustAsHtml = function(string){
@@ -148,29 +130,43 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
     };
     $scope.currentUserText;
 
+    var checkOverride = function(msg){
+            function check(test){ return msg.toLowerCase().indexOf(test) !== -1 };
+            if (check('project')) {
+                    $timeout(function(){
+                        $scope.dottedAnimate = true;
+                    },500);
+            } else if (check('switch')) {
+                    $scope.buttonClicked();
+            }
+            return false;
+    };
+
     // Send filtered response
     $scope.messageQueue = [];
     $scope.send = function(input) {
-            if (!lock) {
-                registerMessage(input, 'user');
-                $element.find('input').val('');
-                $scope.currentUserText = null;
-                dialogueResponse(input).then(function(data){
-                        switch (data.response) {
-                                case "E.AGE":
-                                        registerMessage(GrantsAge);
-                                        break;
-                                case "E.WEATHER":
-                                        Weather.then(function(resp){
-                                                registerMessage(resp);
-                                        });
-                                        break;
-                                default:
-                                        registerMessage(data.response);
-                        }
-                },function(notFoundMsg){
-                    registerMessage(notFoundMsg);
-                });
+            if (!$scope.lock && input) {
+                if (!checkOverride(input)) {
+                        registerMessage(input, 'user');
+                        $element.find('input').val('');
+                        $scope.currentUserText = null;
+                        dialogueResponse(input).then(function(data){
+                                switch (data.response) {
+                                        case "E.AGE":
+                                                registerMessage(GrantsAge);
+                                                break;
+                                        case "E.WEATHER":
+                                                Weather.then(function(resp){
+                                                        registerMessage(resp);
+                                                });
+                                                break;
+                                        default:
+                                                registerMessage(data.response);
+                                }
+                        },function(notFoundMsg){
+                            registerMessage(notFoundMsg);
+                        });
+                }
             }
     };
 

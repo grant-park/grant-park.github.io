@@ -1,17 +1,29 @@
+html {
+        box-shadow: 0 0 300px rgba(0,0,0,0.40) inset;
+}
+
 a {
         color: navajowhite;
         text-decoration: none;
 }
 
 body {
-        background-color: tomato;
+        background-image: url('retina_wood_@2X.png');
+        //background-image: url('notebook_@2X.png');
+        background-repeat: repeat;
+}
+
+.noSelect {
+        -webkit-user-select: none;  /* Chrome all / Safari all */
+          -moz-user-select: none;     /* Firefox all */
+            -ms-user-select: none;      /* IE 10+ */
 }
 
 .mobile-device {
         position: relative;
         height: 600px;
         width: 310px;
-        background-color: white;
+        background-color: lightgray;
         margin: 40 auto;
         border-radius: 25px;
         opacity: 0;
@@ -20,6 +32,24 @@ body {
                 opacity: 1;
                 transition: 1s ease-in-out;
         }
+        transform: perspective(1500px) rotateX(15deg) rotate(0);
+        -webkit-box-shadow: 0px 10px 35px 0px rgba(0,0,0,0.55);
+        -moz-box-shadow: 0px 10px 35px 0px rgba(0,0,0,0.55);
+        box-shadow: 0px 10px 35px 0px rgba(0,0,0,0.55);
+}
+
+.mobile-device:after {
+        content:'';
+        position: absolute;
+        height: 600px;
+        width: 312px;
+        background-color: white;
+        margin: 40 auto;
+        transform: translateY(-50px) translateX(-1px);
+        border-radius: 25px;
+        opacity: 1;
+        transition: 0.5s ease-in-out;
+        z-index: -1;
 }
 
 .screen {
@@ -29,7 +59,7 @@ body {
         transform: translateX(-50%);
         height: 500px;
         width: 300px; 
-        background-color: yellow;
+        background-color: ghostwhite;
         border-radius: 5px;
 }
 
@@ -52,25 +82,26 @@ body {
 
 .button {
         position: absolute;
-        bottom: 10px;
-        height: 40px;
-        width: 40px;
-        background-color: lightblue;
+        bottom: 20px;
+        height: 30px;
+        width: 30px;
+        background-color: white;
         border-radius: 50%;
         left: 50%;
+        transform-origin: 50% 50%;
         transform: translateX(-50%);
-        //-webkit-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.75);
-        //-moz-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.75);
-        //box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.75);
-        // dashed and rotating, then add shadow and fade-remove dashes
-        //border: 1px dashed lightslategray;
+        &.dotted-shadow {
+            -webkit-animation: dotted-shadow linear 1s forwards;
+            animation: dotted-shadow linear 1s forwards;
+        }
+        border: 1px solid gainsboro;
 }
 
-.button:active {
-        //-webkit-box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.75);
-        //-moz-box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.75);
-        //box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.75);
-        border: none;
+.button.dotted-shadow:active {
+        -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.75);
+        border: 1px solid gray;
 }
 
 .chat-bubble {
@@ -120,8 +151,18 @@ body {
         border-color: steelblue steelblue transparent transparent;
 }
 
+.fade.ng-enter {
+        transition: 0.3s ease-in-out;
+        opacity: 0;
+}
+
+.fade.ng-enter.ng-enter-active {
+        transition: 0.3s ease-in-out;
+        opacity: 1;
+}
+
 .chat-window {
-        overflow: hidden;
+        overflow: scroll;
         height: calc(90% - 10px);
         padding: 10px 10px 0px 10px;
 }
@@ -165,4 +206,100 @@ input {
         text-align: center;
         font-size: 15px;
         font-family: 'Work Sans', sans-serif;
+}
+
+.pending {
+        padding-top: 0;
+}
+
+.dot1, .dot2, .dot3 {
+        font-size: 25px;
+}
+
+.dot1 {
+        -webkit-animation: flash1 linear 0.5s infinite;
+        animation: flash1 linear 0.5s infinite;
+}
+
+.dot2 {
+        -webkit-animation: flash2 linear 0.5s infinite;
+        animation: flash2 linear 0.5s infinite;
+}
+
+.dot3 {
+        -webkit-animation: flash3 linear 0.5s infinite;
+        animation: flash3 linear 0.5s infinite;
+}
+
+@-webkit-keyframes flash1 {
+        0% { opacity: 1; }
+        50% { opacity: 0.1; }
+        100% { opacity: 0.1; }
+}
+
+@keyframes flash1 {
+        0% { opacity: 1; }
+        50% { opacity: 0.1; }
+        100% { opacity: 0.1; }
+}
+
+@-webkit-keyframes flash2 {
+        0% { opacity: 0.1; }
+        50% { opacity: 1; }
+        100% { opacity: 0.1; }
+}
+
+@keyframes flash2 {
+        0% { opacity: 0.1; }
+        50% { opacity: 1; }
+        100% { opacity: 0.1; }
+}
+
+@-webkit-keyframes flash3 {
+        0% { opacity: 0.1; }
+        50% { opacity: 0.1; }
+        100% { opacity: 1; }
+}
+
+@keyframes flash3 {
+        0% { opacity: 0.1; }
+        50% { opacity: 0.1; }
+        100% { opacity: 1; }
+}
+
+@-webkit-keyframes dotted-shadow {
+        0% { border: none; }
+        50% { 
+            -webkit-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.25);
+            -moz-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.25);
+            box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.25);
+        }
+        75% { 
+            -webkit-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.50);
+            -moz-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.50);
+            box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.50);
+        }
+        100% { 
+            -webkit-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.75);
+            box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.75);
+        }
+}
+
+@keyframes dotted-shadow {
+        50% { 
+            -webkit-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.25);
+            -moz-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.25);
+            box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.25);
+        }
+        75% { 
+            -webkit-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.50);
+            -moz-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.50);
+            box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.50);
+        }
+        100% { 
+            -webkit-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.75);
+            box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.75);
+        }
 }
