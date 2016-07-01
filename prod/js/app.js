@@ -733,7 +733,7 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
     $scope.currentUserText;
 
     var checkOverride = function(msg){
-            function check(test){ return msg.toLowerCase().indexOf(test) !== -1 };
+            function check(test){ return msg.toLowerCase().indexOf(test) !== -1; }
             if (check('project')) {
                     $timeout(function(){
                         $scope.dottedAnimate = true;
@@ -784,14 +784,20 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
     }).then(function(data){
         parsedData = DialoguePortfolioParser.parse(data);
         dialogue = parsedData.dialogue;
-        portfolio = parsedData.portfolio;
+        $scope.portfolio = parsedData.portfolio;
+        console.log($scope.portfolio);
     },function(msg){console.error(msg);});
 
     registerMessage("Hi, I'm Grant Park. Ask me anything you'd like. For suggestions, try '?'");
 
     $timeout(function(){
         $element.addClass('loaded'); 
-    },750);
+    },1250);
+
+    $scope.imageDict = {
+        hurdlr: 'hurdlr.jpeg',
+        dangle: 'dangle.png'
+    };
 
 }]);
 })(); 
