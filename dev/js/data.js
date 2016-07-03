@@ -183,7 +183,22 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
         parsedData = DialoguePortfolioParser.parse(data);
         dialogue = parsedData.dialogue;
         $scope.portfolio = parsedData.portfolio;
-        console.log($scope.portfolio);
+            // currently set page capacity to 20 apps
+            var capacity = 20;
+            $scope.pages = [];
+
+            var currentIterPage = [];
+            _.each($scope.portfolio, function(el){
+                    if (currentIterPage.length === capacity) {
+                        $scope.pages.push(currentIterPage); 
+                        currentIterPage = [];
+                    }
+                    currentIterPage.push(el);
+            });
+            if (currentIterPage !== []) {
+                    $scope.pages.push(currentIterPage);
+            }
+
     },function(msg){console.error(msg);});
 
     registerMessage("Hi, I'm Grant Park. Ask me anything you'd like. For suggestions, try '?'");
@@ -192,8 +207,17 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
         $element.addClass('loaded'); 
     },1250);
 
+    $scope.pageMove = 'translateX(0)';
+    $scope.currentOption = 0;
+    $scope.optionSelected = function(index){
+            $scope.pageMove = 'translateX(' + (index*-309) + 'px)';
+            $scope.currentOption = index;
+    };
+
     $scope.imageDict = {
-        hurdlr: 'hurdlr.jpeg'
+        hurdlr: 'dangle.png',
+        dangle: 'dangle.png',
+        hurdlre: 'hurdlr.jpeg'
     };
 
 }]);

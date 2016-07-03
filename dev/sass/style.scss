@@ -58,13 +58,25 @@ body {
 }
 
 .screen {
-        position: absolute;
+        position: fixed;
         left: 50%;
         top: 40px;
         transform: translateX(-50%);
         height: 500px;
         width: 300px; 
-        background-color: darkgray;
+        background-image: url('blur.jpg');
+        background-size: cover;
+        box-shadow: inset 0 0 150px 19px rgba(50,50,50,1);
+        border-radius: 5px;
+}
+
+.screen:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 500px;
+        width: 300px; 
         border-radius: 5px;
 }
 
@@ -75,6 +87,7 @@ body {
         left: 0;
         right: 0;
         border-radius: 5px;
+        z-index: 1;
 }
 
 .dialogue {
@@ -83,10 +96,7 @@ body {
 
 .portfolio {
         background-color: lightblue;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: flex-start;
-        align-content: flex-start;
+        overflow: hidden;
 }
 
 .button {
@@ -162,30 +172,29 @@ body {
 }
 
 .switch.ng-enter {
-        transition: 0.5s ease-in-out;
+        transition: 0.3s ease-in-out;
         opacity: 0;
         transform: scale(0.5);
 }
 
 .switch.ng-enter.ng-enter-active {
-        transition: 0.5s ease-in-out;
         opacity: 1;
         transform: scale(1);
 }
 
 .switch.ng-leave {
-        transition: 0.5s ease-in-out;
+        transition: 0.3s ease-in-out;
         opacity: 1;
         transform: scale(1)
 }
 
 .switch.ng-leave.ng-leave-active {
         opacity: 0;
-        transform: scale(0.5);
+        transform: scale(0.8);
 }
 
 .alt.ng-enter {
-        transition: 0.5s ease-in-out;
+        transition: 0.3s ease-in-out;
         opacity: 0;
 }
 
@@ -194,9 +203,8 @@ body {
 }
 
 .alt.ng-leave {
-        transition: 0.5s ease-in-out;
+        transition: 0.3s ease-in-out;
         opacity: 1;
-        transform: scale(1)
 }
 
 .alt.ng-leave.ng-leave-active {
@@ -283,24 +291,34 @@ input {
         animation: flash3 linear 0.5s infinite;
 }
 
+.app-page {
+        -webkit-transition: 2s ease-in-out;
+        transition: 2s ease-in-out;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-content: flex-start;
+        width: 309px;
+}
+
 .app-container {
         position: absolute;
-        width: 100%;
-        height: 80%;
+        height: calc(85% - 10px);
+        padding-top: 10px;
         background-image: url('blur.jpg');
         background-size: cover;
         box-shadow: inset 0 0 130px -19px rgba(50,50,50,1);
         display: flex;
-        flex-flow: row wrap;
+        flex-flow: row nowrap;
         justify-content: flex-start;
         align-content: flex-start;
         border-radius: 5px 5px 0 0;
 }
 
 .app {
+        transition: 0.2s ease-in-out;
         width: 75px;
-        height: 75px;
-        margin-top: 10px;
+        height: 80px;
 }
 
 .app-icon {
@@ -317,11 +335,26 @@ input {
         font-family: 'Work Sans', sans-serif;
 }
 
+.options {
+        display: inline-block;
+        margin: 3px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: white;
+        opacity: 0.5;
+        cursor: pointer;
+        &.selected {
+                opacity: 1;
+        }
+}
+
 .select {
-        position: absolute;
+        position: fixed;
         width: 100%;
         height: 15px;
         bottom: 15%;
+        text-align: center;
 }
 
 .home-row {
@@ -333,7 +366,7 @@ input {
         right: 0;
         bottom: 0;
         width: 100%;
-        height: 20%;
+        height: 15%;
         background-color:blue;
         border-radius: 0 0 5px 5px;
 }
