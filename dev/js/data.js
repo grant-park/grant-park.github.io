@@ -102,6 +102,22 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
         return deferred.promise;
     };
 
+    $scope.tabs = [{
+        name: 'Music',
+        icon: 'soundcloud.png',
+        link: 'https://soundcloud.com/grant-park'
+    },
+    {
+        name: 'Blog',
+        icon: 'medium.png',
+        link: 'https://medium.com/@grantxs'
+    },
+    {
+        name: 'Design',
+        icon: 'behance.jpg',
+        link: 'https://www.behance.net/grantpark'
+    }];
+
     $scope.lock = false;
     // Add to message queue
     var registerMessage = function(msg,sender){
@@ -215,9 +231,18 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
     };
 
     $scope.imageDict = {
-        hurdlr: 'dangle.png',
+        hurdlr: 'hurdlr.jpeg',
         dangle: 'dangle.png',
-        hurdlre: 'hurdlr.jpeg'
+        hungrie: 'hungrie.jpg',
+        byte: 'byte.png',
+        notesms: 'onenote.jpg',
+        outsidehacks: 'outside.png',
+        amherstec: 'amherst.png',
+        codepen: 'codepen.jpg',
+        linkedin: 'linked.png',
+        github: 'github.jpeg',
+        resume: 'paper.jpg',
+        website1: 'web1.png'
     };
 
 }]);
