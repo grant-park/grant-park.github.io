@@ -780,12 +780,12 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
 
     $scope.tabs = [{
         name: 'Music',
-        icon: 'prod/img/soundcloud.png',
+        icon: 'prod/img/soundcloud.jpg',
         link: 'https://soundcloud.com/grant-park'
     },
     {
         name: 'Blog',
-        icon: 'prod/img/medium.png',
+        icon: 'prod/img/medium.jpg',
         link: 'https://medium.com/@grantxs'
     },
     {
@@ -908,17 +908,17 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
 
     $scope.imageDict = {
         hurdlr: 'prod/img/hurdlr.jpeg',
-        dangle: 'prod/img/dangle.png',
+        dangle: 'prod/img/dangle.jpg',
         hungrie: 'prod/img/hungrie.jpg',
-        byte: 'prod/img/byte.png',
+        byte: 'prod/img/byte.jpg',
         notesms: 'prod/img/onenote.jpg',
-        outsidehacks: 'prod/img/outside.png',
-        amherstec: 'prod/img/amherst.png',
+        outsidehacks: 'prod/img/outside.jpg',
+        amherstec: 'prod/img/amherst.jpg',
         codepen: 'prod/img/codepen.jpg',
-        linkedin: 'prod/img/linked.png',
+        linkedin: 'prod/img/linked.jpg',
         github: 'prod/img/github.jpeg',
         resume: 'prod/img/paper.jpg',
-        website1: 'prod/img/web1.png'
+        website1: 'prod/img/web1.jpg'
     };
 
 }]);
