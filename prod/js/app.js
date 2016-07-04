@@ -919,7 +919,8 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
         github: 'prod/img/github.jpeg',
         resume: 'prod/img/paper.jpg',
         website1: 'prod/img/web1.jpg',
-        setmine: 'prod/img/setmine.jpg'
+        setmine: 'prod/img/setmine.jpg',
+        r2r: 'prod/img/r2r.jpg'
     };
 
 }]);
