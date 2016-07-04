@@ -303,8 +303,8 @@ input {
         -webkit-transition: 0.5s ease-in-out;
         transition: 0.5s ease-in-out;
         position: absolute;
-        height: calc(83% - 10px);
-        padding-top: 10px;
+        height: calc(83% - 5px);
+        padding-top: 5px;
         background-image: url('blur.jpg');
         background-size: cover;
         box-shadow: inset 0 0 130px -19px rgba(50,50,50,1);
@@ -318,7 +318,7 @@ input {
 .app {
         transition: 0.2s ease-in-out;
         width: 75px;
-        height: 78px;
+        height: 80px;
 }
 
 .app-icon {
