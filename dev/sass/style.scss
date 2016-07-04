@@ -12,8 +12,7 @@ body {
         background-image: url('retina_wood_@2X.png');
         //background-image: url('notebook_@2X.png');
         background-repeat: repeat;
-        overflow-y: auto;
-        overflow-x: hidden;
+        overflow: hidden;
         height: 99%;
         margin: 0;
 }
