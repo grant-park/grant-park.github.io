@@ -1,0 +1,35 @@
+html  
+  head
+    title NoteSMS
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='css/main.css')
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:300', rel='stylesheet', type='text/css')
+  body
+    .outer
+      h1#title NoteSMS
+      .flexcontainer
+        .stepcontainer.flexitem
+          h2
+            | If you use Microsoft's 
+            a#onenote(href='https://www.onenote.com/', target='blank_') OneNote
+            | , you can create new notes on the fly by sending texts!
+          h3 Steps:
+          ul#steps
+            li
+              b
+                | 1. Provide your phone number here: 
+                br
+                form#form
+                  input(type='text', name='Phone Number', onkeypress='return event.charCode > 47 && event.charCode < 58;', pattern='[0-9]{5}', required='')
+            li
+              b
+                | 2. Sign in to 
+                a(href='') your Microsoft account.
+            li
+              b 3. Wait for a confirmation.
+            li
+              b 4. Start texting your new notes!
+        .gif.flexitem
+          img(height='500px;', src='gif.gif')
+    footer#footer
+      p © 2015 Grant Park and Thomas Lam
