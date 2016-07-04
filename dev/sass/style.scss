@@ -454,14 +454,8 @@ input {
         }
 }
 
-@keyframes slide {
-        from {
-                -webkit-transform: translateX(0px);
-                transform: translateX(0px);
-        }
-
-        to {
-                -webkit-transform: translateX(-309px);
-                transform: translateX(-309px);
+@media (max-device-width: 768px) {
+        .mobile-device {
+                zoom: 2;
         }
 }
