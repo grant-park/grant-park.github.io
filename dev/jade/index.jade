@@ -20,8 +20,8 @@ body(ng-app='Site')
                         span(class='dot2') .
                         span(class='dot3') .
                 div(class='chat-bar')
-                    input(autofocus type='text' ng-model='currentUserText' placeholder='Write here...' ng-keypress='$event.keyCode==13 ? send(currentUserText) : ""')
-                    div(class='send-button noSelect' ng-click='send(currentUserText)') Send
+                    input(autofocus type='text' ng-model='currentUser.text' placeholder='Write here...' ng-keypress='$event.keyCode==13 ? send(currentUser.text) : ""')
+                    div(class='send-button noSelect' ng-click='send(currentUser.text)') Send
             div(class='portfolio alt' ng-if='!dialogue')
                 div(class='app-container' ng-style='{ "-webkit-transform": pageMove, "transform": pageMove }')
                    div(class='app-page' ng-repeat='page in pages') 

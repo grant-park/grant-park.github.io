@@ -199,7 +199,7 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
                 $scope.lock = true;
                 $timeout(function(){
         $scope.messageQueue.push({ sender: sender ? sender : 'Grant', message: msg }); 
-                },750).then(function(){
+                },900).then(function(){
                     $scope.lock = false;
                 }); 
             } else {
@@ -218,7 +218,6 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
     $scope.buttonClicked = function(){
         $scope.dialogue = !$scope.dialogue;
     };
-    $scope.currentUserText;
 
     var checkOverride = function(msg){
             function check(test){ return msg.toLowerCase().indexOf(test) !== -1; }
@@ -232,6 +231,8 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
             return false;
     };
 
+    $scope.currentUser = { text: '' };
+
     // Send filtered response
     $scope.messageQueue = [];
     $scope.send = function(input) {
@@ -239,7 +240,7 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
                 if (!checkOverride(input)) {
                         registerMessage(input, 'user');
                         $element.find('input').val('');
-                        $scope.currentUserText = null;
+                        $scope.currentUser.text = null;
                         dialogueResponse(input).then(function(data){
                                 switch (data.response) {
                                         case "E.AGE":
