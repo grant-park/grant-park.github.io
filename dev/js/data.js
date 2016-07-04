@@ -162,17 +162,17 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
 
     $scope.tabs = [{
         name: 'Music',
-        icon: 'soundcloud.png',
+        icon: 'prod/img/soundcloud.png',
         link: 'https://soundcloud.com/grant-park'
     },
     {
         name: 'Blog',
-        icon: 'medium.png',
+        icon: 'prod/img/medium.png',
         link: 'https://medium.com/@grantxs'
     },
     {
         name: 'Design',
-        icon: 'behance.jpg',
+        icon: 'prod/img/behance.jpg',
         link: 'https://www.behance.net/grantpark'
     }];
 
@@ -289,18 +289,18 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
     };
 
     $scope.imageDict = {
-        hurdlr: 'hurdlr.jpeg',
-        dangle: 'dangle.png',
-        hungrie: 'hungrie.jpg',
-        byte: 'byte.png',
-        notesms: 'onenote.jpg',
-        outsidehacks: 'outside.png',
-        amherstec: 'amherst.png',
-        codepen: 'codepen.jpg',
-        linkedin: 'linked.png',
-        github: 'github.jpeg',
-        resume: 'paper.jpg',
-        website1: 'web1.png'
+        hurdlr: 'prod/img/hurdlr.jpeg',
+        dangle: 'prod/img/dangle.png',
+        hungrie: 'prod/img/hungrie.jpg',
+        byte: 'prod/img/byte.png',
+        notesms: 'prod/img/onenote.jpg',
+        outsidehacks: 'prod/img/outside.png',
+        amherstec: 'prod/img/amherst.png',
+        codepen: 'prod/img/codepen.jpg',
+        linkedin: 'prod/img/linked.png',
+        github: 'prod/img/github.jpeg',
+        resume: 'prod/img/paper.jpg',
+        website1: 'prod/img/web1.png'
     };
 
 }]);
