@@ -9,7 +9,6 @@ $appIconColor: white;
 
 html {
         box-shadow: 0 0 300px rgba(0,0,0,0.40) inset;
-        display: block;
 }
 
 a {
@@ -19,11 +18,9 @@ a {
 
 body {
         background-image: url('retina_wood_@2X.png');
-        //background-image: url('notebook_@2X.png');
         background-repeat: repeat;
         overflow: hidden;
-        height: 99%;
-        margin: 0;
+        height: 100%;
 }
 
 .noSelect {
