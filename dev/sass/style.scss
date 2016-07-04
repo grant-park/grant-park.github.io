@@ -1,3 +1,12 @@
+$font: 'Work Sans', sans-serif;
+$mobileDeviceColor: lightgray;
+$mobileDeviceAfterColor: white;
+$chatBubbleColor: #64a7ed;
+$chatBubbleUserColor: #4cb5ff;
+$chatWindowColor: #c3edfb;
+$chatBarColor: #d2d2d2;
+$appIconColor: white;
+
 html {
         box-shadow: 0 0 300px rgba(0,0,0,0.40) inset;
         display: block;
@@ -19,15 +28,15 @@ body {
 
 .noSelect {
         -webkit-user-select: none;  /* Chrome all / Safari all */
-          -moz-user-select: none;     /* Firefox all */
-            -ms-user-select: none;      /* IE 10+ */
+        -moz-user-select: none;     /* Firefox all */
+        -ms-user-select: none;      /* IE 10+ */
 }
 
 .mobile-device {
         position: relative;
         height: 600px;
         width: 310px;
-        background-color: lightgray;
+        background-color: $mobileDeviceColor;
         margin: 40 auto;
         border-radius: 25px;
         opacity: 0;
@@ -47,9 +56,9 @@ body {
         position: absolute;
         height: 600px;
         width: 312px;
-        background-color: white;
+        background-color: $mobileDeviceAfterColor;
         margin: 40 auto;
-        transform: translateY(-50px) translateX(-1px);
+        transform: translateY(-45px) translateX(-1px);
         border-radius: 25px;
         opacity: 1;
         transition: 0.5s ease-in-out;
@@ -89,24 +98,18 @@ body {
         z-index: 1;
 }
 
-.dialogue {
-        background-color: lightblue;
-}
-
 .portfolio {
-        background-color: lightblue;
         overflow: hidden;
 }
 
 .button {
         position: absolute;
-        bottom: 20px;
+        bottom: 16px;
         height: 30px;
         width: 30px;
-        background-color: white;
+        background-color: $mobileDeviceAfterColor;
         border-radius: 50%;
         left: 50%;
-        transform-origin: 50% 50%;
         transform: translateX(-50%);
         &.dotted-shadow {
             -webkit-animation: dotted-shadow linear 1s forwards;
@@ -126,14 +129,14 @@ body {
         position: relative;
         height: auto;
         max-width: 200px;
-        background-color: cornflowerblue;
+        background-color: $chatBubbleColor;
         border-radius: 20px;
         padding: 10px 15px 10px 15px;
         text-align: left;
         font-size: 15px;
         line-height: 1.5em;
         color: white;
-        font-family: 'Work Sans', sans-serif;
+        font-family: $font; 
         clear: both;
         margin-bottom: 20px;
         word-wrap: break-word;
@@ -145,7 +148,7 @@ body {
 
 .chat-bubble.user {
         float: right;
-        background-color: steelblue;
+        background-color: $chatBubbleUserColor;
 }
 
 .chat-bubble.Grant::after {
@@ -156,7 +159,7 @@ body {
         bottom: -10px;
         left: 5px;
         border: 10px solid;
-        border-color: cornflowerblue transparent transparent cornflowerblue;
+        border-color: $chatBubbleColor transparent transparent $chatBubbleColor;
 }
 
 .chat-bubble.user::after {
@@ -167,7 +170,7 @@ body {
         bottom: -10px;
         right: 5px;
         border: 10px solid;
-        border-color: steelblue steelblue transparent transparent;
+        border-color: $chatBubbleUserColor $chatBubbleUserColor transparent transparent;
 }
 
 .switch.ng-enter {
@@ -224,12 +227,13 @@ body {
         overflow: scroll;
         height: calc(90% - 10px);
         padding: 10px 10px 0px 10px;
+        background-color: $chatWindowColor;
 }
 
 .chat-bar {
         position: absolute;
         bottom: 0;
-        background-color: darkgray;
+        background-color: $chatBarColor;
         height: 10%;
         width: 100%;
         display: flex;
@@ -250,7 +254,7 @@ input {
         color: slategray;
         outline: none;
         font-size: 15px;
-        font-family: 'Work Sans', sans-serif;
+        font-family: $font; 
 }
 
 .send-button {
@@ -264,7 +268,7 @@ input {
         line-height: 30px;
         text-align: center;
         font-size: 15px;
-        font-family: 'Work Sans', sans-serif;
+        font-family: $font; 
 }
 
 .pending {
@@ -324,7 +328,7 @@ input {
         margin: auto;
         margin-left: 7.5px;
         border-radius: 10px;
-        background-color: white;
+        background-color: $appIconColor;
 }
 
 .app-name {
@@ -332,7 +336,7 @@ input {
         text-align: center;
         color: white;
         font-size: 11px;
-        font-family: 'Work Sans', sans-serif;
+        font-family: $font; 
 }
 
 .options {
@@ -341,7 +345,7 @@ input {
         width: 6px;
         height: 6px;
         border-radius: 50%;
-        background-color: white;
+        background-color: $appIconColor;
         opacity: 0.5;
         cursor: pointer;
         &.selected {
@@ -367,7 +371,6 @@ input {
         bottom: 0;
         width: 100%;
         height: 17%;
-        background-color:blue;
         border-radius: 0 0 5px 5px;
         display: flex;
         flex-flow: row nowrap;

@@ -159,6 +159,22 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
         deferred.reject("Sorry, I can't respond to that.");
         return deferred.promise;
     };
+    
+    // currently set page capacity to 20 apps
+    var capacity = 20;
+    $scope.pages = [];
+
+    var currentIterPage = [];
+    _.each($scope.portfolio, function(el){
+        if (currentIterPage.length === capacity) {
+            $scope.pages.push(currentIterPage);
+            currentIterPage = [];
+        }
+        currentIterPage.push(el);
+    });
+    if (currentIterPage !== []) {
+        $scope.pages.push(currentIterPage);
+    }
 
     $scope.tabs = [{
         name: 'Music',
@@ -258,7 +274,6 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
         dialogue = parsedData.dialogue;
         $scope.portfolio = parsedData.portfolio;
             // currently set page capacity to 20 apps
-            var capacity = 20;
             $scope.pages = [];
 
             var currentIterPage = [];
