@@ -171,25 +171,31 @@ body {
 }
 
 .switch.ng-enter {
+        -webkit-transition: 0.3s ease-in-out;
         transition: 0.3s ease-in-out;
         opacity: 0;
         transform: scale(0.5);
+        -webkit-transform: scale(0.5);
 }
 
 .switch.ng-enter.ng-enter-active {
         opacity: 1;
         transform: scale(1);
+        -webkit-transform: scale(1)
 }
 
 .switch.ng-leave {
+        -webkit-transition: 0.3s ease-in-out;
         transition: 0.3s ease-in-out;
         opacity: 1;
-        transform: scale(1)
+        transform: scale(1);
+        -webkit-transform: scale(1);
 }
 
 .switch.ng-leave.ng-leave-active {
         opacity: 0;
         transform: scale(0.8);
+        -webkit-transform: scale(0.8);
 }
 
 .alt.ng-enter {
