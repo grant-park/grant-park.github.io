@@ -37,12 +37,15 @@ body {
         margin: 40 auto;
         border-radius: 25px;
         opacity: 0;
+        -webkit-transition: 0.5s ease-in-out;
         transition: 0.5s ease-in-out;
         &.loaded {
                 opacity: 1;
                 transition: 1s ease-in-out;
+                -webkit-transition: 1s ease-in-out;
         }
         transform: perspective(1500px) rotateX(15deg) rotate(0);
+        -webkit-transform: perspective(1500px) rotateX(15deg) rotate(0);
         -webkit-box-shadow: 0px 10px 35px 0px rgba(0,0,0,0.55);
         -moz-box-shadow: 0px 10px 35px 0px rgba(0,0,0,0.55);
         box-shadow: 0px 10px 35px 0px rgba(0,0,0,0.55);
@@ -56,9 +59,11 @@ body {
         background-color: $mobileDeviceAfterColor;
         margin: 40 auto;
         transform: translateY(-45px) translateX(-1px);
+        -webkit-transform: translateY(-45px) translateX(-1px);
         border-radius: 25px;
         opacity: 1;
         transition: 0.5s ease-in-out;
+        -webkit-transition: 0.5s ease-in-out;
         z-index: -1;
 }
 
@@ -67,6 +72,7 @@ body {
         left: 50%;
         top: 40px;
         transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
         height: 500px;
         width: 300px; 
         background-image: url('blur.jpg');
@@ -80,6 +86,7 @@ body {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
         height: 500px;
         width: 300px; 
         border-radius: 5px;
@@ -108,6 +115,7 @@ body {
         border-radius: 50%;
         left: 50%;
         transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
         &.dotted-shadow {
             -webkit-animation: dotted-shadow linear 1s forwards;
             animation: dotted-shadow linear 1s forwards;
@@ -200,6 +208,7 @@ body {
 
 .alt.ng-enter {
         transition: 0.3s ease-in-out;
+        -webkit-transition: 0.3s ease-in-out;
         opacity: 0;
 }
 
@@ -209,6 +218,7 @@ body {
 
 .alt.ng-leave {
         transition: 0.3s ease-in-out;
+        -webkit-transition: 0.3s ease-in-out;
         opacity: 1;
 }
 
@@ -218,11 +228,13 @@ body {
 
 .fade.ng-enter {
         transition: 0.3s ease-in-out;
+        -webkit-transition: 0.3s ease-in-out;
         opacity: 0;
 }
 
 .fade.ng-enter.ng-enter-active {
         transition: 0.3s ease-in-out;
+        -webkit-transition: 0.3s ease-in-out;
         opacity: 1;
 }
 
@@ -251,6 +263,7 @@ input {
         position: relative;
         top: 50%;
         transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
         padding: 10px;
         border-radius: 5px;
         border: transparent;
@@ -266,6 +279,7 @@ input {
         height: 30px;
         position: relative;
         top: 50%;
+        -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
         color: white;
         line-height: 30px;
@@ -323,6 +337,7 @@ input {
 
 .app {
         transition: 0.2s ease-in-out;
+        -webkit-transition: 0.2s ease-in-out;
         width: 75px;
         height: 80px;
 }
@@ -382,6 +397,7 @@ input {
 }
 
 .home-app {
+        -webkit-transform: translateY(7px);
         transform: translateY(7px);
         width: 75px;
         height: 80px;
