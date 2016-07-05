@@ -1,4 +1,4 @@
-# [Grant Hyun Park](http://www.granthpark.me)
+# [granthpark.me](http://www.granthpark.me)
 ###Built with
 Node & Angular  
 Jade, Sass, & Gulp  
