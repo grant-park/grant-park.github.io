@@ -107,7 +107,7 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
                     diff -= 1;
             }
     }
-    return diff;
+    return diff.toString();
 }])
 
 .factory('Weather',['$http','$q',function($http,$q){
