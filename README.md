@@ -3,7 +3,7 @@ My Personal Website
 
 ###Built with
 Node & Angular JS  
-Jade & Sass & Gulp
+Jade, Sass, & Gulp  
 [Tabletop.js](https://github.com/jsoma/tabletop)  
 
 ###Navigating the Project
