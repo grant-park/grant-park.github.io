@@ -1,4 +1,4 @@
-# sungjp.github.io
+# [Grant Hyun Park](www.granthpark.me)
 ###Built with
 Node & Angular  
 Jade, Sass, & Gulp  
