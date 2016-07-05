@@ -1,6 +1,4 @@
 # sungjp.github.io
-My Personal Website
-
 ###Built with
 Node & Angular JS  
 Jade, Sass, & Gulp  
