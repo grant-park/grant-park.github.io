@@ -1,6 +1,6 @@
 # sungjp.github.io
 ###Built with
-Node & Angular 
+Node & Angular  
 Jade, Sass, & Gulp  
 [Tabletop.js](https://github.com/jsoma/tabletop)  
 
