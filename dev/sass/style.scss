@@ -5,6 +5,7 @@ $chatBubbleColor: #64a7ed;
 $chatBubbleUserColor: #4cb5ff;
 $chatWindowColor: #c3edfb;
 $chatBarColor: #d2d2d2;
+$chatBubbleFontColor: white;
 $appIconColor: tan;
 
 html {
@@ -140,7 +141,7 @@ body {
         text-align: left;
         font-size: 15px;
         line-height: 1.5em;
-        color: white;
+        color: $chatBubbleFontColor;
         font-family: $font; 
         clear: both;
         margin-bottom: 20px;
@@ -243,6 +244,9 @@ body {
         height: calc(90% - 10px);
         padding: 10px 10px 0px 10px;
         background-color: $chatWindowColor;
+        background: url(../img/bg.jpg);
+        background-size: 150px 150px;
+        background-repeat: repeat;
 }
 
 .chat-bar {
