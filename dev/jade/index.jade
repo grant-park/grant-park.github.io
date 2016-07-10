@@ -4,22 +4,17 @@ head
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='description', content="Grant Hyun Park's personal website")
     meta(name='viewport', content = 'width=device-width, initial-scale=1')
-    script(type='text/javascript' src='https://code.jquery.com/jquery-3.1.0.min.js')
     script(type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.min.js')
     script(type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js')
     script(type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-animate.min.js')
     script(type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-sanitize.min.js')
     script(type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angularjs-scroll-glue/2.0.7/scrollglue.min.js')
-    script.
-        window.fadeIn = function(obj) {
-            $(obj).fadeIn(1000);
-        }
     script(type='text/javascript' src='prod/js/app-min.js')
     link(href='prod/css/style.css', rel='stylesheet')
     link(href="https://fonts.googleapis.com/css?family=Work+Sans:300" rel="stylesheet")
     link(rel='shortcut icon' type='image/x-icon' href='/favicon.ico?')
 a(href="https://github.com/sungjp/sungjp.github.io" target='_blank' class="noSelect")
-    img(onload="fadeIn(this)" style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png")
+    img(style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png")
 body(ng-app='Site')
     div(class='mobile-device ng-cloak' ng-controller='Dialogue')
         div(class='screen')
@@ -37,17 +32,17 @@ body(ng-app='Site')
                 div(class='app-container' ng-style='{ "-webkit-transform": pageMove, "transform": pageMove }')
                    div(class='app-page' ng-repeat='page in pages') 
                         a(ng-mouseenter='hover = true' ng-mouseleave='hover = false' ng-class='{ shake: hover }' class='app' ng-repeat='app in page track by $index' href='{{ app.link }}' target='_blank')
-                                img(onload="fadeIn(this)" ng-src='{{ imageDict[app.icon] }}' class='app-icon' width='60' height='60')
+                                img(ng-src='{{ imageDict[app.icon] }}' class='app-icon' width='60' height='60')
                                 div(class='app-name') {{ app.name }}
                                 div(ng-class='{display: hover && app.description}' class='app-description') {{ app.description }}
                 div(class='select')
                     div(class='options' ng-class='{ selected: $index === currentOption }' ng-style='{ opacity: pages.length > 1 ? inherit : 0 }' ng-repeat='option in pages track by $index' ng-click='optionSelected($index)')
                 div(class='home-row')
                     a(ng-mouseenter='hover = true' ng-mouseleave='hover = false' class='home-app' ng-class='{ shake: hover }' ng-repeat='tab in tabs' href='{{tab.link}}' target='_blank')
-                        img(onload="fadeIn(this)" ng-src='{{ tab.icon }}' class='app-icon' width='60' height='60')
+                        img(ng-src='{{ tab.icon }}' class='app-icon' width='60' height='60')
                         div(class='app-name') {{ tab.name }}
                     a(ng-mouseenter='telegramHover = true' ng-mouseleave='telegramHover = false' class='home-app' ng-class='{ shake: telegramHover }' style='cursor: pointer;' ng-click='buttonClicked()')
-                        img(onload="fadeIn(this)" src='prod/img/Telegram.jpg' class='app-icon' width='60' height='60')
+                        img(src='prod/img/Telegram.jpg' class='app-icon' width='60' height='60')
                         div(class='app-name') Message
         div(class='button noSelect' ng-click='buttonClicked()' ng-class="{'dotted-shadow': dottedAnimate}")
     div(class='under')
