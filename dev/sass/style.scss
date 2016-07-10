@@ -411,6 +411,10 @@ input {
         transform: translateY(7px);
         width: 75px;
         height: 80px;
+        &.shake {
+            -webkit-animation: shakeTab ease-in-out 0.2s 1;
+            animation: shakeTab ease-in-out 0.2s 1;
+        }
 }
 
 .app-description {
@@ -512,13 +516,31 @@ input {
 
 @keyframes shake {
         0% {
+                -webkit-transform: translateX(0px);
                 transform: translateX(0px);
         }
         50% {
+                -webkit-transform: translateX(-3px);
                 transform: translateX(-3px);
         }
         100% {
+                -webkit-transform: translateX(3px);
                 transform: translateX(3px);
+        }
+}
+
+@keyframes shakeTab {
+        0% {
+                -webkit-transform: translateY(7px) translateX(0px);
+                transform: translateY(7px) translateX(0px);
+        }
+        50% {
+                -webkit-transform: translateY(7px) translateX(-3px);
+                transform: translateY(7px) translateX(-3px);
+        }
+        100% {
+                -webkit-transform: translateY(7px) translateX(3px);
+                transform: translateY(7px) translateX(3px);
         }
 }
 
