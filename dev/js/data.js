@@ -177,19 +177,19 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
     }
 
     $scope.tabs = [{
-        name: 'Music',
-        icon: 'prod/img/soundcloud.jpg',
-        link: 'https://soundcloud.com/grant-park'
+        name: 'Github',
+        icon: 'prod/img/github.jpeg',
+        link: 'https://github.com/sungjp'
     },
     {
-        name: 'Blog',
-        icon: 'prod/img/medium.jpg',
-        link: 'https://medium.com/@grantxs'
+        name: 'LinkedIn',
+        icon: 'prod/img/linked.jpg',
+        link: 'https://www.linkedin.com/in/granthpark'
     },
     {
-        name: 'Design',
-        icon: 'prod/img/behance.jpg',
-        link: 'https://www.behance.net/grantpark'
+        name: 'Resume',
+        icon: 'prod/img/paper.jpg',
+        link: 'http://www.granthpark.me/parkgrantresume.pdf'
     }];
 
     $scope.lock = false;
@@ -318,7 +318,10 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
         resume: 'prod/img/paper.jpg',
         website1: 'prod/img/web1.jpg',
         setmine: 'prod/img/setmine.jpg',
-        r2r: 'prod/img/r2r.jpg'
+        r2r: 'prod/img/r2r.jpg',
+        soundcloud: 'prod/img/soundcloud.jpg',
+        medium: 'prod/img/medium.jpg',
+        behance: 'prod/img/behance.jpg'
     };
 
 }]);

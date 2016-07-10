@@ -7,6 +7,7 @@ $chatWindowColor: #c3edfb;
 $chatBarColor: #d2d2d2;
 $chatBubbleFontColor: white;
 $appIconColor: tan;
+$appDescriptionBackground: darkorange;
 
 html {
         box-shadow: 0 0 300px rgba(0,0,0,0.40) inset;
@@ -344,6 +345,10 @@ input {
         -webkit-transition: 0.2s ease-in-out;
         width: 75px;
         height: 80px;
+        &.shake {
+            -webkit-animation: shake ease-in-out 0.2s 1;
+            animation: shake ease-in-out 0.2s 1;
+        }
 }
 
 .app-icon {
@@ -405,6 +410,29 @@ input {
         transform: translateY(7px);
         width: 75px;
         height: 80px;
+}
+
+.app-description {
+        position: absolute;
+        text-align: center;
+        width: 60px;
+        height: 60px;
+        font-family: $font; 
+        background-color: $appDescriptionBackground;
+        font-size: 12px;
+        color: white;
+        border-radius: 10px;
+        transform: translateY(-73px) translateX(8px);
+        word-wrap: break-word;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        opacity: 0;
+        &.display {
+                -webkit-transition: 0.3s ease-in-out;
+                transition: 0.3s ease-in-out;
+                opacity: 1;
+        }
 }
 
 @-webkit-keyframes flash1 {
@@ -477,6 +505,18 @@ input {
             -webkit-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.75);
             -moz-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.75);
             box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.75);
+        }
+}
+
+@keyframes shake {
+        0% {
+                transform: translateX(0px);
+        }
+        50% {
+                transform: translateX(-3px);
+        }
+        100% {
+                transform: translateX(3px);
         }
 }
 
