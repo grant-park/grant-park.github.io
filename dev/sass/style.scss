@@ -8,6 +8,7 @@ $chatBarColor: #d2d2d2;
 $chatBubbleFontColor: white;
 $appIconColor: tan;
 $appDescriptionBackground: darkorange;
+$appDescriptionText: white;
 
 html {
         box-shadow: 0 0 300px rgba(0,0,0,0.40) inset;
@@ -416,13 +417,14 @@ input {
         position: absolute;
         text-align: center;
         width: 60px;
-        height: 60px;
+        height: 59px;
+        padding: 1px;
         font-family: $font; 
         background-color: $appDescriptionBackground;
         font-size: 12px;
-        color: white;
+        color: $appDescriptionText;
         border-radius: 10px;
-        transform: translateY(-73px) translateX(8px);
+        transform: translateY(-73px) translateX(7px);
         word-wrap: break-word;
         display: flex;
         flex-direction: column;
