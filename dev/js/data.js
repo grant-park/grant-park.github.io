@@ -178,7 +178,7 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
 
     $scope.tabs = [{
         name: 'Github',
-        icon: 'prod/img/github.jpeg',
+        icon: 'prod/img/github.jpg',
         link: 'https://github.com/sungjp'
     },
     {
@@ -188,7 +188,7 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
     },
     {
         name: 'Resume',
-        icon: 'prod/img/paper.jpg',
+        icon: 'prod/img/resume.jpg',
         link: 'http://www.granthpark.me/parkgrantresume.pdf'
     }];
 
@@ -314,8 +314,8 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
         amherstec: 'prod/img/amherst.jpg',
         codepen: 'prod/img/codepen.jpg',
         linkedin: 'prod/img/linked.jpg',
-        github: 'prod/img/github.jpeg',
-        resume: 'prod/img/paper.jpg',
+        github: 'prod/img/github.jpg',
+        resume: 'prod/img/resume.jpg',
         website1: 'prod/img/web1.jpg',
         setmine: 'prod/img/setmine.jpg',
         r2r: 'prod/img/r2r.jpg',
