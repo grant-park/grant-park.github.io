@@ -10,6 +10,8 @@ $appIconColor: tan;
 $appDescriptionBackground: midnightblue;
 $appDescriptionText: white;
 
+$deviceHeightAdd: 15px;
+
 html {
         box-shadow: 0 0 300px rgba(0,0,0,0.40) inset;
 }
@@ -34,7 +36,7 @@ body {
 
 .mobile-device {
         position: relative;
-        height: 600px;
+        height: 600px + $deviceHeightAdd;
         width: 310px;
         background-color: $mobileDeviceColor;
         margin: 40 auto;
@@ -61,7 +63,7 @@ body {
 .mobile-device:after {
         content:'';
         position: absolute;
-        height: 600px;
+        height: 600px + $deviceHeightAdd;
         width: 312px;
         background-color: $mobileDeviceAfterColor;
         margin: 40 auto;
@@ -80,7 +82,7 @@ body {
         top: 40px;
         transform: translateX(-50%);
         -webkit-transform: translateX(-50%);
-        height: 500px;
+        height: 500px + $deviceHeightAdd;
         width: 300px; 
         background-image: url('blur.jpg');
         background-size: cover;
@@ -371,7 +373,7 @@ input {
         font-family: $font; 
 }
 
-.options {
+.option {
         display: inline-block;
         margin: 3px;
         width: 6px;
@@ -383,7 +385,14 @@ input {
         &.selected {
                 opacity: 1;
         }
+        &:after {
+                content:'';
+                padding: 5px;
+                position: absolute;
+                transform: translateX(-5px) translateY(-2px);
+        }
 }
+
 
 .select {
         position: fixed;

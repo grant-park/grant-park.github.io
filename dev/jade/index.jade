@@ -36,7 +36,7 @@ body(ng-app='Site')
                                 div(class='app-name') {{ app.name }}
                                 div(ng-class='{display: hover && app.description}' class='app-description') {{ app.description }}
                 div(class='select')
-                    div(class='options' ng-class='{ selected: $index === currentOption }' ng-style='{ opacity: pages.length > 1 ? inherit : 0 }' ng-repeat='option in pages track by $index' ng-click='optionSelected($index)')
+                    div(class='option' ng-class='{ selected: $index === currentOption }' ng-style='{ opacity: pages.length > 1 ? inherit : 0 }' ng-repeat='option in pages track by $index' ng-click='optionSelected($index)')
                 div(class='home-row')
                     a(ng-mouseenter='hover = true' ng-mouseleave='hover = false' class='home-app' ng-class='{ shake: hover }' ng-repeat='tab in tabs' href='{{tab.link}}' target='_blank')
                         img(ng-src='{{ tab.icon }}' class='app-icon' width='60' height='60')
