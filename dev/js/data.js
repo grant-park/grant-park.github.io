@@ -322,7 +322,8 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
         soundcloud: 'prod/img/soundcloud.jpg',
         medium: 'prod/img/medium.jpg',
         behance: 'prod/img/behance.jpg',
-        pair: 'prod/img/pair.jpg'
+        pair: 'prod/img/pair.jpg',
+        code: 'prod/img/code.jpg'
     };
 
 }]);
