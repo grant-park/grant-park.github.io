@@ -1,4 +1,4 @@
-# [grantpark.io](http://www.granthpark.me)
+# [grantpark.io](http://grantpark.io)
 ###Built with
 Node & Angular  
 Jade, Sass, & Gulp  
