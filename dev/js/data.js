@@ -141,7 +141,7 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
 .controller('Dialogue', ['$sce','$element','$timeout','$q','$scope','Tabletop','DialoguePortfolioParser','DialogueCache','Weather','GrantsAge',function($sce,$element,$timeout,$q,$scope,Tabletop,DialoguePortfolioParser,DialogueCache,Weather,GrantsAge) {
 
     // Socket.io
-    var socket = io.connect('http://grantbot.herokuapp.com');
+    var socket = io.connect('http://grantbot.herokuapp.com/');
     socket.on('chat message', function(data){
         window.works = data; 
     });
