@@ -447,6 +447,8 @@ input {
         flex-direction: column;
         justify-content: center;
         opacity: 0;
+        -webkit-transition: 0.3s ease-in-out;
+        transition: 0.3s ease-in-out;
         &.display {
                 -webkit-transition: 0.3s ease-in-out;
                 transition: 0.3s ease-in-out;
