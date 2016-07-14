@@ -141,11 +141,12 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
 .controller('Dialogue', ['$sce','$element','$timeout','$q','$scope','Tabletop','DialoguePortfolioParser','DialogueCache','Weather','GrantsAge',function($sce,$element,$timeout,$q,$scope,Tabletop,DialoguePortfolioParser,DialogueCache,Weather,GrantsAge) {
 
     // Socket.io
-    //var socket = io.connect('http://grantbot.herokuapp.com/');
-    //socket.on('chat message', function(data){
-        //window.works = data; 
-    //});
-    //socket.emit('incoming meessage', { my: 'hurray' });
+    var socket = io.connect('http://grantbot.herokuapp.com/');
+    socket.on('chat message', function(data){
+        window.works = data; 
+        console.log(data);
+    });
+    socket.emit('incoming meessage', { my: 'hurray' });
 
     // In case spreadsheets are too slow
     var parsedData = DialogueCache, 
