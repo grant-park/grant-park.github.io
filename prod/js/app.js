@@ -744,11 +744,11 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
 
     // Socket.io
     var socket = io.connect('http://grantbot.herokuapp.com/');
-    socket.on('chat message', function(data){
+    socket.on('joined', function(data){
         window.works = data; 
         console.log(data);
     });
-    socket.emit('incoming meessage', { my: 'hurray' });
+    socket.emit('new user', 'lol123');
 
     // In case spreadsheets are too slow
     var parsedData = DialogueCache, 
