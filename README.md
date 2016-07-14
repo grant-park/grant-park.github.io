@@ -2,6 +2,7 @@
 ###Built with
 Node & Angular  
 Jade, Sass, & Gulp  
+[Socket.io](http://socket.io/)
 [Tabletop.js](https://github.com/jsoma/tabletop)  
 
 ###Navigating the Project
