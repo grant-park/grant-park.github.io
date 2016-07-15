@@ -141,12 +141,20 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
 .controller('Dialogue', ['$sce','$element','$timeout','$q','$scope','Tabletop','DialoguePortfolioParser','DialogueCache','Weather','GrantsAge',function($sce,$element,$timeout,$q,$scope,Tabletop,DialoguePortfolioParser,DialogueCache,Weather,GrantsAge) {
 
     // Socket.io
+    // 1) if app starts with me online
+    // then start init message indicatinng im online
+    // 2) if I come online while app already started
+    //  then quietly send message (which pings if user is not in chat mode)
     var socket = io.connect('http://grantbot.herokuapp.com/');
     socket.on('joined', function(data){
         window.works = data; 
         console.log(data);
     });
-    socket.emit('new user', 'lol123');
+    socket.on('added', function(data) {
+            console.log(data);
+            window.added = data;
+    });
+    socket.emit('new user', Math.random().toString());
 
     // In case spreadsheets are too slow
     var parsedData = DialogueCache, 
@@ -170,6 +178,13 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
     
     // currently set page capacity to 20 apps
     var capacity = 20;
+
+    $scope.notifCount = 2;
+    // if notif is 0, then dont show
+    // if switch, reset notif to 0
+    // if increment notif, animate it and remove class
+    // bot messages dont cause incrememnt, only grant messages do
+
     $scope.pages = [];
 
     var currentIterPage = [];

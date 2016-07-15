@@ -9,6 +9,11 @@ $chatBubbleFontColor: white;
 $appIconColor: tan;
 $appDescriptionBackground: midnightblue;
 $appDescriptionText: white;
+$statusColor: black;
+$statusDotOffline: red;
+$statusDotActive: lightgreen;
+$notifColor: red;
+$notifFontColor: white;
 
 $deviceHeightAdd: 15px;
 
@@ -454,6 +459,25 @@ input {
                 transition: 0.3s ease-in-out;
                 opacity: 1;
         }
+}
+
+.notif {
+        position: absolute;
+        top: -10px;
+        right: 10px;
+        z-index: 100;
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        background-color: $notifColor;
+        color: $notifFontColor;
+        font-size: 12px;
+        font-family: $font; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        //keyframes for jumping later
 }
 
 @-webkit-keyframes flash1 {
