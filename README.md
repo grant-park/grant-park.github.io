@@ -1,10 +1,10 @@
 # [grantpark.io](http://grantpark.io)
 ###Built with
-Node & Angular  
-Jade, Sass, & Gulp  
-[Socket.io](http://socket.io/)  
-[Tabletop.js](https://github.com/jsoma/tabletop)  
-[Telegram Bot](https://core.telegram.org/bots/api)
+* Node & Angular  
+* Jade, Sass, & Gulp  
+* [Socket.io](http://socket.io/)  
+* [Tabletop.js](https://github.com/jsoma/tabletop)  
+* [Telegram Bot](https://core.telegram.org/bots/api)
 
 ###Navigating the Project
 * `prod` folder holds all compiled sources and miscellaneous items
