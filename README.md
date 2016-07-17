@@ -16,7 +16,7 @@
 
 ###Disclaimer
 * All conversations with both @sungjp and grantbot are archived via MongoDB.
-* This project is purely recreational (no commercial intents or purposes) and will remain open sourced.  
+* This project is purely recreational (no commercial intents or purposes) and will remain open sourced with the ISC license.  
 * If I'm online, you'll be alerted with an automated message and/or a notification counter on the Telegram logo.  
 
 
