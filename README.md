@@ -11,7 +11,7 @@
 * `prod/img` has all site images & svgs  
 
 ###Setting Up Locally
-* Clone the project and run `npm install` to install necessary npm modules for development
+* Clone the project and run `npm install` to install necessary node modules for development
 * Run `gulp watch` to monitor changes in the `dev` folder. Changes will immediately show in the browser via Livereload. (No server is required, just have index.html open in your browser)
 
 ![](prod/img/website2.png?raw=true "Grant Hyun Park")
