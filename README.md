@@ -12,11 +12,14 @@
 
 ###Setting Up Locally
 * Clone the project and run `npm install` to install necessary node modules for development
-* Run `gulp watch` to monitor changes in the `dev` folder. Changes will immediately show in the browser via Livereload. (No server is required, just have index.html open in your browser)
+* Run `gulp watch` to monitor changes in the `dev` folder. Changes will immediately show in the browser via Livereload. (No server is required, just have index.html open in your browser)  
 
 ###Disclaimer
 * All conversations with both @sungjp and grantbot are archived via MongoDB.
 * This project is purely recreational (no commercial intents or purposes) and will remain open sourced.  
+* If I'm online, you'll be alerted with an automated message and/or a notification counter on the Telegram logo.  
+
+
 
 ![](prod/img/website2.png?raw=true "Grant Hyun Park")
 ![](prod/img/website.jpg?raw=true "Grant Hyun Park")
