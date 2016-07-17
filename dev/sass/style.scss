@@ -253,13 +253,18 @@ body {
 }
 
 .chat-window {
-        overflow: scroll;
+        -ms-overflow-style: none;
+        overflow: auto;
         height: calc(90% - 10px);
         padding: 10px 10px 0px 10px;
         background-color: $chatWindowColor;
         background: url(../img/bg.jpg);
         background-size: 150px 150px;
         background-repeat: repeat;
+}
+
+.chat-window::-webkit-scrollbar {
+        width: 0 !important;
 }
 
 .chat-bar {
