@@ -16,7 +16,7 @@
 
 ###Disclaimer
 * All conversations with both @sungjp and grantbot are archived via MongoDB.
-* This project is purely recreational (no commercial intents or purposes) and will remain open sourced.
+* This project is purely recreational (no commercial intents or purposes) and will remain open sourced.  
 
 ![](prod/img/website2.png?raw=true "Grant Hyun Park")
 ![](prod/img/website.jpg?raw=true "Grant Hyun Park")
