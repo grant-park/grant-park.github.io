@@ -3,7 +3,7 @@
 * Angular, Jade, Sass, & Gulp  
 * [Socket.io](http://socket.io/)  
 * [Tabletop.js](https://github.com/jsoma/tabletop)  
-* WebSocket and Webhooks @grantbot.herokuapp.com via Node, Express, MongoDB, and [Telegram Bot](https://core.telegram.org/bots/api)
+* Sockets and Hooks @grantbot.herokuapp.com via Node, Express, MongoDB, and [Telegram Bot](https://core.telegram.org/bots/api)
 
 ###Navigating the Project
 * `prod` folder holds all compiled sources and miscellaneous items
