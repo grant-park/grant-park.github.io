@@ -781,6 +781,7 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
 
     socket.on('I choose you!', function(){
         $scope.amSelected = true; 
+        registerMessage("Grant has connected.", undefined, { ping: true, offline: false });
     });
 
     socket.on('master message', function(data) {
@@ -790,6 +791,7 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
     socket.on('bye', function(){
         $scope.amSelected = false; 
         // should ping here grant has disconnected
+        registerMessage("Grant has disconnected.", undefined, { ping: true, offline: true });
     });
 
     socket.on('masterOnline', function(){
@@ -858,11 +860,11 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
 
     $scope.lock = false;
     // Add to message queue
-    var registerMessage = function(msg,sender){
+    var registerMessage = function(msg,sender,/*optional*/ status){
             if (!sender && !$scope.lock) {
                 $scope.lock = true;
                 $timeout(function(){
-        $scope.messageQueue.push({ sender: sender ? sender : 'Grant', message: msg }); 
+        $scope.messageQueue.push({ sender: sender ? sender : 'Grant', message: msg, status: status }); 
                 },900).then(function(){
                     $scope.lock = false;
                 }); 

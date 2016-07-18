@@ -14,6 +14,8 @@ $statusDotOffline: red;
 $statusDotActive: lightgreen;
 $notifColor: red;
 $notifFontColor: white;
+$statusOnline: lightgreen;
+$statusOffline: tomato;
 
 $deviceHeightAdd: 15px;
 
@@ -159,26 +161,44 @@ body {
         clear: both;
         margin-bottom: 20px;
         word-wrap: break-word;
+        &.status {
+               background-color: $statusOnline;
+               &.offline {
+                       background-color: $statusOffline;
+               }
+        }
 }
 
 .chat-bubble.Grant {
         float: left;
+        &:after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 0;
+                bottom: -10px;
+                left: 5px;
+                border: 10px solid;
+                border-color: $chatBubbleColor transparent transparent $chatBubbleColor;
+        }
+        &.status {
+                margin: 0 auto;
+                margin-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 10px;
+                float: inherit;
+                text-align: center;
+                &:after {
+                    display: none;
+                }
+        }
 }
 
 .chat-bubble.user {
         float: right;
         background-color: $chatBubbleUserColor;
-}
-
-.chat-bubble.Grant::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 0;
-        bottom: -10px;
-        left: 5px;
-        border: 10px solid;
-        border-color: $chatBubbleColor transparent transparent $chatBubbleColor;
 }
 
 .chat-bubble.user::after {
