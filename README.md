@@ -4,7 +4,7 @@
 * [Socket.io](http://socket.io/)  
 * [Tabletop.js](https://github.com/jsoma/tabletop)  
 * Node, Express, and MongoDB @grantbot.herokuapp.com  
-* [Telegram Bot](https://core.telegram.org/bots/api)  
+* [Telegram Bot](https://core.telegram.org/bots)  
 
 ###Navigating the Project
 * `prod` folder holds all compiled sources and miscellaneous items
