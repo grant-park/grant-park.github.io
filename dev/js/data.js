@@ -164,7 +164,7 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
     }
     return deferred.promise;
 }])
-    
+
 .controller('Dialogue', ['$sce','$element','$timeout','$q','$scope','Tabletop','DialoguePortfolioParser','DialogueCache','Weather','GrantsAge','RandomName',function($sce,$element,$timeout,$q,$scope,Tabletop,DialoguePortfolioParser,DialogueCache,Weather,GrantsAge,RandomName) {
 
 
@@ -365,8 +365,7 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
         code: 'prod/img/code.jpg'
     };
 
-    $scope.$watch('$viewContentLoaded', function() {
-            $timeout(function(){
+    angular.element(document).ready(function(){
                     // Socket.io
                     // 1) if app starts with me online
                     // then start init message indicatinng im online
@@ -397,8 +396,6 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
                         $scope.masterOnline = true; 
                         // could ping here that grant connected
                     });
-            });
     });
-
 }]);
 })(); 
