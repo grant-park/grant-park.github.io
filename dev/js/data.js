@@ -334,7 +334,38 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
 
     $timeout(function(){
         $element.addClass('loaded'); 
-    },1250).then(function(){
+    },1250);
+
+    $scope.pageMove = 'translateX(0)';
+    $scope.currentOption = 0;
+    $scope.optionSelected = function(index){
+            $scope.pageMove = 'translateX(' + (index*-309) + 'px)';
+            $scope.currentOption = index;
+    };
+
+    $scope.imageDict = {
+        hurdlr: 'prod/img/hurdlr.jpeg',
+        dangle: 'prod/img/dangle.jpg',
+        hungrie: 'prod/img/hungrie.jpg',
+        byte: 'prod/img/byte.jpg',
+        notesms: 'prod/img/onenote.jpg',
+        outsidehacks: 'prod/img/outside.jpg',
+        amherstec: 'prod/img/amherst.jpg',
+        codepen: 'prod/img/codepen.jpg',
+        linkedin: 'prod/img/linked.jpg',
+        github: 'prod/img/github.jpg',
+        resume: 'prod/img/resume.jpg',
+        website1: 'prod/img/web1.jpg',
+        setmine: 'prod/img/setmine.jpg',
+        r2r: 'prod/img/r2r.jpg',
+        soundcloud: 'prod/img/soundcloud.jpg',
+        medium: 'prod/img/medium.jpg',
+        behance: 'prod/img/behance.jpg',
+        pair: 'prod/img/pair.jpg',
+        code: 'prod/img/code.jpg'
+    };
+
+    $scope.$watch('$viewContentLoaded', function() {
             // Socket.io
             // 1) if app starts with me online
             // then start init message indicatinng im online
@@ -366,35 +397,6 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
                 // could ping here that grant connected
             });
     });
-
-    $scope.pageMove = 'translateX(0)';
-    $scope.currentOption = 0;
-    $scope.optionSelected = function(index){
-            $scope.pageMove = 'translateX(' + (index*-309) + 'px)';
-            $scope.currentOption = index;
-    };
-
-    $scope.imageDict = {
-        hurdlr: 'prod/img/hurdlr.jpeg',
-        dangle: 'prod/img/dangle.jpg',
-        hungrie: 'prod/img/hungrie.jpg',
-        byte: 'prod/img/byte.jpg',
-        notesms: 'prod/img/onenote.jpg',
-        outsidehacks: 'prod/img/outside.jpg',
-        amherstec: 'prod/img/amherst.jpg',
-        codepen: 'prod/img/codepen.jpg',
-        linkedin: 'prod/img/linked.jpg',
-        github: 'prod/img/github.jpg',
-        resume: 'prod/img/resume.jpg',
-        website1: 'prod/img/web1.jpg',
-        setmine: 'prod/img/setmine.jpg',
-        r2r: 'prod/img/r2r.jpg',
-        soundcloud: 'prod/img/soundcloud.jpg',
-        medium: 'prod/img/medium.jpg',
-        behance: 'prod/img/behance.jpg',
-        pair: 'prod/img/pair.jpg',
-        code: 'prod/img/code.jpg'
-    };
 
 }]);
 })(); 
