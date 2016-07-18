@@ -769,36 +769,6 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
     
 .controller('Dialogue', ['$sce','$element','$timeout','$q','$scope','Tabletop','DialoguePortfolioParser','DialogueCache','Weather','GrantsAge','RandomName',function($sce,$element,$timeout,$q,$scope,Tabletop,DialoguePortfolioParser,DialogueCache,Weather,GrantsAge,RandomName) {
 
-    // Socket.io
-    // 1) if app starts with me online
-    // then start init message indicatinng im online
-    // 2) if I come online while app already started
-    //  then quietly send message (which pings if user is not in chat mode)
-    var socket = io.connect('http://grantbot.herokuapp.com/');
-    socket.emit('new user', RandomName);
-    window.socket = socket;
-
-    $scope.amSelected = false;
-
-    socket.on('I choose you!', function(){
-        $scope.amSelected = true; 
-        registerMessage("Grant has connected.", undefined, { ping: true, offline: false });
-    });
-
-    socket.on('master message', function(data) {
-        registerMessage(data);        
-    });
-
-    socket.on('bye', function(){
-        $scope.amSelected = false; 
-        // should ping here grant has disconnected
-        registerMessage("Grant has disconnected.", undefined, { ping: true, offline: true });
-    });
-
-    socket.on('masterOnline', function(){
-        $scope.masterOnline = true; 
-        // could ping here that grant connected
-    });
 
     // In case spreadsheets are too slow
     var parsedData = DialogueCache, 
@@ -966,6 +936,36 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
 
     $timeout(function(){
         $element.addClass('loaded'); 
+            // Socket.io
+            // 1) if app starts with me online
+            // then start init message indicatinng im online
+            // 2) if I come online while app already started
+            //  then quietly send message (which pings if user is not in chat mode)
+            var socket = io.connect('http://grantbot.herokuapp.com/');
+            socket.emit('new user', RandomName);
+            window.socket = socket;
+
+            $scope.amSelected = false;
+
+            socket.on('I choose you!', function(){
+                $scope.amSelected = true; 
+                registerMessage("Grant has connected.", undefined, { ping: true, offline: false });
+            });
+
+            socket.on('master message', function(data) {
+                registerMessage(data);        
+            });
+
+            socket.on('bye', function(){
+                $scope.amSelected = false; 
+                // should ping here grant has disconnected
+                registerMessage("Grant has disconnected.", undefined, { ping: true, offline: true });
+            });
+
+            socket.on('masterOnline', function(){
+                $scope.masterOnline = true; 
+                // could ping here that grant connected
+            });
     },1250);
 
     $scope.pageMove = 'translateX(0)';
