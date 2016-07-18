@@ -748,15 +748,28 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
     // 2) if I come online while app already started
     //  then quietly send message (which pings if user is not in chat mode)
     var socket = io.connect('http://grantbot.herokuapp.com/');
-    socket.on('joined', function(data){
-        window.works = data; 
-        console.log(data);
-    });
-    socket.on('added', function(data) {
-            console.log(data);
-            window.added = data;
-    });
     socket.emit('new user', Math.random().toString());
+    window.socket = socket;
+
+    $scope.amSelected = false;
+
+    socket.on('I choose you!', function(){
+        $scope.amSelected = true; 
+    });
+
+    socket.on('master message', function(data) {
+        registerMessage(data);        
+    });
+
+    socket.on('bye', function(){
+        $scope.amSelected = false; 
+        // should ping here grant has disconnected
+    });
+
+    socket.on('masterOnline', function(){
+        $scope.masterOnline = true; 
+        // could ping here that grant connected
+    });
 
     // In case spreadsheets are too slow
     var parsedData = DialogueCache, 
@@ -866,22 +879,26 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
                         registerMessage(input, 'user');
                         $element.find('input').val('');
                         $scope.currentUser.text = null;
-                        dialogueResponse(input).then(function(data){
-                                switch (data.response) {
-                                        case "E.AGE":
-                                                registerMessage(GrantsAge);
-                                                break;
-                                        case "E.WEATHER":
-                                                Weather.then(function(resp){
-                                                        registerMessage(resp);
-                                                });
-                                                break;
-                                        default:
-                                                registerMessage(data.response);
-                                }
-                        },function(notFoundMsg){
-                            registerMessage(notFoundMsg);
-                        });
+                        if ($scope.amSelected) {
+                                socket.emit('new message', input);
+                        } else {
+                                dialogueResponse(input).then(function(data){
+                                        switch (data.response) {
+                                                case "E.AGE":
+                                                        registerMessage(GrantsAge);
+                                                        break;
+                                                case "E.WEATHER":
+                                                        Weather.then(function(resp){
+                                                                registerMessage(resp);
+                                                        });
+                                                        break;
+                                                default:
+                                                        registerMessage(data.response);
+                                        }
+                                },function(notFoundMsg){
+                                    registerMessage(notFoundMsg);
+                                });
+                        }
                 }
             }
     };
