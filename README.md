@@ -16,8 +16,8 @@
 * Run `gulp watch` to monitor changes in the `dev` folder. Changes will immediately show in the browser via Livereload. (No server is required, just have index.html open in your browser)  
 
 ###Disclaimer
-* All conversations with both @sungjp and grantbot are archived via MongoDB.
-* This project is purely recreational (no commercial intents or purposes) and will remain open sourced with the ISC license.  
+* All conversations with both @sungjp and grantbot are archived with MongoDB and saved within Telegram.
+* This is a recreational project which serves as my portfolio and will remain open sourced with the ISC license.  
 * If I'm online, you'll be alerted with an automated message and/or a notification counter on the Telegram logo.  
 
 
