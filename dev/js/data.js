@@ -397,7 +397,7 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
                         $scope.masterOnline = true; 
                         // could ping here that grant connected
                     });
-            },0);
+            });
     });
 
 }]);
