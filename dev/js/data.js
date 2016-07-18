@@ -334,6 +334,7 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
 
     $timeout(function(){
         $element.addClass('loaded'); 
+    },1250).then(function(){
             // Socket.io
             // 1) if app starts with me online
             // then start init message indicatinng im online
@@ -364,7 +365,7 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
                 $scope.masterOnline = true; 
                 // could ping here that grant connected
             });
-    },1250);
+    });
 
     $scope.pageMove = 'translateX(0)';
     $scope.currentOption = 0;
