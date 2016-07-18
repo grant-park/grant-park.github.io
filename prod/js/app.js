@@ -631,6 +631,7 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
         function generateStupidName(generator){
                     var noun1 = randomNoun(generator);
                     var noun2 = randomNoun(generator);
+                    noun1 = noun1.substr(0, 1).toUpperCase() + noun1.substr(1);
                     noun2 = noun2.substr(0, 1).toUpperCase() + noun2.substr(1);
                     var adjective = randomAdjective(generator);
                     return adjective + noun1 + noun2;
