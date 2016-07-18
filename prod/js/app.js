@@ -633,7 +633,7 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
                     var noun2 = randomNoun(generator);
                     noun2 = noun2.substr(0, 1).toUpperCase() + noun2.substr(1);
                     var adjective = randomAdjective(generator);
-                    return adjective + noun1 + ' ' + noun2;
+                    return adjective + noun1 + noun2;
         }
 
         return generateStupidName();
