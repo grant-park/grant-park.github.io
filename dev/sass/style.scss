@@ -167,6 +167,10 @@ body {
                        background-color: $statusOffline;
                }
         }
+        &.shake {
+            -webkit-animation: shake ease-in-out 0.2s 1;
+            animation: shake ease-in-out 0.2s 1;
+        }
 }
 
 .chat-bubble.Grant {

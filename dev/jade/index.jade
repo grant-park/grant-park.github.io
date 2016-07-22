@@ -20,7 +20,7 @@ body(ng-app='Site')
         div(class='screen') 
             div(class='dialogue switch' ng-if='dialogue')
                 div(class='chat-window' scroll-glue='true')
-                    div(class='chat-bubble {{ message.sender }} noSelect' ng-class='{ status: message.status.ping, offline: message.status.offline }' ng-repeat='message in messageQueue track by $index' ng-bind-html='trustAsHtml(messageQueue[$index].message)')
+                    div(class='chat-bubble {{ message.sender }} noSelect' ng-mouseenter='hover = true' ng-mouseleave='hover = false' ng-class='{ status: message.status.ping, offline: message.status.offline, shake: hover }' ng-repeat='message in messageQueue track by $index' ng-bind-html='trustAsHtml(messageQueue[$index].message)')
                     div(class='chat-bubble Grant pending fade' ng-if='lock')
                         span(class='dot1') .
                         span(class='dot2') .
