@@ -44,7 +44,7 @@ body(ng-app='Site')
                     a(ng-mouseenter='telegramHover = true' ng-mouseleave='telegramHover = false' class='home-app' ng-class='{ shake: telegramHover }' style='cursor: pointer;' ng-click='buttonClicked()')
                         img(src='prod/img/Telegram.jpg' class='app-icon' width='60' height='60')
                         div(class='app-name') Message
-                        div(class='notif' ng-if='notifCount !== 0') {{ notifCount }}
+                        div(class='notif' ng-class='{ show: notifCount !== 0, jump: updateNotif }') {{ notifCount }}
         
         div(class='button noSelect' ng-click='buttonClicked()' ng-class="{'dotted-shadow': dottedAnimate}")
     div(class='under')

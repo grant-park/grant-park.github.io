@@ -251,8 +251,14 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
     // Initial screen is dialogue
     $scope.dialogue = true;
     $scope.buttonClicked = function(){
+        if ($scope.dialogue) {
+                $scope.notifCount = 0;
+        }
         $scope.dialogue = !$scope.dialogue;
     };
+
+    // notif is initally idle
+    $scope.updateNotif = false;
 
     var checkOverride = function(msg){
             function check(test){ return msg.toLowerCase().indexOf(test) !== -1; }
@@ -380,10 +386,24 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
                     socket.on('I choose you!', function(){
                         $scope.amSelected = true; 
                         registerMessage("Grant has connected.", undefined, { ping: true, offline: false });
+                        $scope.updateNotif = true;
+                        $scope.notifCount += 1;
+                        $timeout(function(){
+                            $scope.updateNotif = false; 
+                        },1000);
+                    });
+
+                    $scope.$on('$destroy',function(){
+                        console.log('destroyed!'); 
                     });
 
                     socket.on('master message', function(data) {
                         registerMessage(data);        
+                        $scope.notifCount += 1;
+                        $scope.updateNotif = true;
+                        $timeout(function(){
+                            $scope.updateNotif = false;
+                        },1000);
                     });
 
                     socket.on('bye', function(){

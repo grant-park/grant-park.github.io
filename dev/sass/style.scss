@@ -507,6 +507,14 @@ input {
         justify-content: center;
         text-align: center;
         //keyframes for jumping later
+        transition: 0.3s ease-in-out;
+        opacity: 0;
+        &.show {
+            opacity: 1;
+        }
+        &.jump {
+            animation: jump ease-in-out 0.2s 1;
+        }
 }
 
 @-webkit-keyframes flash1 {
@@ -609,6 +617,21 @@ input {
         100% {
                 -webkit-transform: translateY(7px) translateX(3px);
                 transform: translateY(7px) translateX(3px);
+        }
+}
+
+@keyframes jump {
+        0% {
+                -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+        }
+        50% {
+                -webkit-transform: translateY(-8px);
+                transform: translateY(-8px);
+        }
+        100% {
+                -webkit-transform: translateY(0px);
+                transform: translateY(0px);
         }
 }
 
