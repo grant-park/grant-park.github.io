@@ -3,7 +3,7 @@
 * Angular, Jade, Sass, & Gulp  
 * [Socket.io](http://socket.io/)  
 * [Tabletop.js](https://github.com/jsoma/tabletop)  
-* Node, Express, and MongoDB @grantbot.herokuapp.com  
+* Node, Express, and MongoDB [@grantbot.herokuapp.com](https://github.com/sungjp/grantbot)  
 * [Telegram Bot](https://core.telegram.org/bots)  
 
 ###Navigating the Project
