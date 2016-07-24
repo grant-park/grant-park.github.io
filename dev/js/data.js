@@ -86,12 +86,12 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
             {
                 name: 'NoteSMS',
                 icon: 'notesms',
-                link: 'http://www.granthpark.me/BostonHacks/index.html'
+                link: 'http://www.grantpark.io/BostonHacks/index.html'
             },
             {
                 name: 'OutsideHacks',
                 icon: 'outsidehacks',
-                link: 'http://www.granthpark.me/outside.html'
+                link: 'http://www.grantpark.io/outside.html'
             },
             {
                 name: 'CodePen',
@@ -111,7 +111,7 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
             {
                 name: 'Resume',
                 icon: 'resume',
-                link: 'http://www.granthpark.me/parkgrantresume.pdf'
+                link: 'http://www.grantpark.io/parkgrantresume.pdf'
             },
             {
                 name: 'Website 1.0',
@@ -224,7 +224,7 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
     {
         name: 'Resume',
         icon: 'prod/img/resume.jpg',
-        link: 'http://www.granthpark.me/parkgrantresume.pdf'
+        link: 'http://www.grantpark.io/parkgrantresume.pdf'
     }];
 
     $scope.lock = false;
