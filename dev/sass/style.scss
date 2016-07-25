@@ -483,7 +483,7 @@ input {
         opacity: 0;
         -webkit-transition: 0.3s ease-in-out;
         transition: 0.3s ease-in-out;
-        &.display {
+        &:hover {
                 -webkit-transition: 0.3s ease-in-out;
                 transition: 0.3s ease-in-out;
                 opacity: 1;
