@@ -167,7 +167,7 @@ body {
                        background-color: $statusOffline;
                }
         }
-        &.shake {
+        &:hover {
             -webkit-animation: shake ease-in-out 0.2s 1;
             animation: shake ease-in-out 0.2s 1;
         }
@@ -386,7 +386,7 @@ input {
         -webkit-transition: 0.2s ease-in-out;
         width: 75px;
         height: 80px;
-        &.shake {
+        &:hover {
             -webkit-animation: shake ease-in-out 0.2s 1;
             animation: shake ease-in-out 0.2s 1;
         }
@@ -458,7 +458,7 @@ input {
         transform: translateY(7px);
         width: 75px;
         height: 80px;
-        &.shake {
+        &:hover {
             -webkit-animation: shakeTab ease-in-out 0.2s 1;
             animation: shakeTab ease-in-out 0.2s 1;
         }
