@@ -637,6 +637,11 @@ input {
 
 @media (max-device-width: 768px) {
         .mobile-device {
+                margin-top: 10px;
                 zoom: 0.8;
+        }
+        body {
+                background-image: none;
+                background-color: tan;
         }
 }
