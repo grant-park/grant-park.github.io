@@ -356,7 +356,7 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
         byte: 'prod/img/byte.jpg',
         notesms: 'prod/img/onenote.jpg',
         outsidehacks: 'prod/img/outside.jpg',
-        amherstec: 'prod/img/amherst.jpg',
+        amherstec: 'prod/img/electronics.jpg',
         codepen: 'prod/img/codepen.jpg',
         linkedin: 'prod/img/linked.jpg',
         github: 'prod/img/github.jpg',
