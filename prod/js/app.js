@@ -969,8 +969,8 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
         soundcloud: 'prod/img/soundcloud.jpg',
         medium: 'prod/img/medium.jpg',
         behance: 'prod/img/behance.jpg',
-        pair: 'prod/img/programming.jpg',
-        code: 'prod/img/code.jpg'
+        pair: 'prod/img/code.jpg',
+        code: 'prod/img/programming.jpg'
     };
 
     angular.element(document).ready(function(){
