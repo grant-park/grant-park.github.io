@@ -739,6 +739,27 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
     return diff.toString();
 }])
 
+.factory('GetLocation',['$http','$q',function($http,$q){
+    var deferred = $q.defer();
+    var location;
+    var locationPromise = $http({method: 'JSONP', url: "https://geoip-db.com/json/geoip.php?jsonp=JSON_CALLBACK"}).success(function(response){
+            location = response.city + ', ' + response.state + ', ' + response.country_name;
+         }).error(function(errorMsg){
+            location = 'unknown';
+         });
+    var resolve = function(){
+        deferred.resolve(location);
+    };
+    if (location) {
+        resolve();
+    } else {
+        locationPromise.then(function(){
+            resolve();
+        });
+    }
+    return deferred.promise;
+}])
+
 .factory('Weather',['$http','$q',function($http,$q){
     var deferred = $q.defer();
     var weather;
@@ -767,7 +788,7 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
     return deferred.promise;
 }])
 
-.controller('Dialogue', ['$sce','$element','$timeout','$q','$scope','Tabletop','DialoguePortfolioParser','DialogueCache','Weather','GrantsAge','RandomName',function($sce,$element,$timeout,$q,$scope,Tabletop,DialoguePortfolioParser,DialogueCache,Weather,GrantsAge,RandomName) {
+.controller('Dialogue', ['$sce','$element','$timeout','$q','$scope','Tabletop','DialoguePortfolioParser','DialogueCache','Weather','GetLocation','GrantsAge','RandomName',function($sce,$element,$timeout,$q,$scope,Tabletop,DialoguePortfolioParser,DialogueCache,Weather,GetLocation,GrantsAge,RandomName) {
 
 
     // In case spreadsheets are too slow
@@ -970,17 +991,19 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
         medium: 'prod/img/medium.jpg',
         behance: 'prod/img/behance.jpg',
         pair: 'prod/img/code.jpg',
-        code: 'prod/img/programming.jpg'
+        code: 'prod/img/programming.jpg',
+        talks: 'prod/img/talks.jpg'
     };
 
-    angular.element(document).ready(function(){
                     // Socket.io
                     // 1) if app starts with me online
                     // then start init message indicatinng im online
                     // 2) if I come online while app already started
                     //  then quietly send message (which pings if user is not in chat mode)
                     var socket = io.connect('http://grantbot.herokuapp.com/');
-                    socket.emit('new user', RandomName);
+                    GetLocation.then(function(resp){
+                        socket.emit('new user', RandomName + ' (' + resp + ')');
+                    });
                     window.socket = socket;
 
                     $scope.amSelected = false;
@@ -993,10 +1016,6 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
                         $timeout(function(){
                             $scope.updateNotif = false; 
                         },1000);
-                    });
-
-                    $scope.$on('$destroy',function(){
-                        console.log('destroyed!'); 
                     });
 
                     socket.on('master message', function(data) {
@@ -1018,6 +1037,5 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
                         $scope.masterOnline = true; 
                         // could ping here that grant connected
                     });
-    });
 }]);
 })(); 
