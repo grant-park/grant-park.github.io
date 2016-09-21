@@ -929,7 +929,8 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
             pair: 'prod/img/code.jpg',
             code: 'prod/img/programming.jpg',
             talks: 'prod/img/talks.jpg',
-            dribbble: 'prod/img/dribbble-icon.jpg'
+            dribbble: 'prod/img/dribbble-icon.jpg',
+            eye: 'prod/img/eye.jpg'
         };
 
         // Socket.io
