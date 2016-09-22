@@ -146,7 +146,7 @@ body {
 .chat-bubble {
         position: relative;
         height: auto;
-        max-width: 200px;
+        max-width: 60%;
         background-color: $chatBubbleColor;
         border-radius: 20px;
         padding: 10px 15px 10px 15px;
@@ -165,8 +165,8 @@ body {
                }
         }
         &:hover {
-            -webkit-animation: shake ease-in-out 0.2s 1;
-            animation: shake ease-in-out 0.2s 1;
+            -webkit-animation: shake ease-in-out 0.3s 1;
+            animation: shake ease-in-out 0.3s 1;
         }
 }
 
@@ -384,8 +384,8 @@ input {
         width: 75px;
         height: 80px;
         &:hover {
-            -webkit-animation: shake ease-in-out 0.2s 1;
-            animation: shake ease-in-out 0.2s 1;
+            -webkit-animation: shake ease-in-out 0.3s 1;
+            animation: shake ease-in-out 0.3s 1;
         }
 }
 
@@ -456,8 +456,8 @@ input {
         width: 75px;
         height: 80px;
         &:hover {
-            -webkit-animation: shakeTab ease-in-out 0.2s 1;
-            animation: shakeTab ease-in-out 0.2s 1;
+            -webkit-animation: shakeTab ease-in-out 0.3s 1;
+            animation: shakeTab ease-in-out 0.3s 1;
         }
 }
 
