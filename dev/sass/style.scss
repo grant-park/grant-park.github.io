@@ -135,6 +135,7 @@ body {
         &.dotted-shadow {
             -webkit-animation: dotted-shadow linear 1s forwards;
             animation: dotted-shadow linear 1s forwards;
+            cursor: pointer;
         }
         border: 1px solid gainsboro;
 }
