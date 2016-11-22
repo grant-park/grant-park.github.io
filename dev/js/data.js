@@ -102,7 +102,7 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
             var data = response.data;
             var location = data.location.city,
             currentTemp = data.current_observation.temp_f;
-            weather = "The current temperature in " + location + " is: " + currentTemp + "&deg;F &#128513;";
+            weather = "The current temperature in " + location + " is: " + currentTemp + "&degF &#128513;";
             if (50 > currentTemp) {
                 weather = "Brrr! The current temperature in " + location + " is: " + currentTemp + "&deg:F &#128559;";
             }
@@ -328,7 +328,8 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
             code: 'prod/img/programming.jpg',
             talks: 'prod/img/talks.jpg',
             dribbble: 'prod/img/dribbble-icon.jpg',
-            eye: 'prod/img/eye.jpg'
+            eye: 'prod/img/eye.jpg',
+            calendar: 'prod/img/calendar.png'
         };
 
         // Socket.io
