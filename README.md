@@ -7,6 +7,7 @@
 * [Telegram Bot](https://core.telegram.org/bots)  
 
 ###Navigating the Project
+* Switch to `dev` branch
 * `prod` folder holds all compiled sources and miscellaneous items
 * `dev` folder holds directories for Jade, Sass, and JS
 * `prod/img` has all site images & svgs  
