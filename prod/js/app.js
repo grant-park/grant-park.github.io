@@ -939,7 +939,7 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
         // then start init message indicatinng im online
         // 2) if I come online while app already started
         //  then quietly send message (which pings if user is not in chat mode)
-        var socket = io.connect('http://grantbot.herokuapp.com/');
+        var socket = io.connect('https://grantbot.herokuapp.com/');
         GetLocation.then(function(resp){
             socket.emit('new user', RandomName + ' (' + resp + ')');
         });
