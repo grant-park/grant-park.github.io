@@ -700,7 +700,8 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
     .factory('Weather',['$http','$q',function($http,$q){
         var deferred = $q.defer();
         var weather;
-        var weatherPromise = $http.get("http://api.wunderground.com/api/c1ea49b3e06dc3b3/geolookup/conditions/q/MA/Amherst.json").then(function(response){
+        //TODO: Someone keeps trolling me by using my weather key lol. Need to find another key and hide this on github.
+        var weatherPromise = $http.get("").then(function(response){
             var data = response.data;
             var location = data.location.city,
             currentTemp = data.current_observation.temp_f;
