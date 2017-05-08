@@ -932,7 +932,8 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
             dribbble: 'prod/img/dribbble-icon.jpg',
             eye: 'prod/img/eye.jpg',
             calendar: 'prod/img/calendar.png',
-            keyboard: 'prod/img/kb.jpg'
+            keyboard: 'prod/img/kb.jpg',
+            secret: 'prod/img/spreadsheets.png'
         };
 
         // Socket.io
