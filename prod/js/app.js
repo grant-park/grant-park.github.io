@@ -842,8 +842,9 @@ angular.module('Site', ['ngAnimate','times.tabletop','ngSanitize','luegg.directi
                     registerMessage(input, 'user');
                     $element.find('input').val('');
                     $scope.currentUser.text = null;
+                    socket.emit('new message', input);
                     if ($scope.amSelected) {
-                        socket.emit('new message', input);
+                        // TODO: reconfigure things...
                     } else {
                         dialogueResponse(input).then(function(data){
                             switch (data.response) {
