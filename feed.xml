@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.0">Jekyll</generator><link href="https://grant.ai/testBlog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://grant.ai/testBlog/" rel="alternate" type="text/html" /><updated>2018-03-14T01:50:47-04:00</updated><id>https://grant.ai/testBlog/</id><title type="html">grant.ai</title><subtitle></subtitle><entry><title type="html">Deep Black Keycaps</title><link href="https://grant.ai/testBlog/keyboards/2018/03/13/keycaps.html" rel="alternate" type="text/html" title="Deep Black Keycaps" /><published>2018-03-13T14:34:17-04:00</published><updated>2018-03-13T14:34:17-04:00</updated><id>https://grant.ai/testBlog/keyboards/2018/03/13/keycaps</id><content type="html" xml:base="https://grant.ai/testBlog/keyboards/2018/03/13/keycaps.html">&lt;p&gt;I bought “Blank Black PBT Keycaps” from &lt;a href=&quot;https://mechanicalkeyboards.com/shop/index.php?l=product_detail&amp;amp;p=1652&quot;&gt;mechanicalkeyboards.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, they were dark grey in color. I really like deep black, and I’ve had to dye my own Cherry ML keycaps in the past because no one makes blank black keycaps nowadays. I didn’t document my past dyeing process, so this is my chance to do it now. This isn’t a do-while-read guide. If you’re going to follow in my footsteps, read everything here first.&lt;/p&gt;
+
+&lt;p&gt;Before dyeing, we clean the caps thoroughly with a q-tip and rubbing alcohol.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai/testBlog/assets/img/deep_black_keycaps-cleaning_caps.jpg&quot; alt=&quot;cleaning_caps&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;All 46 done.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai/testBlog/assets/img/deep_black_keycaps-clean_array_of_caps.jpg&quot; alt=&quot;done_cleaning_caps&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now we get ready to boil using this. We boil for about 30 minutes.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai/testBlog/assets/img/deep_black_keycaps-dye.jpg&quot; alt=&quot;dye_closeup&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Don’t forget to use something to suck in toxic fumes while boiling. An open window isn’t enough. This shit smells like gasoline and can leave your area smelling nauseating for a couple days. I use a carbon filter fume-extractor that I have on hand usually for soldering.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai/testBlog/assets/img/deep_black_keycaps-boiling.jpg&quot; alt=&quot;dye_closeup&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Strain the caps afterwards.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai/testBlog/assets/img/deep_black_keycaps-strain.jpg&quot; alt=&quot;dye_closeup&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;They’re bronze colored, but don’t be alarmed. It’s because there is a lot of sticky excess dye stuck on them.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai/testBlog/assets/img/deep_black_keycaps-bronze.jpg&quot; alt=&quot;dye_closeup&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To get rid of the excess, soap and water isn’t enough. We need to soak them in isopropyl alcohol for 24 hours, changing them out every 6-12 hours.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai/testBlog/assets/img/deep_black_keycaps-soak.jpg&quot; alt=&quot;dye_closeup&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once all is done, they should be pitch black save for a bit of residue here and there.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai/testBlog/assets/img/deep_black_keycaps-impurity.jpg&quot; alt=&quot;dye_closeup&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">I bought “Blank Black PBT Keycaps” from mechanicalkeyboards.com.</summary></entry><entry><title type="html">Old Portfolio Show &amp;amp; Tell</title><link href="https://grant.ai/testBlog/jekyll/update/2018/01/17/old-portfolio-show-n-tell.html" rel="alternate" type="text/html" title="Old Portfolio Show &amp; Tell" /><published>2018-01-17T15:56:19-05:00</published><updated>2018-01-17T15:56:19-05:00</updated><id>https://grant.ai/testBlog/jekyll/update/2018/01/17/old-portfolio-show-n-tell</id><content type="html" xml:base="https://grant.ai/testBlog/jekyll/update/2018/01/17/old-portfolio-show-n-tell.html">&lt;p&gt;This is my old portfolio built with good old AngularJS.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai/testBlog/assets/img/ss2.png&quot; alt=&quot;screenshot_of_old_portfolio1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Every time someone pulled it up, a websocket connection would start transmitting and saving to MongoDB their conversation with my bot along with their IP. Its responses came from a loaded Google Spreadsheet via Tabletop.js.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai/testBlog/assets/img/ss1.png&quot; alt=&quot;screenshot_of_old_portfolio2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There was also a webhook for Telegram that kept track of who was visiting my sites from where. It allowed me to pick and communicate with a site visitor after turning off the bot and outputting my own responses from the Telegram app on my phone or my laptop.&lt;/p&gt;
+
+&lt;p&gt;If you want to check it out, it’s &lt;a href=&quot;https://grant.ai&quot;&gt;right here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here is the source code for the &lt;a href=&quot;https://github.com/grant-park/grant-park.github.io&quot;&gt;client&lt;/a&gt; and the &lt;a href=&quot;https://github.com/grant-park/grantbot&quot;&gt;server&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">This is my old portfolio built with good old AngularJS.</summary></entry></feed>
