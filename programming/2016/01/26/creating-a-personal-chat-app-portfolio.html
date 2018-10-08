@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Creating a Personal “Chat App” Portfolio | grant.ai</title>
+<meta name="generator" content="Jekyll v3.8.4" />
+<meta property="og:title" content="Creating a Personal “Chat App” Portfolio" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Recently, someone asked how I made my portfolio website: http://www.granthpark.me/, so I thought I’d share some simplified markup. I used AngularJS, CSS3, and HTML5 to make my site. Here’s what the simplified version looks like." />
+<meta property="og:description" content="Recently, someone asked how I made my portfolio website: http://www.granthpark.me/, so I thought I’d share some simplified markup. I used AngularJS, CSS3, and HTML5 to make my site. Here’s what the simplified version looks like." />
+<link rel="canonical" href="https://grant.ai/programming/2016/01/26/creating-a-personal-chat-app-portfolio.html" />
+<meta property="og:url" content="https://grant.ai/programming/2016/01/26/creating-a-personal-chat-app-portfolio.html" />
+<meta property="og:site_name" content="grant.ai" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-01-26T13:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://grant.ai/programming/2016/01/26/creating-a-personal-chat-app-portfolio.html","description":"Recently, someone asked how I made my portfolio website: http://www.granthpark.me/, so I thought I’d share some simplified markup. I used AngularJS, CSS3, and HTML5 to make my site. Here’s what the simplified version looks like.","headline":"Creating a Personal “Chat App” Portfolio","datePublished":"2016-01-26T13:00:00-05:00","dateModified":"2016-01-26T13:00:00-05:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://grant.ai/programming/2016/01/26/creating-a-personal-chat-app-portfolio.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://grant.ai/feed.xml" title="grant.ai" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">grant.ai</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">Grant H. Park</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Creating a Personal &quot;Chat App&quot; Portfolio</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2016-01-26T13:00:00-05:00" itemprop="datePublished">Jan 26, 2016
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Recently, someone asked how I made my portfolio website: http://www.granthpark.me/, so I thought I’d share some simplified markup. I used AngularJS, CSS3, and HTML5 to make my site. Here’s what the simplified version looks like.</p>
+
+<p>HTML</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class=”rotate”&gt;
+   &lt;div class=”iphone6-plus”&gt;
+     &lt;div class=”screen”&gt;
+       &lt;div class=”messenger-app noscrollbar” id="messenger"&gt;
+         &lt;div class=”bubble”&gt;Hello there!&lt;/div&gt;
+         &lt;div class=”bubble”&gt;Howdy!&lt;/div&gt;
+       &lt;/div&gt;
+       &lt;div class=”interface”&gt;
+         &lt;input type=”text” name=”textfield” placeholder=”Write here…” class=”field” id="input"&gt;&lt;/input&gt;
+         &lt;button onclick="send()" type=”submit” class=”send” id="submit"&gt;Send&lt;/button&gt;
+       &lt;/div&gt;
+     &lt;/div&gt;
+     &lt;div class=”button”&gt;&lt;/div&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;
+</code></pre></div></div>
+
+<p>CSS</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.rotate {
+ transform: perspective(1500px) rotateX(15deg) rotate(0);
+}
+
+.iphone6-plus {
+ background-color: ghostwhite;
+ margin: 0 auto;
+ width: 400px;
+ height: 720px;
+ border-radius: 30px;
+ padding-top: 30px;
+ padding-bottom: 50px;
+}
+
+.iphone6-plus:after {
+ content: “”;
+ width: 397px;
+ height: 802px;
+ background-color: #e6e6e6;
+ margin: 0 auto;
+ margin-left: 1.5px;
+ margin-top: -780px;
+ position: absolute;
+ z-index: -1;
+ border-radius: 30px;
+ -webkit-box-shadow: 0px 10px 37px 0px rgba(0, 0, 0, 0.75);
+ -moz-box-shadow: 0px 10px 37px 0px rgba(0, 0, 0, 0.75);
+ box-shadow: 0px 10px 37px 0px rgba(0, 0, 0, 0.75);
+}
+
+.screen {
+ background-color: white;
+ margin: 0 auto;
+ width: 360px;
+ height: 695px;
+}
+
+.button {
+ background-color: #fffff;
+ margin: 0 auto;
+ margin-top: 10px;
+ width: 50px;
+ height: 50px;
+ border: 1px solid gray;
+ border-radius: 50%;
+}
+
+.button:active {
+ border: 1px solid black;
+}
+
+.messenger-app {
+ background-color: #e5f2ff;
+ padding-top: 20px;
+ margin: 0 auto;
+ overflow: scroll;
+ overflow-x: hidden;
+ width: 360px;
+ height: 605px;
+}
+
+.noscrollbar {
+ -ms-overflow-style: none;
+ overflow: -moz-scrollbars-none; // but it seems to not work…
+}
+
+.noscrollbar::-webkit-scrollbar {
+ width: 0px
+}
+
+.interface {
+ background-color: #cccccc;
+ margin: 0 auto;
+ width: 360px;
+ height: 70px;
+}
+
+.field {
+ margin-left: 15px;
+ margin-top: 15px;
+ padding-left: 5px;
+ width: 250px;
+ height: 35px;
+ font-size: 20px;
+ border: none;
+ border-radius: 8px;
+ color: cornflowerblue;
+}
+
+.field:focus {
+ outline: none;
+}
+
+.send {
+ background: none;
+ border: none;
+ width: 80px;
+ height: 35px;
+ font-size: 20px;
+ color: white
+}
+
+.send:focus {
+ outline: none;
+}
+
+.send:active {
+ color: black;
+}
+
+.bubble {
+ background-color: cornflowerblue;
+ margin-left: 10px;
+ padding-top: 25px;
+ width: 200px;
+ height: 45px;
+ text-align: center;
+ color: white;
+ font-family: ‘Open Sans’, sans-serif;
+ border-radius: 30px;
+}
+
+.bubble:nth-child(even) {
+ background-color: #66d9ff;
+ margin-left: 150px;
+ margin-bottom: 10px;
+ margin-top: 10px;
+}
+</code></pre></div></div>
+
+<p>JS</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var send = function() {
+  var inputValue = document.getElementById(“input”).value;
+  var div = document.createElement(‘div’);
+  div.className = “bubble”;
+  div.textContent = inputValue;
+  document.getElementById(“messenger”).appendChild(div);
+}
+</code></pre></div></div>
+
+
+  </div><a class="u-url" href="/programming/2016/01/26/creating-a-personal-chat-app-portfolio.html" hidden></a>
+</article>
+
+      </div>
+    </main></body>
+
+</html>

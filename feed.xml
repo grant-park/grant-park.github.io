@@ -1,13 +1,412 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-10-07T22:15:35-04:00</updated><id>/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="/jekyll/update/2018/10/07/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2018-10-07T22:11:09-04:00</published><updated>2018-10-07T22:11:09-04:00</updated><id>/jekyll/update/2018/10/07/welcome-to-jekyll</id><content type="html" xml:base="/jekyll/update/2018/10/07/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="https://grant.ai/feed.xml" rel="self" type="application/atom+xml" /><link href="https://grant.ai/" rel="alternate" type="text/html" /><updated>2018-10-09T23:54:58-04:00</updated><id>https://grant.ai/feed.xml</id><title type="html">grant.ai</title><subtitle>Grant H. Park</subtitle><entry><title type="html">State of Mutation Testing on Android</title><link href="https://grant.ai/keyboards/2018/10/07/state-of-mutation-testing-on-android.html" rel="alternate" type="text/html" title="State of Mutation Testing on Android" /><published>2018-10-07T14:34:17-04:00</published><updated>2018-10-07T14:34:17-04:00</updated><id>https://grant.ai/keyboards/2018/10/07/state-of-mutation-testing-on-android</id><content type="html" xml:base="https://grant.ai/keyboards/2018/10/07/state-of-mutation-testing-on-android.html">&lt;p&gt;Mutation testing is unit test testing. If your unit tests are full of false-positives, meaning that there are pointless or absent assertions, and your test coverage is misleadingly high; it is probably time for you to maintain your test suite with mutation testing.&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;This is how it works:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Take a piece of code along with its unit tests.&lt;/li&gt;
+  &lt;li&gt;Mutate the code in a fundamental way, e.g. change a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;If your unit tests still &lt;em&gt;pass&lt;/em&gt;*, then the mutation test has failed.&lt;/li&gt;
+  &lt;li&gt;Otherwise, try the above steps exhaustively until all possible mutations are tested.&lt;/li&gt;
+  &lt;li&gt;If your unit tests &lt;em&gt;kill&lt;/em&gt;* all the mutations, then your code coverage result for the tested piece of code is accurate and meaningful.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;* &lt;em&gt;If the units test pass without having reached the changed code, the mutated code behaves similarly to the original code despite all different inputs, or if the propogated symptoms of the mutated code are never acknowledged by the unit tests, then the mutation test is considered failed. Otherwise, the unit tests will have “killed” the mutants and pass the mutation test.&lt;/em&gt;&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;Here is a simple example of some code and a test suite that passes mutation testing:&lt;/p&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry></feed>
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;boolean sampleCode(x, y) {
+    if (x &amp;lt; y) {
+        return 1;
+    } else {
+        return 2;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;assertTrue(sampleCode(1,2).equals(1));
+assertTrue(sampleCode(2,1).equals(2));
+assertTrue(sampleCode(1,1).equals(2));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The above code would produce mutants in which &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;&lt;/code&gt; is replaced with one of &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;=&lt;/code&gt;, or &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;=&lt;/code&gt;. The test suite would have a unique result consisting of at least one failed assertion for each mutant case, acknowledging the different state produced by each mutant via &lt;code class=&quot;highlighter-rouge&quot;&gt;.equals()&lt;/code&gt;. Thus, the test suite would pass mutation testing.&lt;/p&gt;
+
+&lt;p&gt;A couple of months ago at work, I was introduced to the Gradle code coverage tool and its use case in our development cycle and CI. I really questioned it after having figured out that coverage means nothing if you game the assertions in tests. You can effectively call code and make unnecessary or absolutely no assertions in your unit tests, still achieving coverage for that code.&lt;/p&gt;
+
+&lt;p&gt;Such a possibility for abuse indicates that it is important for my team to scrutinize unit tests in each code review, which is not always the case (given that there is an informal assumption that no one would try to game the tests). I think there is a lot of time, trust, and comfort to be gained from mutation testing – and I imagine that in some industries, it is an unquestionable
+requirement for large teams.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, mutation testing is not in high demand for Android development. There is a &lt;a href=&quot;http://pitest.org/&quot;&gt;popular mutation testing library called PIT&lt;/a&gt; which happens to have a great Gradle plugin – but because of how different Google’s Java environment is from the “standard”, it is not easy to port over to Android. There is an &lt;a href=&quot;https://github.com/koral--/gradle-pitest-plugin&quot;&gt;experimental fork&lt;/a&gt; of the Gradle plugin by @koral–, which works for basic tests using &lt;a href=&quot;http://robolectric.org/&quot;&gt;Roboelectric&lt;/a&gt;, but it is not yet up to speed for enterprise testing. I also hear rumors of certain large companies having their own internal tools for mutation testing on Android but are too stingy to share such a power with the rest of the world.&lt;/p&gt;
+
+&lt;p&gt;The only solution I can think of to address the limitations for Android, is to decouple all environmental implementations from business logic. That is, ensure that all code to be tested can be compiled without the ADK. This strategy has saved my ass many times when I couldn’t figure out how to mock things like Android’s &lt;code class=&quot;highlighter-rouge&quot;&gt;Handler&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;Bundles&lt;/code&gt;. My team, for this very reason of environment independent code, has been avoiding the use of Roboelectric like the plague. Ironically, there are a number of components in our project that do not have tests because it would be a pain to mock the environmental requirements – so tech debt’s a thing.&lt;/p&gt;</content><author><name></name></author><summary type="html">Mutation testing is unit test testing. If your unit tests are full of false-positives, meaning that there are pointless or absent assertions, and your test coverage is misleadingly high; it is probably time for you to maintain your test suite with mutation testing.</summary></entry><entry><title type="html">Introducing the micro_32</title><link href="https://grant.ai/keyboards/2018/09/24/introducing_the_micro_32.html" rel="alternate" type="text/html" title="Introducing the micro_32" /><published>2018-09-24T14:34:17-04:00</published><updated>2018-09-24T14:34:17-04:00</updated><id>https://grant.ai/keyboards/2018/09/24/introducing_the_micro_32</id><content type="html" xml:base="https://grant.ai/keyboards/2018/09/24/introducing_the_micro_32.html">&lt;p&gt;I’ve been piloting a 32-key layout for a year now, primarily for LaTeX and essay writing. Since I’ve graduated and no longer have homework, I now only type for work.&lt;/p&gt;
+
+&lt;p&gt;My layout is in reach of all the fingers and I can do any combo or config that I can think of with ease. On &lt;a href=&quot;&quot;&gt;10fastfingers&lt;/a&gt;, my WPM is comfortably 144 on the normal test and 110 on the advanced test. On &lt;a href=&quot;&quot;&gt;speedcoder.net&lt;/a&gt;, my WPM is 64 for the C++ test.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai///assets/img/keymap_micro_32.png&quot; alt=&quot;result&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Some notes&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;I have modifers on the homerow because I will accidentally activate them elsewhere from lagging my fingers during fast typing.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;My modifiers form symmetries with each other on both halves of the layout so that I can always form a combo.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I have all my macros and layouts implemented via QMK. You probably get the point about how many combos you can form with just 32 keys so I won’t be pedantic with the math here.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://gist.github.com/grant-park/13990d95307ea56e2c5f95a35234efcb&quot;&gt;Here is a snapshot of my QMK keymap.&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Meanwhile, I’ve handwired a prototype as shown below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai///assets/img/micro_32.jpg&quot; alt=&quot;result&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The halves are flashed with &lt;a href=&quot;https://github.com/qmk/qmk_firmware/tree/master/keyboards/lets_split&quot;&gt;Let’s Split firmware&lt;/a&gt; and communicate via I2C over a TRRS cable. The switches are Gateron silent black, have O-Rings, and have Krytox-lubed springs and stems. They’re pretty silent so I like using them at work.&lt;/p&gt;
+
+&lt;p&gt;I am prototyping a PCB and some case designs for a new keyboard with my layout – I’m calling it the micro_32 since it’s a tiny-ass keyboard with 32 keys and it coincidentally sounds like a combination of ProMicro and Atmega32u4. Originally I wanted to name it the “Micro32”, but I realized it was &lt;a href=&quot;https://www.favero.com/en2_billiard_electronic_digital_controller_to_time_accounting_system_for_billiard-59-22.html&quot;&gt;already taken and trademarked&lt;/a&gt; – hence the casing and added underscore.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;mailto:granthpark@gmail.com&quot;&gt;Email me&lt;/a&gt; if you would like to get your hands on one.&lt;/p&gt;
+
+&lt;p&gt;Here is a snapshot of my keymap in QMK:&lt;/p&gt;
+&lt;noscript&gt;&lt;pre&gt;400: Invalid request
+&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/13990d95307ea56e2c5f95a35234efcb.js&quot;&gt; &lt;/script&gt;</content><author><name></name></author><summary type="html">I’ve been piloting a 32-key layout for a year now, primarily for LaTeX and essay writing. Since I’ve graduated and no longer have homework, I now only type for work.</summary></entry><entry><title type="html">Deep Black PBT Keycaps</title><link href="https://grant.ai/keyboards/2018/03/13/keycaps.html" rel="alternate" type="text/html" title="Deep Black PBT Keycaps" /><published>2018-03-13T14:34:17-04:00</published><updated>2018-03-13T14:34:17-04:00</updated><id>https://grant.ai/keyboards/2018/03/13/keycaps</id><content type="html" xml:base="https://grant.ai/keyboards/2018/03/13/keycaps.html">&lt;p&gt;Final result first:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai///assets/img/deep_black_keycaps-result.jpg&quot; alt=&quot;result&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Before and After:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai///assets/img/deep_black_keycaps-before_after.jpg&quot; alt=&quot;result&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I bought “Blank Black PBT Keycaps” from &lt;a href=&quot;https://mechanicalkeyboards.com/shop/index.php?l=product_detail&amp;amp;p=1652&quot;&gt;mechanicalkeyboards.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, they were dark grey in color. I really like deep black, and I’ve had to dye my own Cherry ML keycaps in the past because no one makes blank black ML keycaps nowadays. I didn’t document my past dyeing process, so this is my chance to do it now.&lt;/p&gt;
+
+&lt;p&gt;This isn’t a do-while-read guide. If you’re going to follow in my footsteps, read everything here first.&lt;/p&gt;
+
+&lt;p&gt;Before dyeing, we clean the caps thoroughly with a q-tip and rubbing alcohol.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai///assets/img/deep_black_keycaps-cleaning_cap.jpg&quot; alt=&quot;cleaning_caps&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;All 46 done.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai///assets/img/deep_black_keycaps-clean_array_of_caps.jpg&quot; alt=&quot;done_cleaning_caps&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now we get ready to boil using this. We boil for about 30 minutes.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai///assets/img/deep_black_keycaps-dye.jpg&quot; alt=&quot;dye_closeup&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Don’t forget to use something to suck in toxic fumes while boiling. An open window isn’t enough. This shit smells like gasoline and can leave your area smelling nauseating for a couple days. I use a &lt;a href=&quot;https://www.amazon.com/Xytronic-0608426DLX-426DLX-Fume-Extractor/dp/B0007ZLH4Q/ref=sr_1_7?ie=UTF8&amp;amp;qid=1521116905&amp;amp;sr=8-7&amp;amp;keywords=fume+extractor&amp;amp;dpID=311CqKVeKsL&amp;amp;preST=_QL70_&amp;amp;dpSrc=srch&quot;&gt;carbon filter fume-extractor&lt;/a&gt; that I have on hand usually for soldering.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai///assets/img/deep_black_keycaps-boiling.jpg&quot; alt=&quot;dye_closeup&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Strain the caps afterwards.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai///assets/img/deep_black_keycaps-strain.jpg&quot; alt=&quot;dye_closeup&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;They’re bronze colored, but don’t be alarmed. It’s because there is a lot of sticky excess dye stuck on them.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai///assets/img/deep_black_keycaps-bronze.jpg&quot; alt=&quot;dye_closeup&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To get rid of the excess, soap and water isn’t enough. We need to soak them in isopropyl alcohol for 24 hours, changing them out every 6-12 hours.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai///assets/img/deep_black_keycaps-soak.jpg&quot; alt=&quot;dye_closeup&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once all is done, they should be pitch black save for a bit of residue here and there. The residue can be cleaned off with soap and water or another bathing session in alcohol. I got a little excited and put the caps on my keyboard before I could finish cleaning them all (I’ll get to it later).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai///assets/img/deep_black_keycaps-impurity.jpg&quot; alt=&quot;dye_closeup&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Final result first:</summary></entry><entry><title type="html">Arch Linux on the Macbook Pro (Retina, 13-inch, Early 2015)</title><link href="https://grant.ai/keyboards/2018/02/11/archlinux-on-the-macbook-pro.html" rel="alternate" type="text/html" title="Arch Linux on the Macbook Pro (Retina, 13-inch, Early 2015)" /><published>2018-02-11T13:00:00-05:00</published><updated>2018-02-11T13:00:00-05:00</updated><id>https://grant.ai/keyboards/2018/02/11/archlinux-on-the-macbook-pro</id><content type="html" xml:base="https://grant.ai/keyboards/2018/02/11/archlinux-on-the-macbook-pro.html">&lt;p&gt;I have been playing Whac-A-Mole with Arch Linux issues on my early-2015 Macbook Pro with Retina display since moving to it from Ubuntu-GNOME a month ago. That is not to say I’m complaining about this distro. A lot of these fires have been put out for good and I’m enjoying Arch. I’ll just be summarizing most of what I’ve come across as solutions to these issues in addition to providing my own notes.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai///assets/img/archlinux_notes-screenshot.png&quot; alt=&quot;screenshot&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;wifi&quot;&gt;WiFi&lt;/h1&gt;
+
+&lt;p&gt;You need either an ethernet-thunderbolt adapter or a tethered mobile network to jumpstart connectivity in order to download the necessary drivers for your network card. Once you have that, thankfully, you only need the single &lt;code class=&quot;highlighter-rouge&quot;&gt;brcmfmac&lt;/code&gt; driver which you can get via &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo pacman -S brcm80211&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can use a variety of programs at this point to handle network detection and configuration. I started out using &lt;code class=&quot;highlighter-rouge&quot;&gt;wicd&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;wicd-curses&lt;/code&gt;, but found that &lt;code class=&quot;highlighter-rouge&quot;&gt;NetworkManager&lt;/code&gt; was the most robust service. You can install it via &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo pacman -S networkmanager&lt;/code&gt; and configure your network via the gui &lt;code class=&quot;highlighter-rouge&quot;&gt;nmtui&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Afterwards, the following script at startup takes care of everything.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#! /bin/sh&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;modprobe brcmfmac
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;NetworkManager
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;hidpi&quot;&gt;HiDPI&lt;/h1&gt;
+
+&lt;p&gt;HiDPI works out of the box. I have been experimenting with &lt;code class=&quot;highlighter-rouge&quot;&gt;AwesomeWM&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;i3WM&lt;/code&gt;, both window managers for X. As such, I have to fiddle with &lt;code class=&quot;highlighter-rouge&quot;&gt;XRandR&lt;/code&gt; often and I find that &lt;code class=&quot;highlighter-rouge&quot;&gt;ARandR&lt;/code&gt; makes life easier. I work with &lt;code class=&quot;highlighter-rouge&quot;&gt;2560x1600&lt;/code&gt; by default and &lt;code class=&quot;highlighter-rouge&quot;&gt;1920x1200&lt;/code&gt; when my old-man eyes get tired.&lt;/p&gt;
+
+&lt;h1 id=&quot;disabling-keyboard&quot;&gt;Disabling Keyboard&lt;/h1&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;xinput disable &quot;Apple Inc. Apple Internal Keyboard / Trackpad&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;natural-scrolling&quot;&gt;Natural Scrolling&lt;/h1&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo xinput set-prop bcm5974 275 1&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;yaourt&quot;&gt;Yaourt&lt;/h1&gt;
+
+&lt;p&gt;I like not having to type in passwords, not having to type in exact package names, and auto-compilation. Install &lt;code class=&quot;highlighter-rouge&quot;&gt;yaourt&lt;/code&gt; via adding&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[archlinuxfr]
+SigLevel = Never
+Server = http://repo.archlinux.fr/$arch
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;to &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/pacman.conf&lt;/code&gt;
+and then &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo pacman -Sy yaourt&lt;/code&gt;. Afterwards, you can &lt;code class=&quot;highlighter-rouge&quot;&gt;yaourt -s &amp;lt;vague-package-name or some-keyword&amp;gt;&lt;/code&gt; to install things stress free.&lt;/p&gt;
+
+&lt;h1 id=&quot;bluetooth&quot;&gt;Bluetooth&lt;/h1&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;yaourt -s bluez&lt;/code&gt; and use &lt;code class=&quot;highlighter-rouge&quot;&gt;blueman-manager&lt;/code&gt; for out-of-the-box success. Use &lt;code class=&quot;highlighter-rouge&quot;&gt;bluetoothctl&lt;/code&gt; cli as a fallback solution for finnicky devices. Works flawlessly with my custom keyboards and my bluetooth LSTN Bolt earphones.&lt;/p&gt;
+
+&lt;h1 id=&quot;high-fidelity-playback-a2dp-on-bluetooth&quot;&gt;High Fidelity Playback (A2DP) on Bluetooth&lt;/h1&gt;
+
+&lt;p&gt;Bluetooth audio sounds like shit for the first time on any pair of headphones/earphones. It’s most likely that the device sink is set to HSP/HFP (Headset Head Unit). To get around this, use &lt;code class=&quot;highlighter-rouge&quot;&gt;bluetoothctl&lt;/code&gt; cli and &lt;code class=&quot;highlighter-rouge&quot;&gt;connect &amp;lt;mac-address&amp;gt;&lt;/code&gt; instead of going through something like &lt;code class=&quot;highlighter-rouge&quot;&gt;blueman-manager&lt;/code&gt;. If you use &lt;code class=&quot;highlighter-rouge&quot;&gt;pavucontrol&lt;/code&gt;, the device will auto-appear afterwards and you can select A2DP for the sink.&lt;/p&gt;
+
+&lt;h1 id=&quot;media-keys&quot;&gt;Media Keys&lt;/h1&gt;
+
+&lt;p&gt;Play/Pause and Next/Prev don’t magically work without binding them to commands in your environment. I don’t know of any popular CLIs, but &lt;a href=&quot;https://github.com/acrisci/playerctl&quot;&gt;playerctl&lt;/a&gt; has worked very well for me. I use it with Spotify and QMPlay2. Example of usage:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;playerctl play-pause
+playerctl next
+playerctl previous
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;webcam&quot;&gt;Webcam&lt;/h1&gt;
+
+&lt;p&gt;Nope, doesn’t work out of the box. This &lt;a href=&quot;https://github.com/patjak/bcwc_pcie/wiki/Get-Started&quot;&gt;experimental driver&lt;/a&gt; works pretty well for me. Make sure you unload &lt;code class=&quot;highlighter-rouge&quot;&gt;bdc_pci&lt;/code&gt; before inserting the kernel module via &lt;code class=&quot;highlighter-rouge&quot;&gt;modprobe -r bdc_pci&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;urxvt-and-ranger&quot;&gt;Urxvt and Ranger&lt;/h1&gt;
+
+&lt;p&gt;Images can’t be previewed if &lt;code class=&quot;highlighter-rouge&quot;&gt;preview_images_method&lt;/code&gt; is set in addition to &lt;code class=&quot;highlighter-rouge&quot;&gt;preview_images&lt;/code&gt;. I keep my config a one-liner: &lt;code class=&quot;highlighter-rouge&quot;&gt;set preview_images true&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;urxvt-vs-vim-colors&quot;&gt;Urxvt vs Vim Colors&lt;/h1&gt;
+
+&lt;p&gt;If you are facing this common issue (which has a million misleading solutions online) you can fix all your problems by adhering to the community that uses base16. So far, I default to using &lt;code class=&quot;highlighter-rouge&quot;&gt;.Xdefaults&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;.Xresources&lt;/code&gt; with base16-xresources and vim reads its colors from that as well. If you stick with base16, you won’t end up with unexpected colors that result from mixed offsets. I currently use the Base16 Material Theme which looks like:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai///assets/img/archlinux_notes-vim.png&quot; alt=&quot;vim_screenshot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can demo a bunch of base16 themes &lt;a href=&quot;http://chriskempson.com/projects/base16/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;my-dotfiles-and-autosetup&quot;&gt;My Dotfiles and Autosetup&lt;/h1&gt;
+
+&lt;p&gt;You can find my configs here.&lt;/p&gt;
+
+&lt;p&gt;Basic setup for new machines:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pacman -S git htop fzf fd-rs bc ntfs-3g sudo tmux zsh zsh-syntax-highlighting rofi feh firefox awesome imagemagick networkmanager rsync scrot thunar ranger&lt;/code&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">I have been playing Whac-A-Mole with Arch Linux issues on my early-2015 Macbook Pro with Retina display since moving to it from Ubuntu-GNOME a month ago. That is not to say I’m complaining about this distro. A lot of these fires have been put out for good and I’m enjoying Arch. I’ll just be summarizing most of what I’ve come across as solutions to these issues in addition to providing my own notes.</summary></entry><entry><title type="html">Old Portfolio Show &amp;amp; Tell</title><link href="https://grant.ai/jekyll/update/2018/01/17/old-portfolio-show-n-tell.html" rel="alternate" type="text/html" title="Old Portfolio Show &amp; Tell" /><published>2018-01-17T15:56:19-05:00</published><updated>2018-01-17T15:56:19-05:00</updated><id>https://grant.ai/jekyll/update/2018/01/17/old-portfolio-show-n-tell</id><content type="html" xml:base="https://grant.ai/jekyll/update/2018/01/17/old-portfolio-show-n-tell.html">&lt;p&gt;This is my old portfolio built with good old AngularJS.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai///assets/img/old_portfolio_show_n_tell-screenshot.png&quot; alt=&quot;screenshot_of_old_portfolio1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Every time someone pulled it up, a websocket connection would start transmitting and saving to MongoDB their conversation with my bot along with their IP. Its responses came from a loaded Google Spreadsheet via Tabletop.js.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai///assets/img/old_portfolio_show_n_tell-screenshot_2.png&quot; alt=&quot;screenshot_of_old_portfolio2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There was also a webhook for Telegram that kept track of who was visiting my sites from where. It allowed me to pick and communicate with a site visitor after turning off the bot and outputting my own responses from the Telegram app on my phone or my laptop.&lt;/p&gt;
+
+&lt;p&gt;If you want to check it out, it’s &lt;a href=&quot;https://grant.ai/oldsite&quot;&gt;right here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here is the source code for the &lt;a href=&quot;https://github.com/grant-park/oldsite&quot;&gt;client&lt;/a&gt; and the &lt;a href=&quot;https://github.com/grant-park/grantbot&quot;&gt;server&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">This is my old portfolio built with good old AngularJS.</summary></entry><entry><title type="html">How to Make Your Terminal an IDE</title><link href="https://grant.ai/programming/2016/08/20/how-to-make-your-terminal-an-ide.html" rel="alternate" type="text/html" title="How to Make Your Terminal an IDE" /><published>2016-08-20T14:00:00-04:00</published><updated>2016-08-20T14:00:00-04:00</updated><id>https://grant.ai/programming/2016/08/20/how-to-make-your-terminal-an-ide</id><content type="html" xml:base="https://grant.ai/programming/2016/08/20/how-to-make-your-terminal-an-ide.html">&lt;p&gt;Toss Sublime, WebStorm, Atom, or whatever you’re using. I’m going to teach you the way of terminal IDE-ing in a bash environment (with fuzzy file finding and goto function searching).&lt;/p&gt;
+
+&lt;p&gt;As a concession, I only use my terminal as an IDE for small projects. If I’m dealing with a lot of code (i.e. frameworks and other large codebases), I use dedicated software.&lt;/p&gt;
+
+&lt;p&gt;You should be using a terminal based editor for this to work. If not, I recommend that you dive into one before trying to make your terminal an IDE. &lt;br /&gt;
+My ingredients (asterisked means optional):&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Vim/Emacs/Nano, or any other terminal based text editor&lt;/li&gt;
+  &lt;li&gt;Zsh Shell (for plugins galore and tabbed autocompletion)&lt;/li&gt;
+  &lt;li&gt;Tmux (split your terminal into a dozen windows especially for those node projects)&lt;/li&gt;
+  &lt;li&gt;iTerm2 (pretty UI and scattered candies)&lt;/li&gt;
+  &lt;li&gt;fzf (fuzzy file searching)&lt;/li&gt;
+  &lt;li&gt;ack (easy grepping for finding any text)&lt;/li&gt;
+  &lt;li&gt;Exuberant Ctags (goto function functionality)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;We’ll use Homebrew to install our tools, save for Zsh. If you don’t have it already, just run the following line and restart your shell and terminal for good measure.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/bin/ruby -e “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To install Zsh, run this curl:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sh -c “$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For Tmux:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;brew install tmux&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For iTerm2, install the application from their website: http://www.iterm2.com/&lt;/p&gt;
+
+&lt;p&gt;For fzf:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;brew install fzf&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For ack:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;brew install ack&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For Exuberant Ctags:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;brew install ctags&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Create and save in your ~/.ctags file the following:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;recurse=yes
+exclude=.git
+exclude=vendor/*
+exclude=node_modules/*
+exclude=db/*
+exclude=log/*
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can create a ctags file by running ctags along with the directory you want. For example, the following will make a ctags file for your current directory: &lt;code class=&quot;highlighter-rouge&quot;&gt;ctags .&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You’ll have to manually updated your ctags for every new file, method, or variable name you want indexed unless you use automatic indexing. I personally use https://github.com/craigemery/vim-autotag.&lt;/p&gt;
+
+&lt;p&gt;Make sure to update your editor’s configuration file to recognize your ctags file. For example, my vim configuration file, ~/.vimrc, contains the following line:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set tag =./tags,tags;$HOME&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The next step is figuring out the key bindings for goto functionality. For Vim, the following bindings are available by default:
+Jump to definition: &lt;code class=&quot;highlighter-rouge&quot;&gt;^]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Jump back from definition: &lt;code class=&quot;highlighter-rouge&quot;&gt;^t&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Preview definition: &lt;code class=&quot;highlighter-rouge&quot;&gt;^w }&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;See all definitions: &lt;code class=&quot;highlighter-rouge&quot;&gt;g]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And that’s it. You’ve got the essentials for IDEing on the terminal. Happy hacking!&lt;/p&gt;</content><author><name></name></author><summary type="html">Toss Sublime, WebStorm, Atom, or whatever you’re using. I’m going to teach you the way of terminal IDE-ing in a bash environment (with fuzzy file finding and goto function searching).</summary></entry><entry><title type="html">$19 Table + $22 Arm = $41 Adjustable Standing Desk</title><link href="https://grant.ai/misc/2016/04/09/19-table-22-arm-equals-41-adjustable-standing-desk.html" rel="alternate" type="text/html" title="$19 Table + $22 Arm = $41 Adjustable Standing Desk" /><published>2016-04-09T14:00:00-04:00</published><updated>2016-04-09T14:00:00-04:00</updated><id>https://grant.ai/misc/2016/04/09/19-table-22-arm-equals-41-adjustable-standing-desk</id><content type="html" xml:base="https://grant.ai/misc/2016/04/09/19-table-22-arm-equals-41-adjustable-standing-desk.html">&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.walmart.com/ip/Mainstays-Coffee-Table-Black-Oak-Finish/17126589&quot;&gt;Buy a coffee table from Walmart&lt;/a&gt;. As I’m writing this, it’s $19 online. Use this on top of your regular desk.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If you want to switch easily between sit/stand, &lt;a href=&quot;http://www.monoprice.com/Product?p_id=5402&amp;amp;gclid=CjwKEAjw86e4BRCnzuWGlpjLoUcSJACaHG55zlqv5I3b8FXHIzbjyQ1SuBD2vG0_VMiCdzELNc7SEhoCwFLw_wcB&quot;&gt;buy a monitor mount&lt;/a&gt; and clamp it to the edge of the coffee table mentioned above. Depending on your monitor, the arm can cost anywhere from $25 to $100. You can then raise or lower the mount whenever you need to sit or stand.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;You can buy an IKEA coffee table for considerably less, but it doesn’t have the same edges you can clamp a monitor arm on and could potentially tip over.&lt;/p&gt;
+
+&lt;p&gt;Enjoy your cost effective alternative! It works really well for me and I’m 5’9, but results may vary for others. I’ll see if I can post pictures of myself using this later.&lt;/p&gt;</content><author><name></name></author><summary type="html">Buy a coffee table from Walmart. As I’m writing this, it’s $19 online. Use this on top of your regular desk.</summary></entry><entry><title type="html">Welcome to the World of Xcode Plugins</title><link href="https://grant.ai/programming/2016/02/01/welcome-to-the-world-of-xcode-plugins.html" rel="alternate" type="text/html" title="Welcome to the World of Xcode Plugins" /><published>2016-02-01T13:00:00-05:00</published><updated>2016-02-01T13:00:00-05:00</updated><id>https://grant.ai/programming/2016/02/01/welcome-to-the-world-of-xcode-plugins</id><content type="html" xml:base="https://grant.ai/programming/2016/02/01/welcome-to-the-world-of-xcode-plugins.html">&lt;p&gt;Prior to using Alcatraz, I didn’t realize how much of my productivity was going to waste. I mean, I always knew there were Xcode plugins that could make life easier; it’s just that I didn’t realize how much easier. Please don’t make the same mistake I did. Take advantage of plugins.&lt;/p&gt;
+
+&lt;p&gt;Alcatraz is a popular package manager for Xcode. It’s easy to install and it has a very nice GUI window for picking/downloading a variety of cool plugins.&lt;/p&gt;
+
+&lt;p&gt;I’m only using two plugins right now, and they’re amazing: Fuzzy Autocomplete and XVim.&lt;/p&gt;
+
+&lt;p&gt;Fuzzy Autocomplete extends the functionality of Xcode’s default autocompletion when you type in prefixes of certain keywords.&lt;/p&gt;
+
+&lt;p&gt;e.g. Say you’re writing methods for UITableViewDataSource; by default, Xcode’s autocomplete will show you the following ONLY if you type in “func tableView…”:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -&amp;gt; UITableViewCell&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;However, with Fuzzy Autocomplete, you can type in “cellForRow…” and it will recognize the same function for you. No more scrolling endlessly through Xcode’s autocompletions!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grant.ai///assets/img/welcome_to_the_world_of_xcode_plugins-screenshot.png&quot; alt=&quot;screenshot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;XVim is a plugin to simulate the Vim interface on Xcode. It’s totally badass and I never thought I could achieve this functionality before. If you’re into Vim, this is definitely the plugin for you.&lt;/p&gt;
+
+&lt;p&gt;Additionally, I’m running a custom script from SwiftLint that’s improved my coding style via providing warnings whenever my code seems messy or dangerous. I never knew about this sort of on-the-fly linting until SwiftLint, so it’s made my coding experience a lot more interesting.&lt;/p&gt;
+
+&lt;p&gt;You can say for sure that I’m really happy with my development environment right now :) If you’re comfortable and bored with the Xcode environment, go spice it up with plugins!&lt;/p&gt;</content><author><name></name></author><summary type="html">Prior to using Alcatraz, I didn’t realize how much of my productivity was going to waste. I mean, I always knew there were Xcode plugins that could make life easier; it’s just that I didn’t realize how much easier. Please don’t make the same mistake I did. Take advantage of plugins.</summary></entry><entry><title type="html">Completion Handlers in Swift</title><link href="https://grant.ai/programming/2016/01/31/completion-handlers-in-swift.html" rel="alternate" type="text/html" title="Completion Handlers in Swift" /><published>2016-01-31T14:00:00-05:00</published><updated>2016-01-31T14:00:00-05:00</updated><id>https://grant.ai/programming/2016/01/31/completion-handlers-in-swift</id><content type="html" xml:base="https://grant.ai/programming/2016/01/31/completion-handlers-in-swift.html">&lt;p&gt;I’m currently learning the MVVM design pattern and I’ve noticed that a lot of asynchronous code manipulation/organization requires the basic creation of completion handling functions.&lt;/p&gt;
+
+&lt;p&gt;Before, I always made messy code in my view controllers that looked sort of like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let kidQuery = PFQuery(className: “_User”)
+let theseKids = kidQuery.whereKey(“parent”, containsString: (PFUser.currentUser()?.objectId!)! as String)
+theseKids.findObjectsInBackgroundWithBlock { (result, error) -&amp;gt; Void in
+
+  if error == nil {
+
+    self.kidArray = result! as [PFObject] ?? []
+    Kids.sharedData.array = self.kidArray as! [PFObject]
+    if self.kidArray == [] {
+        print(“empty!!”)
+    }
+    self.tableView.reloadData()
+    self.refreshCtrl.endRefreshing()
+
+  } else {
+
+    dispatch_async(dispatch_get_main_queue(), { () -&amp;gt; Void in
+    let alert = UIAlertController(title: “Error”, message: error?.localizedDescription, preferredStyle: .Alert)
+    let cancel = UIAlertAction(title: “Close”, style: .Default, handler: nil)
+    alert.addAction(cancel)
+    self.presentViewController(alert, animated: true, completion: nil)
+
+    })
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;After I moved my code around, the same function in my view controller looks a lot cleaner:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Tools.kidQuery(self, senderTableView: theTableView, senderRefresh: refreshCtrl, completionHandler: nil)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Essentially, I went from 20 lines of code to just 1 for this function, making my view controller less cluttered. I also have all of my data logic contained in their own separate classes. This makes debugging, testing, and adding new app features much easier for me. More importantly, it improves the readability of my project.&lt;/p&gt;
+
+&lt;p&gt;To make a lot of these changes to my code, I ran into creating functions with completion handlers. Now I’ll show you how to make your own.&lt;/p&gt;
+
+&lt;p&gt;Create a new .swift file. Let’s call it Toolbox.swift and put inside the following function:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func testCompletionHandler(input: String?, completionHandler: ((result: String?) -&amp;gt; Void)?) {}
+
+Note that the “input” and “completionHandler” arguments in this function are optional; you could call this function with nil for both arguments and it could still do something (or do nothing at all). The “completionHandler” argument is actually a Swift block that can execute something along with a parameter called “result.” Right now, this function does nothing, so let’s add some logic:
+
+func testCompletionHandler(input: String?, completionHandler: ((result: String?) -&amp;gt; Void)?) {
+
+  if let aString = input {
+    if aString == “I want a completion handler!” {
+      if let aHandler = completionHandler {
+        aHandler(result: “Here is the completion handler!”)
+      }
+    } else {
+      if let aHandler = completionHandler {
+        aHandler(result: nil)
+      }
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The moment “aHandler” is called inside of this function, the caller of this function will receive the completion block and can do anything they want with “result” unless it’s nil of course.&lt;/p&gt;
+
+&lt;p&gt;As an example, let’s look at ViewController.swift (a different source file):&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class ViewController: UIViewController {
+
+  var myToolbox = Toolbox()
+
+  viewDidLoad() {
+      super.viewDidLoad()
+      myToolbox.testCompletionHandler(&quot;I want a completion handler!&quot;) { (result) -&amp;gt; Void in 
+        if let aString = result { print(aString) }
+      }
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;When we call our created completion handler function in viewDidLoad, we should receive “Here is the completion handler!” in the console. We’ve successfully created a completion handler function and now you can use this same pattern to move all your asynchronous logic to specialized classes for ultimately cleaner, more readable code!&lt;/p&gt;</content><author><name></name></author><summary type="html">I’m currently learning the MVVM design pattern and I’ve noticed that a lot of asynchronous code manipulation/organization requires the basic creation of completion handling functions.</summary></entry><entry><title type="html">Swift Callback Pattern</title><link href="https://grant.ai/programming/2016/01/31/swift-callback-pattern.html" rel="alternate" type="text/html" title="Swift Callback Pattern" /><published>2016-01-31T12:00:00-05:00</published><updated>2016-01-31T12:00:00-05:00</updated><id>https://grant.ai/programming/2016/01/31/swift-callback-pattern</id><content type="html" xml:base="https://grant.ai/programming/2016/01/31/swift-callback-pattern.html">&lt;p&gt;If you want an alternative to the protocol/delegate pattern, you can use callbacks. Here’s an example:&lt;/p&gt;
+
+&lt;p&gt;Example.swift&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Example {
+  var onCompletion: ((result:String) -&amp;gt; Void)?
+  func doSomething() {
+    onCompletion(result:&quot;here's the callback!&quot;)
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;ViewController.swift&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class ViewController: UIViewController {
+  override viewDidLoad {
+    Example.onCompletion = { result in
+      print(result)
+    }
+    Example.doSomething()
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Once ViewController loads, “here’s the callback!” should show up in the console.&lt;/p&gt;
+
+&lt;p&gt;That’s it! You can use this pattern to get things done without having to abide by the strict “contract” logic of protocols.&lt;/p&gt;</content><author><name></name></author><summary type="html">If you want an alternative to the protocol/delegate pattern, you can use callbacks. Here’s an example:</summary></entry></feed>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>State of Mutation Testing on Android | grant.ai</title>
+<meta name="generator" content="Jekyll v3.8.4" />
+<meta property="og:title" content="State of Mutation Testing on Android" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Mutation testing is unit test testing. If your unit tests are full of false-positives, meaning that there are pointless or absent assertions, and your test coverage is misleadingly high; it is probably time for you to maintain your test suite with mutation testing." />
+<meta property="og:description" content="Mutation testing is unit test testing. If your unit tests are full of false-positives, meaning that there are pointless or absent assertions, and your test coverage is misleadingly high; it is probably time for you to maintain your test suite with mutation testing." />
+<link rel="canonical" href="https://grant.ai/keyboards/2018/10/07/state-of-mutation-testing-on-android.html" />
+<meta property="og:url" content="https://grant.ai/keyboards/2018/10/07/state-of-mutation-testing-on-android.html" />
+<meta property="og:site_name" content="grant.ai" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-10-07T14:34:17-04:00" />
+<script type="application/ld+json">
+{"url":"https://grant.ai/keyboards/2018/10/07/state-of-mutation-testing-on-android.html","description":"Mutation testing is unit test testing. If your unit tests are full of false-positives, meaning that there are pointless or absent assertions, and your test coverage is misleadingly high; it is probably time for you to maintain your test suite with mutation testing.","headline":"State of Mutation Testing on Android","datePublished":"2018-10-07T14:34:17-04:00","dateModified":"2018-10-07T14:34:17-04:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://grant.ai/keyboards/2018/10/07/state-of-mutation-testing-on-android.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://grant.ai/feed.xml" title="grant.ai" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">grant.ai</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">Grant H. Park</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">State of Mutation Testing on Android</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2018-10-07T14:34:17-04:00" itemprop="datePublished">Oct 7, 2018
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Mutation testing is unit test testing. If your unit tests are full of false-positives, meaning that there are pointless or absent assertions, and your test coverage is misleadingly high; it is probably time for you to maintain your test suite with mutation testing.</p>
+
+<p>This is how it works:</p>
+<ul>
+  <li>Take a piece of code along with its unit tests.</li>
+  <li>Mutate the code in a fundamental way, e.g. change a <code class="highlighter-rouge">&lt;</code> to <code class="highlighter-rouge">&gt;</code>.</li>
+  <li>If your unit tests still <em>pass</em>*, then the mutation test has failed.</li>
+  <li>Otherwise, try the above steps exhaustively until all possible mutations are tested.</li>
+  <li>If your unit tests <em>kill</em>* all the mutations, then your code coverage result for the tested piece of code is accurate and meaningful.</li>
+</ul>
+
+<p>* <em>If the units test pass without having reached the changed code, the mutated code behaves similarly to the original code despite all different inputs, or if the propogated symptoms of the mutated code are never acknowledged by the unit tests, then the mutation test is considered failed. Otherwise, the unit tests will have “killed” the mutants and pass the mutation test.</em></p>
+
+<p>Here is a simple example of some code and a test suite that passes mutation testing:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>boolean sampleCode(x, y) {
+    if (x &lt; y) {
+        return 1;
+    } else {
+        return 2;
+    }
+}
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>assertTrue(sampleCode(1,2).equals(1));
+assertTrue(sampleCode(2,1).equals(2));
+assertTrue(sampleCode(1,1).equals(2));
+</code></pre></div></div>
+<p>The above code would produce mutants in which <code class="highlighter-rouge">&lt;</code> is replaced with one of <code class="highlighter-rouge">&gt;</code>, <code class="highlighter-rouge">==</code>, <code class="highlighter-rouge">&gt;=</code>, or <code class="highlighter-rouge">&lt;=</code>. The test suite would have a unique result consisting of at least one failed assertion for each mutant case, acknowledging the different state produced by each mutant via <code class="highlighter-rouge">.equals()</code>. Thus, the test suite would pass mutation testing.</p>
+
+<p>A couple of months ago at work, I was introduced to the Gradle code coverage tool and its use case in our development cycle and CI. I really questioned it after having figured out that coverage means nothing if you game the assertions in tests. You can effectively call code and make unnecessary or absolutely no assertions in your unit tests, still achieving coverage for that code.</p>
+
+<p>Such a possibility for abuse indicates that it is important for my team to scrutinize unit tests in each code review, which is not always the case (given that there is an informal assumption that no one would try to game the tests). I think there is a lot of time, trust, and comfort to be gained from mutation testing – and I imagine that in some industries, it is an unquestionable
+requirement for large teams.</p>
+
+<p>Unfortunately, mutation testing is not in high demand for Android development. There is a <a href="http://pitest.org/">popular mutation testing library called PIT</a> which happens to have a great Gradle plugin – but because of how different Google’s Java environment is from the “standard”, it is not easy to port over to Android. There is an <a href="https://github.com/koral--/gradle-pitest-plugin">experimental fork</a> of the Gradle plugin by @koral–, which works for basic tests using <a href="http://robolectric.org/">Roboelectric</a>, but it is not yet up to speed for enterprise testing. I also hear rumors of certain large companies having their own internal tools for mutation testing on Android but are too stingy to share such a power with the rest of the world.</p>
+
+<p>The only solution I can think of to address the limitations for Android, is to decouple all environmental implementations from business logic. That is, ensure that all code to be tested can be compiled without the ADK. This strategy has saved my ass many times when I couldn’t figure out how to mock things like Android’s <code class="highlighter-rouge">Handler</code> or <code class="highlighter-rouge">Bundles</code>. My team, for this very reason of environment independent code, has been avoiding the use of Roboelectric like the plague. Ironically, there are a number of components in our project that do not have tests because it would be a pain to mock the environmental requirements – so tech debt’s a thing.</p>
+
+  </div><a class="u-url" href="/keyboards/2018/10/07/state-of-mutation-testing-on-android.html" hidden></a>
+</article>
+
+      </div>
+    </main></body>
+
+</html>
