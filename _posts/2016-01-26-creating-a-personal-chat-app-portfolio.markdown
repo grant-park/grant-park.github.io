@@ -1,0 +1,175 @@
+---
+layout: post
+title:  'Creating a Personal "Chat App" Portfolio'
+date:   2016-01-26 12:00:00 -0600
+categories: programming
+---
+
+Recently, someone asked how I made my portfolio website: http://www.granthpark.me/, so I thought I’d share some simplified markup. I used AngularJS, CSS3, and HTML5 to make my site. Here’s what the simplified version looks like.  
+
+HTML
+
+```
+<div class=”rotate”>
+   <div class=”iphone6-plus”>
+     <div class=”screen”>
+       <div class=”messenger-app noscrollbar” id="messenger">
+         <div class=”bubble”>Hello there!</div>
+         <div class=”bubble”>Howdy!</div>
+       </div>
+       <div class=”interface”>
+         <input type=”text” name=”textfield” placeholder=”Write here…” class=”field” id="input"></input>
+         <button onclick="send()" type=”submit” class=”send” id="submit">Send</button>
+       </div>
+     </div>
+     <div class=”button”></div>
+   </div>
+ </div>
+```
+
+CSS
+
+```
+.rotate {
+ transform: perspective(1500px) rotateX(15deg) rotate(0);
+}
+
+.iphone6-plus {
+ background-color: ghostwhite;
+ margin: 0 auto;
+ width: 400px;
+ height: 720px;
+ border-radius: 30px;
+ padding-top: 30px;
+ padding-bottom: 50px;
+}
+
+.iphone6-plus:after {
+ content: “”;
+ width: 397px;
+ height: 802px;
+ background-color: #e6e6e6;
+ margin: 0 auto;
+ margin-left: 1.5px;
+ margin-top: -780px;
+ position: absolute;
+ z-index: -1;
+ border-radius: 30px;
+ -webkit-box-shadow: 0px 10px 37px 0px rgba(0, 0, 0, 0.75);
+ -moz-box-shadow: 0px 10px 37px 0px rgba(0, 0, 0, 0.75);
+ box-shadow: 0px 10px 37px 0px rgba(0, 0, 0, 0.75);
+}
+
+.screen {
+ background-color: white;
+ margin: 0 auto;
+ width: 360px;
+ height: 695px;
+}
+
+.button {
+ background-color: #fffff;
+ margin: 0 auto;
+ margin-top: 10px;
+ width: 50px;
+ height: 50px;
+ border: 1px solid gray;
+ border-radius: 50%;
+}
+
+.button:active {
+ border: 1px solid black;
+}
+
+.messenger-app {
+ background-color: #e5f2ff;
+ padding-top: 20px;
+ margin: 0 auto;
+ overflow: scroll;
+ overflow-x: hidden;
+ width: 360px;
+ height: 605px;
+}
+
+.noscrollbar {
+ -ms-overflow-style: none;
+ overflow: -moz-scrollbars-none; // but it seems to not work…
+}
+
+.noscrollbar::-webkit-scrollbar {
+ width: 0px
+}
+
+.interface {
+ background-color: #cccccc;
+ margin: 0 auto;
+ width: 360px;
+ height: 70px;
+}
+
+.field {
+ margin-left: 15px;
+ margin-top: 15px;
+ padding-left: 5px;
+ width: 250px;
+ height: 35px;
+ font-size: 20px;
+ border: none;
+ border-radius: 8px;
+ color: cornflowerblue;
+}
+
+.field:focus {
+ outline: none;
+}
+
+.send {
+ background: none;
+ border: none;
+ width: 80px;
+ height: 35px;
+ font-size: 20px;
+ color: white
+}
+
+.send:focus {
+ outline: none;
+}
+
+.send:active {
+ color: black;
+}
+
+.bubble {
+ background-color: cornflowerblue;
+ margin-left: 10px;
+ padding-top: 25px;
+ width: 200px;
+ height: 45px;
+ text-align: center;
+ color: white;
+ font-family: ‘Open Sans’, sans-serif;
+ border-radius: 30px;
+}
+
+.bubble:nth-child(even) {
+ background-color: #66d9ff;
+ margin-left: 150px;
+ margin-bottom: 10px;
+ margin-top: 10px;
+}
+```
+
+JS
+
+```
+var send = function() {
+  var inputValue = document.getElementById(“input”).value;
+  var div = document.createElement(‘div’);
+  div.className = “bubble”;
+  div.textContent = inputValue;
+  document.getElementById(“messenger”).appendChild(div);
+}
+```
+
+
