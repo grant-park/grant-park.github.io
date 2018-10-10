@@ -17,8 +17,7 @@ title: grant.ai
 list_title: blogs
 email: granthpark@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Hi, I’m a software engineer @ Wayfair in Boston, currently building WMS software for Android devices.
-  I like to talk about useful SDKs/libraries, design patterns/practices, and tools that make life easier. Also, I love anything regarding high-bandwidth HIDs and ergonomics, such as AR/VR devices and custom keyboards.
+    Grant H. Park
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
