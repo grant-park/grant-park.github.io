@@ -3,6 +3,7 @@ layout: post
 title:  "State of Mutation Testing on Android"
 date:   2018-10-07 12:34:17 -0600
 categories: keyboards
+comments: true
 ---
 Mutation testing is unit test testing. If your unit tests are full of false-positives, meaning that there are pointless or absent assertions, and your test coverage is misleadingly high; it is probably time for you to maintain your test suite with mutation testing.
 

@@ -31,3 +31,5 @@ I am prototyping a PCB and some case designs for a new keyboard with my layout -
 
 [Email me](mailto:granthpark@gmail.com) if you would like to get your hands on one.
 
+Here is a snapshot of my keymap in QMK:
+{% gist 13990d95307ea56e2c5f95a35234efcb %}
