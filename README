@@ -5,3 +5,5 @@ For my future self:
 4) You are currently in `dev` which is for editing posts in the _posts directory and then building `_site` via the above command.  
 5) Git settings include setting the custom domain and hitting save.  
 6) Take a look at `url` and `baseurl` to ensure that routing works correctly.  
+7) To add jekyll plugins, add to Gemfile and run `Bundle`
+8) Google Analytics was added to head.html in _includes
