@@ -1,0 +1,11 @@
+For my future self:  
+1) Look at commit history to infer changes to HTML/CSS. There were issues turning on disqus for commenting, so the posts.html file was edited to hard code the embed provided by disqus on their admin page. To further edit, emulate the directory paths of the files you want to change (look at the structure of minima -- in fact, just git clone it and copy over the directories you want to change) and edit the files.  
+2) Running `jekyll serve` will start the local blog on 127.0.0.1:4000  
+3) Running `jekyll build` will create a static directory called `_site` which you can `cd` into and push to `master` of this repo.  
+4) You are currently in `dev` which is for editing posts in the _posts directory and then building `_site` via the above command.  
+5) Git settings include setting the custom domain and hitting save.  
+6) Take a look at `url` and `baseurl` to ensure that routing works correctly.  
+7) To add jekyll plugins, add to Gemfile and run `Bundle`
+8) Google Analytics was added to head.html in _includes  
+9) Run `./serve` to serve using `_config_dev.yml` which leaves out Google Analytics in the local server  
+10) Run `./force_edit_and_push` for quick changes

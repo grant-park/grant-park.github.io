@@ -1,4 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="https://grant.ai/feed.xml" rel="self" type="application/atom+xml" /><link href="https://grant.ai/" rel="alternate" type="text/html" /><updated>2018-10-09T23:54:58-04:00</updated><id>https://grant.ai/feed.xml</id><title type="html">grant.ai</title><subtitle>Grant H. Park</subtitle><entry><title type="html">State of Mutation Testing on Android</title><link href="https://grant.ai/keyboards/2018/10/07/state-of-mutation-testing-on-android.html" rel="alternate" type="text/html" title="State of Mutation Testing on Android" /><published>2018-10-07T14:34:17-04:00</published><updated>2018-10-07T14:34:17-04:00</updated><id>https://grant.ai/keyboards/2018/10/07/state-of-mutation-testing-on-android</id><content type="html" xml:base="https://grant.ai/keyboards/2018/10/07/state-of-mutation-testing-on-android.html">&lt;p&gt;Mutation testing is unit test testing. If your unit tests are full of false-positives, meaning that there are pointless or absent assertions, and your test coverage is misleadingly high; it is probably time for you to maintain your test suite with mutation testing.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="https://grant.ai/feed.xml" rel="self" type="application/atom+xml" /><link href="https://grant.ai/" rel="alternate" type="text/html" /><updated>2018-11-01T20:25:51-04:00</updated><id>https://grant.ai/feed.xml</id><title type="html">grant.ai</title><subtitle>Grant H. Park</subtitle><entry><title type="html">Notes on Data@Scale 2018</title><link href="https://grant.ai/conferences/2018/10/25/notes-on-data-at-scale.html" rel="alternate" type="text/html" title="Notes on Data@Scale 2018" /><published>2018-10-25T09:34:17-04:00</published><updated>2018-10-25T09:34:17-04:00</updated><id>https://grant.ai/conferences/2018/10/25/notes-on-data-at-scale</id><content type="html" xml:base="https://grant.ai/conferences/2018/10/25/notes-on-data-at-scale.html">&lt;p&gt;The following notes are quick thoughts and summarizations of various talks at the Data@Scale conference I attended today. I plan to refine them later once I review more resources on each topic and aggregate the shots I took of interesting slides during each presentation.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lessons and Observations Scaling a Timeseries Database&lt;/strong&gt; &lt;em&gt;by&lt;/em&gt; &lt;strong&gt;Ryan Betts&lt;/strong&gt;, &lt;em&gt;Director of Platform Engineering at InfluxData&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Timeseries Database&lt;/li&gt;
+  &lt;li&gt;LSM&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Leveraging Sampling to Reduce Data Warehouse Resource Consumption&lt;/strong&gt; &lt;em&gt;by&lt;/em&gt; &lt;strong&gt;Gabriela Jacques Da Silva&lt;/strong&gt;, &lt;em&gt;Software Engineer at Facebook; and&lt;/em&gt; &lt;strong&gt;Donghui Zhang&lt;/strong&gt;, &lt;em&gt;Software Engineer at Facebook&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Various research papers and a closed form error estimate&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Voting with Witnesses the Apache Cassandra Way&lt;/strong&gt; &lt;em&gt;by&lt;/em&gt; &lt;strong&gt;Ariel Weisberg&lt;/strong&gt;, &lt;em&gt;PMC Member at Apache Cassandra&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Quorums&lt;/li&gt;
+  &lt;li&gt;Merkle Tree&lt;/li&gt;
+  &lt;li&gt;Consistent Hashing (Hash Rings)&lt;/li&gt;
+  &lt;li&gt;Visible / Witness&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Deleting Data @ Scale&lt;/strong&gt; &lt;em&gt;by&lt;/em&gt; &lt;strong&gt;Ben Strahs&lt;/strong&gt;, &lt;em&gt;Software Engineer, Privacy &amp;amp; Data Use at Facebook&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Schemas&lt;/li&gt;
+  &lt;li&gt;Widespread testing&lt;/li&gt;
+  &lt;li&gt;Restoration (Continuous)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Scaling Data Plumbing at Wayfair&lt;/strong&gt; &lt;em&gt;by&lt;/em&gt; &lt;strong&gt;Ben Clark&lt;/strong&gt;, &lt;em&gt;Chief Architect at Wayfair&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Sliding Window on Pipeline&lt;/li&gt;
+  &lt;li&gt;Leaky Bucket&lt;/li&gt;
+  &lt;li&gt;ETL&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Presto: Pursuit of Performance&lt;/strong&gt; &lt;em&gt;by&lt;/em&gt; &lt;strong&gt;Andrii Rosa&lt;/strong&gt;, &lt;em&gt;Software Engineer at Facebook&lt;/em&gt;  &lt;em&gt;and&lt;/em&gt; &lt;strong&gt;Matt Fuller&lt;/strong&gt;, &lt;em&gt;VP of Engineering at Starburst&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Cost-based optimizer&lt;/li&gt;
+  &lt;li&gt;Fast SQL querying&lt;/li&gt;
+  &lt;li&gt;Use of coefficients to determine cost of three things: storage usage, CPU usage, and complexity&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Building Highly Reliable Data Pipelines at Datadog&lt;/strong&gt; &lt;em&gt;by&lt;/em&gt; &lt;strong&gt;Jeremy Karn&lt;/strong&gt;, &lt;em&gt;Staff Data Engineer at Datadog&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Spot Instances&lt;/li&gt;
+  &lt;li&gt;On-demand instances&lt;/li&gt;
+  &lt;li&gt;Isolate issues via preventatively running multiple pipelines&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">The following notes are quick thoughts and summarizations of various talks at the Data@Scale conference I attended today. I plan to refine them later once I review more resources on each topic and aggregate the shots I took of interesting slides during each presentation.</summary></entry><entry><title type="html">State of Mutation Testing on Android</title><link href="https://grant.ai/programming/2018/10/07/state-of-mutation-testing-on-android.html" rel="alternate" type="text/html" title="State of Mutation Testing on Android" /><published>2018-10-07T14:34:17-04:00</published><updated>2018-10-07T14:34:17-04:00</updated><id>https://grant.ai/programming/2018/10/07/state-of-mutation-testing-on-android</id><content type="html" xml:base="https://grant.ai/programming/2018/10/07/state-of-mutation-testing-on-android.html">&lt;p&gt;Mutation testing is unit test testing. If your unit tests are full of false-positives, meaning that there are pointless or absent assertions, and your test coverage is misleadingly high; it is probably time for you to maintain your test suite with mutation testing.&lt;/p&gt;
 
 &lt;p&gt;This is how it works:&lt;/p&gt;
 &lt;ul&gt;
@@ -13,18 +67,18 @@
 
 &lt;p&gt;Here is a simple example of some code and a test suite that passes mutation testing:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;boolean sampleCode(x, y) {
-    if (x &amp;lt; y) {
-        return 1;
-    } else {
-        return 2;
-    }
-}
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sampleCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;assertTrue(sampleCode(1,2).equals(1));
-assertTrue(sampleCode(2,1).equals(2));
-assertTrue(sampleCode(1,1).equals(2));
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;assertTrue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sampleCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;assertTrue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sampleCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;assertTrue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sampleCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;The above code would produce mutants in which &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;&lt;/code&gt; is replaced with one of &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;=&lt;/code&gt;, or &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;=&lt;/code&gt;. The test suite would have a unique result consisting of at least one failed assertion for each mutant case, acknowledging the different state produced by each mutant via &lt;code class=&quot;highlighter-rouge&quot;&gt;.equals()&lt;/code&gt;. Thus, the test suite would pass mutation testing.&lt;/p&gt;
 
@@ -35,7 +89,7 @@ requirement for large teams.&lt;/p&gt;
 
 &lt;p&gt;Unfortunately, mutation testing is not in high demand for Android development. There is a &lt;a href=&quot;http://pitest.org/&quot;&gt;popular mutation testing library called PIT&lt;/a&gt; which happens to have a great Gradle plugin – but because of how different Google’s Java environment is from the “standard”, it is not easy to port over to Android. There is an &lt;a href=&quot;https://github.com/koral--/gradle-pitest-plugin&quot;&gt;experimental fork&lt;/a&gt; of the Gradle plugin by @koral–, which works for basic tests using &lt;a href=&quot;http://robolectric.org/&quot;&gt;Roboelectric&lt;/a&gt;, but it is not yet up to speed for enterprise testing. I also hear rumors of certain large companies having their own internal tools for mutation testing on Android but are too stingy to share such a power with the rest of the world.&lt;/p&gt;
 
-&lt;p&gt;The only solution I can think of to address the limitations for Android, is to decouple all environmental implementations from business logic. That is, ensure that all code to be tested can be compiled without the ADK. This strategy has saved my ass many times when I couldn’t figure out how to mock things like Android’s &lt;code class=&quot;highlighter-rouge&quot;&gt;Handler&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;Bundles&lt;/code&gt;. My team, for this very reason of environment independent code, has been avoiding the use of Roboelectric like the plague. Ironically, there are a number of components in our project that do not have tests because it would be a pain to mock the environmental requirements – so tech debt’s a thing.&lt;/p&gt;</content><author><name></name></author><summary type="html">Mutation testing is unit test testing. If your unit tests are full of false-positives, meaning that there are pointless or absent assertions, and your test coverage is misleadingly high; it is probably time for you to maintain your test suite with mutation testing.</summary></entry><entry><title type="html">Introducing the micro_32</title><link href="https://grant.ai/keyboards/2018/09/24/introducing_the_micro_32.html" rel="alternate" type="text/html" title="Introducing the micro_32" /><published>2018-09-24T14:34:17-04:00</published><updated>2018-09-24T14:34:17-04:00</updated><id>https://grant.ai/keyboards/2018/09/24/introducing_the_micro_32</id><content type="html" xml:base="https://grant.ai/keyboards/2018/09/24/introducing_the_micro_32.html">&lt;p&gt;I’ve been piloting a 32-key layout for a year now, primarily for LaTeX and essay writing. Since I’ve graduated and no longer have homework, I now only type for work.&lt;/p&gt;
+&lt;p&gt;The only solution I can think of to address the limitations for Android, is to decouple all environmental implementations from business logic. That is, ensure that all code to be tested can be compiled without the ADK – essentially just sticking to POJO code. My team does a good job of this for the most part and tries maintain the status quo for the reason above. Ironically, there are a small number of components in our project that do not have tests because it would be a pain to mock the environmental requirements – so tech debt’s a thing.&lt;/p&gt;</content><author><name></name></author><summary type="html">Mutation testing is unit test testing. If your unit tests are full of false-positives, meaning that there are pointless or absent assertions, and your test coverage is misleadingly high; it is probably time for you to maintain your test suite with mutation testing.</summary></entry><entry><title type="html">Introducing the Micro32</title><link href="https://grant.ai/keyboards/2018/09/24/introducing_the_micro_32.html" rel="alternate" type="text/html" title="Introducing the Micro32" /><published>2018-09-24T14:34:17-04:00</published><updated>2018-09-24T14:34:17-04:00</updated><id>https://grant.ai/keyboards/2018/09/24/introducing_the_micro_32</id><content type="html" xml:base="https://grant.ai/keyboards/2018/09/24/introducing_the_micro_32.html">&lt;p&gt;I’ve been piloting a 32-key layout for a year now, primarily for LaTeX and essay writing. Since I’ve graduated and no longer have homework, I now only type for work.&lt;/p&gt;
 
 &lt;p&gt;My layout is in reach of all the fingers and I can do any combo or config that I can think of with ease. On &lt;a href=&quot;&quot;&gt;10fastfingers&lt;/a&gt;, my WPM is comfortably 144 on the normal test and 110 on the advanced test. On &lt;a href=&quot;&quot;&gt;speedcoder.net&lt;/a&gt;, my WPM is 64 for the C++ test.&lt;/p&gt;
 
@@ -62,9 +116,9 @@ requirement for large teams.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://grant.ai///assets/img/micro_32.jpg&quot; alt=&quot;result&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The halves are flashed with &lt;a href=&quot;https://github.com/qmk/qmk_firmware/tree/master/keyboards/lets_split&quot;&gt;Let’s Split firmware&lt;/a&gt; and communicate via I2C over a TRRS cable. The switches are Gateron silent black, have O-Rings, and have Krytox-lubed springs and stems. They’re pretty silent so I like using them at work.&lt;/p&gt;
+&lt;p&gt;The halves are flashed with &lt;a href=&quot;https://github.com/qmk/qmk_firmware/tree/master/keyboards/lets_split&quot;&gt;Let’s Split firmware&lt;/a&gt; and communicate via I2C over a TRRS cable. The switches are Gateron silent black, have O-Rings, and have Krytox-lubed springs and stems. They’re pretty silent so I like using them at work. I got the keycaps off a Commodore 64 PCB I found on eBay.&lt;/p&gt;
 
-&lt;p&gt;I am prototyping a PCB and some case designs for a new keyboard with my layout – I’m calling it the micro_32 since it’s a tiny-ass keyboard with 32 keys and it coincidentally sounds like a combination of ProMicro and Atmega32u4. Originally I wanted to name it the “Micro32”, but I realized it was &lt;a href=&quot;https://www.favero.com/en2_billiard_electronic_digital_controller_to_time_accounting_system_for_billiard-59-22.html&quot;&gt;already taken and trademarked&lt;/a&gt; – hence the casing and added underscore.&lt;/p&gt;
+&lt;p&gt;I am prototyping a PCB and some case designs for a new keyboard with my layout – I’m calling it the Micro32 since it’s a tiny-ass keyboard with 32 keys and it coincidentally sounds like a combination of ProMicro and Atmega32u4.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;mailto:granthpark@gmail.com&quot;&gt;Email me&lt;/a&gt; if you would like to get your hands on one.&lt;/p&gt;
 
@@ -308,31 +362,31 @@ Jump to definition: &lt;code class=&quot;highlighter-rouge&quot;&gt;^]&lt;/code&
 
 &lt;p&gt;Before, I always made messy code in my view controllers that looked sort of like this:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let kidQuery = PFQuery(className: “_User”)
-let theseKids = kidQuery.whereKey(“parent”, containsString: (PFUser.currentUser()?.objectId!)! as String)
-theseKids.findObjectsInBackgroundWithBlock { (result, error) -&amp;gt; Void in
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;kidQuery&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PFQuery&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_User&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;theseKids&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kidQuery&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;whereKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;containsString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;PFUser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;currentUser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objectId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;theseKids&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;findObjectsInBackgroundWithBlock&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Void&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
 
-  if error == nil {
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 
-    self.kidArray = result! as [PFObject] ?? []
-    Kids.sharedData.array = self.kidArray as! [PFObject]
-    if self.kidArray == [] {
-        print(“empty!!”)
-    }
-    self.tableView.reloadData()
-    self.refreshCtrl.endRefreshing()
+    &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kidArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;PFObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;??&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;Kids&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sharedData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kidArray&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as!&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;PFObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kidArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!!&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tableView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reloadData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;refreshCtrl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;endRefreshing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 
-  } else {
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 
-    dispatch_async(dispatch_get_main_queue(), { () -&amp;gt; Void in
-    let alert = UIAlertController(title: “Error”, message: error?.localizedDescription, preferredStyle: .Alert)
-    let cancel = UIAlertAction(title: “Close”, style: .Default, handler: nil)
-    alert.addAction(cancel)
-    self.presentViewController(alert, animated: true, completion: nil)
+    &lt;span class=&quot;nf&quot;&gt;dispatch_async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;dispatch_get_main_queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Void&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;alert&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIAlertController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;localizedDescription&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;preferredStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;cancel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIAlertAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Close&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;addAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cancel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;presentViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;completion&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-    })
-  }
-}
+    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;After I moved my code around, the same function in my view controller looks a lot cleaner:&lt;/p&gt;
@@ -345,68 +399,42 @@ theseKids.findObjectsInBackgroundWithBlock { (result, error) -&amp;gt; Void in
 
 &lt;p&gt;Create a new .swift file. Let’s call it Toolbox.swift and put inside the following function:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func testCompletionHandler(input: String?, completionHandler: ((result: String?) -&amp;gt; Void)?) {}
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testCompletionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)?)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
 
-Note that the “input” and “completionHandler” arguments in this function are optional; you could call this function with nil for both arguments and it could still do something (or do nothing at all). The “completionHandler” argument is actually a Swift block that can execute something along with a parameter called “result.” Right now, this function does nothing, so let’s add some logic:
+&lt;span class=&quot;kt&quot;&gt;Note&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;that&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arguments&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;are&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;optional&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;you&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;could&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;both&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arguments&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;could&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;still&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;something&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nothing&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;at&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;The&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argument&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;actually&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Swift&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;block&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;that&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;can&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;execute&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;something&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;along&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parameter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;called&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Right&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;does&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nothing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;so&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;’&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;logic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
 
-func testCompletionHandler(input: String?, completionHandler: ((result: String?) -&amp;gt; Void)?) {
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testCompletionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)?)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 
-  if let aString = input {
-    if aString == “I want a completion handler!” {
-      if let aHandler = completionHandler {
-        aHandler(result: “Here is the completion handler!”)
-      }
-    } else {
-      if let aHandler = completionHandler {
-        aHandler(result: nil)
-      }
-    }
-  }
-}
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;aString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;I&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;want&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;completion&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;aHandler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;completionHandler&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;aHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Here&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;completion&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;aHandler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;completionHandler&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;aHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The moment “aHandler” is called inside of this function, the caller of this function will receive the completion block and can do anything they want with “result” unless it’s nil of course.&lt;/p&gt;
 
 &lt;p&gt;As an example, let’s look at ViewController.swift (a different source file):&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class ViewController: UIViewController {
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 
-  var myToolbox = Toolbox()
+  &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;myToolbox&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Toolbox&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 
-  viewDidLoad() {
-      super.viewDidLoad()
-      myToolbox.testCompletionHandler(&quot;I want a completion handler!&quot;) { (result) -&amp;gt; Void in 
-        if let aString = result { print(aString) }
-      }
-    }
-  }
-}
+  &lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;myToolbox&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;testCompletionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;I want a completion handler!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Void&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; 
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;aString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;When we call our created completion handler function in viewDidLoad, we should receive “Here is the completion handler!” in the console. We’ve successfully created a completion handler function and now you can use this same pattern to move all your asynchronous logic to specialized classes for ultimately cleaner, more readable code!&lt;/p&gt;</content><author><name></name></author><summary type="html">I’m currently learning the MVVM design pattern and I’ve noticed that a lot of asynchronous code manipulation/organization requires the basic creation of completion handling functions.</summary></entry><entry><title type="html">Swift Callback Pattern</title><link href="https://grant.ai/programming/2016/01/31/swift-callback-pattern.html" rel="alternate" type="text/html" title="Swift Callback Pattern" /><published>2016-01-31T12:00:00-05:00</published><updated>2016-01-31T12:00:00-05:00</updated><id>https://grant.ai/programming/2016/01/31/swift-callback-pattern</id><content type="html" xml:base="https://grant.ai/programming/2016/01/31/swift-callback-pattern.html">&lt;p&gt;If you want an alternative to the protocol/delegate pattern, you can use callbacks. Here’s an example:&lt;/p&gt;
-
-&lt;p&gt;Example.swift&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Example {
-  var onCompletion: ((result:String) -&amp;gt; Void)?
-  func doSomething() {
-    onCompletion(result:&quot;here's the callback!&quot;)
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;ViewController.swift&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class ViewController: UIViewController {
-  override viewDidLoad {
-    Example.onCompletion = { result in
-      print(result)
-    }
-    Example.doSomething()
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Once ViewController loads, “here’s the callback!” should show up in the console.&lt;/p&gt;
-
-&lt;p&gt;That’s it! You can use this pattern to get things done without having to abide by the strict “contract” logic of protocols.&lt;/p&gt;</content><author><name></name></author><summary type="html">If you want an alternative to the protocol/delegate pattern, you can use callbacks. Here’s an example:</summary></entry></feed>
+&lt;p&gt;When we call our created completion handler function in viewDidLoad, we should receive “Here is the completion handler!” in the console. We’ve successfully created a completion handler function and now you can use this same pattern to move all your asynchronous logic to specialized classes for ultimately cleaner, more readable code!&lt;/p&gt;</content><author><name></name></author><summary type="html">I’m currently learning the MVVM design pattern and I’ve noticed that a lot of asynchronous code manipulation/organization requires the basic creation of completion handling functions.</summary></entry></feed>

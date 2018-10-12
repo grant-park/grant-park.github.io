@@ -17,7 +17,16 @@
 <script type="application/ld+json">
 {"url":"https://grant.ai/programming/2016/01/31/swift-callback-pattern.html","description":"If you want an alternative to the protocol/delegate pattern, you can use callbacks. Here’s an example:","headline":"Swift Callback Pattern","datePublished":"2016-01-31T12:00:00-05:00","dateModified":"2016-01-31T12:00:00-05:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://grant.ai/programming/2016/01/31/swift-callback-pattern.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://grant.ai/feed.xml" title="grant.ai" /></head>
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://grant.ai/feed.xml" title="grant.ai" /><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-69280329-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69280329-1');
+</script>
+</head>
 <body><header class="site-header" role="banner">
 
   <div class="wrapper"><a class="site-title" rel="author" href="/">grant.ai</a><nav class="site-nav">
@@ -49,24 +58,24 @@
 
 <p>Example.swift</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Example {
-  var onCompletion: ((result:String) -&gt; Void)?
-  func doSomething() {
-    onCompletion(result:"here's the callback!")
-  }
-}
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">Example</span> <span class="p">{</span>
+  <span class="k">var</span> <span class="nv">onCompletion</span><span class="p">:</span> <span class="p">((</span><span class="nv">result</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span>
+  <span class="kd">func</span> <span class="nf">doSomething</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">onCompletion</span><span class="p">(</span><span class="nv">result</span><span class="p">:</span><span class="s">"here's the callback!"</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 <p>ViewController.swift</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class ViewController: UIViewController {
-  override viewDidLoad {
-    Example.onCompletion = { result in
-      print(result)
-    }
-    Example.doSomething()
-  }
-}
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+  <span class="k">override</span> <span class="n">viewDidLoad</span> <span class="p">{</span>
+    <span class="kt">Example</span><span class="o">.</span><span class="n">onCompletion</span> <span class="o">=</span> <span class="p">{</span> <span class="n">result</span> <span class="k">in</span>
+      <span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="kt">Example</span><span class="o">.</span><span class="nf">doSomething</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 <p>Once ViewController loads, “here’s the callback!” should show up in the console.</p>

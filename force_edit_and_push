@@ -1,0 +1,5 @@
+jekyll build
+cd _site
+git add .
+git commit --amend --no-edit
+git push origin master --force

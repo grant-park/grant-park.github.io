@@ -17,7 +17,16 @@
 <script type="application/ld+json">
 {"url":"https://grant.ai/programming/2016/01/31/completion-handlers-in-swift.html","description":"I’m currently learning the MVVM design pattern and I’ve noticed that a lot of asynchronous code manipulation/organization requires the basic creation of completion handling functions.","headline":"Completion Handlers in Swift","datePublished":"2016-01-31T14:00:00-05:00","dateModified":"2016-01-31T14:00:00-05:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://grant.ai/programming/2016/01/31/completion-handlers-in-swift.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://grant.ai/feed.xml" title="grant.ai" /></head>
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://grant.ai/feed.xml" title="grant.ai" /><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-69280329-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69280329-1');
+</script>
+</head>
 <body><header class="site-header" role="banner">
 
   <div class="wrapper"><a class="site-title" rel="author" href="/">grant.ai</a><nav class="site-nav">
@@ -49,31 +58,31 @@
 
 <p>Before, I always made messy code in my view controllers that looked sort of like this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let kidQuery = PFQuery(className: “_User”)
-let theseKids = kidQuery.whereKey(“parent”, containsString: (PFUser.currentUser()?.objectId!)! as String)
-theseKids.findObjectsInBackgroundWithBlock { (result, error) -&gt; Void in
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">kidQuery</span> <span class="o">=</span> <span class="kt">PFQuery</span><span class="p">(</span><span class="nv">className</span><span class="p">:</span> <span class="err">“</span><span class="n">_User</span><span class="err">”</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">theseKids</span> <span class="o">=</span> <span class="n">kidQuery</span><span class="o">.</span><span class="nf">whereKey</span><span class="p">(</span><span class="err">“</span><span class="n">parent</span><span class="err">”</span><span class="p">,</span> <span class="nv">containsString</span><span class="p">:</span> <span class="p">(</span><span class="kt">PFUser</span><span class="o">.</span><span class="nf">currentUser</span><span class="p">()?</span><span class="o">.</span><span class="n">objectId</span><span class="o">!</span><span class="p">)</span><span class="o">!</span> <span class="k">as</span> <span class="kt">String</span><span class="p">)</span>
+<span class="n">theseKids</span><span class="o">.</span><span class="n">findObjectsInBackgroundWithBlock</span> <span class="p">{</span> <span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="k">in</span>
 
-  if error == nil {
+  <span class="k">if</span> <span class="n">error</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
 
-    self.kidArray = result! as [PFObject] ?? []
-    Kids.sharedData.array = self.kidArray as! [PFObject]
-    if self.kidArray == [] {
-        print(“empty!!”)
-    }
-    self.tableView.reloadData()
-    self.refreshCtrl.endRefreshing()
+    <span class="k">self</span><span class="o">.</span><span class="n">kidArray</span> <span class="o">=</span> <span class="n">result</span><span class="o">!</span> <span class="k">as</span> <span class="p">[</span><span class="kt">PFObject</span><span class="p">]</span> <span class="p">??</span> <span class="p">[]</span>
+    <span class="kt">Kids</span><span class="o">.</span><span class="n">sharedData</span><span class="o">.</span><span class="n">array</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">kidArray</span> <span class="k">as!</span> <span class="p">[</span><span class="kt">PFObject</span><span class="p">]</span>
+    <span class="k">if</span> <span class="k">self</span><span class="o">.</span><span class="n">kidArray</span> <span class="o">==</span> <span class="p">[]</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="err">“</span><span class="n">empty</span><span class="o">!!</span><span class="err">”</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">tableView</span><span class="o">.</span><span class="nf">reloadData</span><span class="p">()</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">refreshCtrl</span><span class="o">.</span><span class="nf">endRefreshing</span><span class="p">()</span>
 
-  } else {
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
 
-    dispatch_async(dispatch_get_main_queue(), { () -&gt; Void in
-    let alert = UIAlertController(title: “Error”, message: error?.localizedDescription, preferredStyle: .Alert)
-    let cancel = UIAlertAction(title: “Close”, style: .Default, handler: nil)
-    alert.addAction(cancel)
-    self.presentViewController(alert, animated: true, completion: nil)
+    <span class="nf">dispatch_async</span><span class="p">(</span><span class="nf">dispatch_get_main_queue</span><span class="p">(),</span> <span class="p">{</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="k">in</span>
+    <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="err">“</span><span class="kt">Error</span><span class="err">”</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="n">error</span><span class="p">?</span><span class="o">.</span><span class="n">localizedDescription</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="kt">Alert</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">cancel</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="err">“</span><span class="kt">Close</span><span class="err">”</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="kt">Default</span><span class="p">,</span> <span class="nv">handler</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="n">alert</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">cancel</span><span class="p">)</span>
+    <span class="k">self</span><span class="o">.</span><span class="nf">presentViewController</span><span class="p">(</span><span class="n">alert</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
 
-    })
-  }
-}
+    <span class="p">})</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 <p>After I moved my code around, the same function in my view controller looks a lot cleaner:</p>
@@ -86,42 +95,42 @@ theseKids.findObjectsInBackgroundWithBlock { (result, error) -&gt; Void in
 
 <p>Create a new .swift file. Let’s call it Toolbox.swift and put inside the following function:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func testCompletionHandler(input: String?, completionHandler: ((result: String?) -&gt; Void)?) {}
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">testCompletionHandler</span><span class="p">(</span><span class="nv">input</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">((</span><span class="nv">result</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?)</span> <span class="p">{}</span>
 
-Note that the “input” and “completionHandler” arguments in this function are optional; you could call this function with nil for both arguments and it could still do something (or do nothing at all). The “completionHandler” argument is actually a Swift block that can execute something along with a parameter called “result.” Right now, this function does nothing, so let’s add some logic:
+<span class="kt">Note</span> <span class="n">that</span> <span class="n">the</span> <span class="err">“</span><span class="n">input</span><span class="err">”</span> <span class="n">and</span> <span class="err">“</span><span class="n">completionHandler</span><span class="err">”</span> <span class="n">arguments</span> <span class="k">in</span> <span class="n">this</span> <span class="n">function</span> <span class="n">are</span> <span class="kd">optional</span><span class="p">;</span> <span class="n">you</span> <span class="n">could</span> <span class="n">call</span> <span class="n">this</span> <span class="n">function</span> <span class="n">with</span> <span class="kc">nil</span> <span class="k">for</span> <span class="n">both</span> <span class="n">arguments</span> <span class="n">and</span> <span class="n">it</span> <span class="n">could</span> <span class="n">still</span> <span class="k">do</span> <span class="nf">something</span> <span class="p">(</span><span class="n">or</span> <span class="k">do</span> <span class="n">nothing</span> <span class="n">at</span> <span class="n">all</span><span class="p">)</span><span class="o">.</span> <span class="kt">The</span> <span class="err">“</span><span class="n">completionHandler</span><span class="err">”</span> <span class="n">argument</span> <span class="k">is</span> <span class="n">actually</span> <span class="n">a</span> <span class="kt">Swift</span> <span class="n">block</span> <span class="n">that</span> <span class="n">can</span> <span class="n">execute</span> <span class="n">something</span> <span class="n">along</span> <span class="n">with</span> <span class="n">a</span> <span class="n">parameter</span> <span class="n">called</span> <span class="err">“</span><span class="n">result</span><span class="o">.</span><span class="err">”</span> <span class="kt">Right</span> <span class="n">now</span><span class="p">,</span> <span class="n">this</span> <span class="n">function</span> <span class="n">does</span> <span class="n">nothing</span><span class="p">,</span> <span class="n">so</span> <span class="kd">let</span><span class="err">’</span><span class="n">s</span> <span class="n">add</span> <span class="n">some</span> <span class="nv">logic</span><span class="p">:</span>
 
-func testCompletionHandler(input: String?, completionHandler: ((result: String?) -&gt; Void)?) {
+<span class="kd">func</span> <span class="nf">testCompletionHandler</span><span class="p">(</span><span class="nv">input</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">((</span><span class="nv">result</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?)</span> <span class="p">{</span>
 
-  if let aString = input {
-    if aString == “I want a completion handler!” {
-      if let aHandler = completionHandler {
-        aHandler(result: “Here is the completion handler!”)
-      }
-    } else {
-      if let aHandler = completionHandler {
-        aHandler(result: nil)
-      }
-    }
-  }
-}
+  <span class="k">if</span> <span class="k">let</span> <span class="nv">aString</span> <span class="o">=</span> <span class="n">input</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">aString</span> <span class="o">==</span> <span class="err">“</span><span class="kt">I</span> <span class="n">want</span> <span class="n">a</span> <span class="n">completion</span> <span class="n">handler</span><span class="o">!</span><span class="err">”</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="k">let</span> <span class="nv">aHandler</span> <span class="o">=</span> <span class="n">completionHandler</span> <span class="p">{</span>
+        <span class="nf">aHandler</span><span class="p">(</span><span class="nv">result</span><span class="p">:</span> <span class="err">“</span><span class="kt">Here</span> <span class="k">is</span> <span class="n">the</span> <span class="n">completion</span> <span class="n">handler</span><span class="o">!</span><span class="err">”</span><span class="p">)</span>
+      <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="k">let</span> <span class="nv">aHandler</span> <span class="o">=</span> <span class="n">completionHandler</span> <span class="p">{</span>
+        <span class="nf">aHandler</span><span class="p">(</span><span class="nv">result</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 <p>The moment “aHandler” is called inside of this function, the caller of this function will receive the completion block and can do anything they want with “result” unless it’s nil of course.</p>
 
 <p>As an example, let’s look at ViewController.swift (a different source file):</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class ViewController: UIViewController {
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
 
-  var myToolbox = Toolbox()
+  <span class="k">var</span> <span class="nv">myToolbox</span> <span class="o">=</span> <span class="kt">Toolbox</span><span class="p">()</span>
 
-  viewDidLoad() {
-      super.viewDidLoad()
-      myToolbox.testCompletionHandler("I want a completion handler!") { (result) -&gt; Void in 
-        if let aString = result { print(aString) }
-      }
-    }
-  }
-}
+  <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+      <span class="n">myToolbox</span><span class="o">.</span><span class="nf">testCompletionHandler</span><span class="p">(</span><span class="s">"I want a completion handler!"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="k">in</span> 
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">aString</span> <span class="o">=</span> <span class="n">result</span> <span class="p">{</span> <span class="nf">print</span><span class="p">(</span><span class="n">aString</span><span class="p">)</span> <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 <p>When we call our created completion handler function in viewDidLoad, we should receive “Here is the completion handler!” in the console. We’ve successfully created a completion handler function and now you can use this same pattern to move all your asynchronous logic to specialized classes for ultimately cleaner, more readable code!</p>

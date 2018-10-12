@@ -17,7 +17,16 @@
 <script type="application/ld+json">
 {"url":"https://grant.ai/programming/2016/01/29/swift-protocol-delegate-pattern.html","description":"Let’s say you have view controllers A and B. Your main view controller is A and it segues to B. Following this logic, it‘s reasonable to assume B will get back to A via dismissing itself; but how does B pass data to A in the process? In other words, how do you pass back data between view controllers?","headline":"Swift Protocol/Delegate Pattern","datePublished":"2016-01-29T13:00:00-05:00","dateModified":"2016-01-29T13:00:00-05:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://grant.ai/programming/2016/01/29/swift-protocol-delegate-pattern.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://grant.ai/feed.xml" title="grant.ai" /></head>
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://grant.ai/feed.xml" title="grant.ai" /><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-69280329-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69280329-1');
+</script>
+</head>
 <body><header class="site-header" role="banner">
 
   <div class="wrapper"><a class="site-title" rel="author" href="/">grant.ai</a><nav class="site-nav">
@@ -59,36 +68,36 @@
 
 <p>ViewControllerA.swift <em>Look at ViewControllerB.swift first before wrapping your head around ViewControllerA.swift</em></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class ViewControllerA: UIViewController, DataProtocol {
-  //Arbitrary segue; you could also use the segue identifier method
-  //Just make sure that you set the delegate of the destination controller as self!
-  func aSegue() {
-    let aStoryboard = UIStoryboard(name:"Main", bundle:nil)
-    let vcb: UIViewController = aStoryboard.instantiateViewControllerWithIdentifier("ViewControllerB")
-    vcb.delegate = self
-  }
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">ViewControllerA</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">DataProtocol</span> <span class="p">{</span>
+  <span class="c1">//Arbitrary segue; you could also use the segue identifier method</span>
+  <span class="c1">//Just make sure that you set the delegate of the destination controller as self!</span>
+  <span class="kd">func</span> <span class="nf">aSegue</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">aStoryboard</span> <span class="o">=</span> <span class="kt">UIStoryboard</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span><span class="s">"Main"</span><span class="p">,</span> <span class="nv">bundle</span><span class="p">:</span><span class="kc">nil</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">vcb</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="o">=</span> <span class="n">aStoryboard</span><span class="o">.</span><span class="nf">instantiateViewControllerWithIdentifier</span><span class="p">(</span><span class="s">"ViewControllerB"</span><span class="p">)</span>
+    <span class="n">vcb</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+  <span class="p">}</span>
   
-  //DataProtocol requires this function to be included
-  func dataFunction(result: String) {
-    print(result)
-  }
-}
+  <span class="c1">//DataProtocol requires this function to be included</span>
+  <span class="kd">func</span> <span class="nf">dataFunction</span><span class="p">(</span><span class="nv">result</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 <p>ViewControllerB.swift</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>protocol DataProtocol {
-  func dataFunction(result: String)
-}
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">DataProtocol</span> <span class="p">{</span>
+  <span class="kd">func</span> <span class="nf">dataFunction</span><span class="p">(</span><span class="nv">result</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
+<span class="p">}</span>
 
-class ViewControllerB: UIViewController {
-  var delegate: DataProtocol? = nil
+<span class="kd">class</span> <span class="kt">ViewControllerB</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+  <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt">DataProtocol</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    delegate!.dataFunction("this string has been passed back!")
-  }
-}
+  <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+    <span class="n">delegate</span><span class="o">!.</span><span class="nf">dataFunction</span><span class="p">(</span><span class="s">"this string has been passed back!"</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 <p>Looking at ViewControllerB.swift first, we can observe that there is a protocol defined right above the class itself. Remember that protocols are like “contracts.” Protocols bind whoever adopts them to agree upon using all the required functions inside of them. The adopter is known as the “delegate.” Anyone can make use of the protocol to take advantage of the delegate.</p>
