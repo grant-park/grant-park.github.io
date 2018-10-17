@@ -9,7 +9,7 @@ If you want an alternative to the protocol/delegate pattern, you can use callbac
 
 Example.swift
 
-```
+```swift
 class Example {
   var onCompletion: ((result:String) -> Void)?
   func doSomething() {
@@ -20,7 +20,7 @@ class Example {
 
 ViewController.swift
 
-```
+```swift
 class ViewController: UIViewController {
   override viewDidLoad {
     Example.onCompletion = { result in

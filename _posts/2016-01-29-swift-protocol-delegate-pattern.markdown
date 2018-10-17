@@ -18,7 +18,7 @@ Today, I’ll teach you how to work with protocols and delegates to achieve this
 
 ViewControllerA.swift *Look at ViewControllerB.swift first before wrapping your head around ViewControllerA.swift*
 
-```
+```swift
 class ViewControllerA: UIViewController, DataProtocol {
   //Arbitrary segue; you could also use the segue identifier method
   //Just make sure that you set the delegate of the destination controller as self!
@@ -37,7 +37,7 @@ class ViewControllerA: UIViewController, DataProtocol {
 
 ViewControllerB.swift
 
-```
+```swift
 protocol DataProtocol {
   func dataFunction(result: String)
 }

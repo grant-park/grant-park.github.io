@@ -9,7 +9,7 @@ Recently, someone asked how I made my portfolio website: http://www.granthpark.m
 
 HTML
 
-```
+```html
 <div class=”rotate”>
    <div class=”iphone6-plus”>
      <div class=”screen”>
@@ -29,7 +29,7 @@ HTML
 
 CSS
 
-```
+```css
 .rotate {
  transform: perspective(1500px) rotateX(15deg) rotate(0);
 }
@@ -93,7 +93,7 @@ CSS
 
 .noscrollbar {
  -ms-overflow-style: none;
- overflow: -moz-scrollbars-none; // but it seems to not work…
+ overflow: -moz-scrollbars-none;
 }
 
 .noscrollbar::-webkit-scrollbar {
@@ -162,7 +162,7 @@ CSS
 
 JS
 
-```
+```javascript
 var send = function() {
   var inputValue = document.getElementById(“input”).value;
   var div = document.createElement(‘div’);

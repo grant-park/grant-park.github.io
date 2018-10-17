@@ -9,7 +9,7 @@ I’m currently learning the MVVM design pattern and I’ve noticed that a lot o
 
 Before, I always made messy code in my view controllers that looked sort of like this:  
 
-```
+```swift
 let kidQuery = PFQuery(className: “_User”)
 let theseKids = kidQuery.whereKey(“parent”, containsString: (PFUser.currentUser()?.objectId!)! as String)
 theseKids.findObjectsInBackgroundWithBlock { (result, error) -> Void in
@@ -47,7 +47,7 @@ To make a lot of these changes to my code, I ran into creating functions with co
 
 Create a new .swift file. Let’s call it Toolbox.swift and put inside the following function:  
 
-```
+```swift
 func testCompletionHandler(input: String?, completionHandler: ((result: String?) -> Void)?) {}
 
 Note that the “input” and “completionHandler” arguments in this function are optional; you could call this function with nil for both arguments and it could still do something (or do nothing at all). The “completionHandler” argument is actually a Swift block that can execute something along with a parameter called “result.” Right now, this function does nothing, so let’s add some logic:
@@ -72,7 +72,7 @@ The moment “aHandler” is called inside of this function, the caller of this 
 
 As an example, let’s look at ViewController.swift (a different source file):  
 
-```
+```swift
 class ViewController: UIViewController {
 
   var myToolbox = Toolbox()

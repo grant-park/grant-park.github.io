@@ -15,10 +15,10 @@ This is how it works:
 * If your unit tests _kill_\* all the mutations, then your code coverage result for the tested piece of code is accurate and meaningful.  
 
 \* _If the units test pass without having reached the changed code, the mutated code behaves similarly to the original code despite all different inputs, or if the propogated symptoms of the mutated code are never acknowledged by the unit tests, then the mutation test is considered failed. Otherwise, the unit tests will have "killed" the mutants and pass the mutation test._
-  
+
 Here is a simple example of some code and a test suite that passes mutation testing:  
 
-```
+```java
 boolean sampleCode(x, y) {
     if (x < y) {
         return 1;
@@ -28,7 +28,7 @@ boolean sampleCode(x, y) {
 }
 ```
 
-```
+```java
 assertTrue(sampleCode(1,2).equals(1));
 assertTrue(sampleCode(2,1).equals(2));
 assertTrue(sampleCode(1,1).equals(2));
@@ -42,4 +42,4 @@ requirement for large teams.
 
 Unfortunately, mutation testing is not in high demand for Android development. There is a [popular mutation testing library called PIT](http://pitest.org/) which happens to have a great Gradle plugin -- but because of how different Google's Java environment is from the "standard", it is not easy to port over to Android. There is an [experimental fork](https://github.com/koral--/gradle-pitest-plugin) of the Gradle plugin by @koral--, which works for basic tests using [Roboelectric](http://robolectric.org/), but it is not yet up to speed for enterprise testing. I also hear rumors of certain large companies having their own internal tools for mutation testing on Android but are too stingy to share such a power with the rest of the world.  
 
-The only solution I can think of to address the limitations for Android, is to decouple all environmental implementations from business logic. That is, ensure that all code to be tested can be compiled without the ADK. This strategy has saved my ass many times when I couldn't figure out how to mock things like Android's `Handler` or `Bundles`. My team, for this very reason of environment independent code, has been avoiding the use of Roboelectric like the plague. Ironically, there are a number of components in our project that do not have tests because it would be a pain to mock the environmental requirements -- so tech debt's a thing.
+The only solution I can think of to address the limitations for Android, is to decouple all environmental implementations from business logic. That is, ensure that all code to be tested can be compiled without the ADK -- essentially just sticking to POJO code. My team does a good job of this for the most part and tries maintain the status quo for the reason above. Ironically, there are a small number of components in our project that do not have tests because it would be a pain to mock the environmental requirements -- so tech debt's a thing.
