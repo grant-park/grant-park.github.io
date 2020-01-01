@@ -9,3 +9,23 @@ For my future self:
 8) Google Analytics was added to head.html in _includes  
 9) Run `./serve` to serve using `_config_dev.yml` which leaves out Google Analytics in the local server  
 10) Run `./force_edit_and_push` for quick changes
+
+Notes from self on 01/01/2020:
+* I'm using NixOS, so I need to include `jekyll` and `bundix` in `environment.systemPackages`
+* Run `bundix -l` in dev branch so that the gemfile will be mapped to a gemset.nix file
+* Create a default.nix containing the code below and then run `nix-shell`  
+
+```
+with (import <nixpkgs> {});
+let
+  gems = bundlerEnv {
+    name = "your-package";
+    inherit ruby;
+    gemdir = ./.;
+  };
+in stdenv.mkDerivation {
+  name = "your-package";
+  buildInputs = [gems ruby];
+}
+```
+
