@@ -1,20 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="https://grant.ai/feed.xml" rel="self" type="application/atom+xml" /><link href="https://grant.ai/" rel="alternate" type="text/html" /><updated>2018-11-01T20:25:51-04:00</updated><id>https://grant.ai/feed.xml</id><title type="html">grant.ai</title><subtitle>Grant H. Park</subtitle><entry><title type="html">Notes on Data@Scale 2018</title><link href="https://grant.ai/conferences/2018/10/25/notes-on-data-at-scale.html" rel="alternate" type="text/html" title="Notes on Data@Scale 2018" /><published>2018-10-25T09:34:17-04:00</published><updated>2018-10-25T09:34:17-04:00</updated><id>https://grant.ai/conferences/2018/10/25/notes-on-data-at-scale</id><content type="html" xml:base="https://grant.ai/conferences/2018/10/25/notes-on-data-at-scale.html">&lt;p&gt;The following notes are quick thoughts and summarizations of various talks at the Data@Scale conference I attended today. I plan to refine them later once I review more resources on each topic and aggregate the shots I took of interesting slides during each presentation.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="https://grant.ai/feed.xml" rel="self" type="application/atom+xml" /><link href="https://grant.ai/" rel="alternate" type="text/html" /><updated>2020-01-01T21:21:32-05:00</updated><id>https://grant.ai/feed.xml</id><title type="html">grant.ai</title><subtitle>Grant H. Park</subtitle><entry><title type="html">Notes on Data@Scale 2018</title><link href="https://grant.ai/keyboards/2018/10/25/notes-on-data-at-scale.html" rel="alternate" type="text/html" title="Notes on Data@Scale 2018" /><published>2018-10-25T14:00:00-04:00</published><updated>2018-10-25T14:00:00-04:00</updated><id>https://grant.ai/keyboards/2018/10/25/notes-on-data-at-scale</id><content type="html" xml:base="https://grant.ai/keyboards/2018/10/25/notes-on-data-at-scale.html">&lt;p&gt;The following notes are quick thoughts and summarizations of various talks at the Data@Scale conference I attended today. The full schedule of events along with some videos of the presentations are found &lt;a href=&quot;https://atscaleconference.com/events/data-scale-2018/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Lessons and Observations Scaling a Timeseries Database&lt;/strong&gt; &lt;em&gt;by&lt;/em&gt; &lt;strong&gt;Ryan Betts&lt;/strong&gt;, &lt;em&gt;Director of Platform Engineering at InfluxData&lt;/em&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;strong&gt;Lessons and Observations Scaling a Timeseries Database&lt;/strong&gt; &lt;em&gt;by&lt;/em&gt; &lt;strong&gt;Ryan Betts&lt;/strong&gt;&lt;em&gt;, Director of Platform Engineering at InfluxData&lt;/em&gt;&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Timeseries Database&lt;/li&gt;
   &lt;li&gt;LSM&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Leveraging Sampling to Reduce Data Warehouse Resource Consumption&lt;/strong&gt; &lt;em&gt;by&lt;/em&gt; &lt;strong&gt;Gabriela Jacques Da Silva&lt;/strong&gt;, &lt;em&gt;Software Engineer at Facebook; and&lt;/em&gt; &lt;strong&gt;Donghui Zhang&lt;/strong&gt;, &lt;em&gt;Software Engineer at Facebook&lt;/em&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;strong&gt;Leveraging Sampling to Reduce Data Warehouse Resource Consumption&lt;/strong&gt; &lt;em&gt;by&lt;/em&gt; &lt;strong&gt;Gabriela Jacques Da Silva&lt;/strong&gt;&lt;em&gt;, Software Engineer at Facebook; and&lt;/em&gt; &lt;strong&gt;Donghui Zhang&lt;/strong&gt;&lt;em&gt;, Software Engineer at Facebook&lt;/em&gt;&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Various research papers and a closed form error estimate&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Voting with Witnesses the Apache Cassandra Way&lt;/strong&gt; &lt;em&gt;by&lt;/em&gt; &lt;strong&gt;Ariel Weisberg&lt;/strong&gt;, &lt;em&gt;PMC Member at Apache Cassandra&lt;/em&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;strong&gt;Voting with Witnesses the Apache Cassandra Way&lt;/strong&gt; &lt;em&gt;by&lt;/em&gt; &lt;strong&gt;Ariel Weisberg&lt;/strong&gt;&lt;em&gt;, PMC Member at Apache Cassandra&lt;/em&gt;&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Quorums&lt;/li&gt;
   &lt;li&gt;Merkle Tree&lt;/li&gt;
@@ -22,37 +19,33 @@
   &lt;li&gt;Visible / Witness&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Deleting Data @ Scale&lt;/strong&gt; &lt;em&gt;by&lt;/em&gt; &lt;strong&gt;Ben Strahs&lt;/strong&gt;, &lt;em&gt;Software Engineer, Privacy &amp;amp; Data Use at Facebook&lt;/em&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;strong&gt;Deleting Data @ Scale&lt;/strong&gt; &lt;em&gt;by&lt;/em&gt; &lt;strong&gt;Ben Strahs&lt;/strong&gt;&lt;em&gt;, Software Engineer, Privacy &amp;amp; Data Use at Facebook&lt;/em&gt;&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Schemas&lt;/li&gt;
   &lt;li&gt;Widespread testing&lt;/li&gt;
   &lt;li&gt;Restoration (Continuous)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Scaling Data Plumbing at Wayfair&lt;/strong&gt; &lt;em&gt;by&lt;/em&gt; &lt;strong&gt;Ben Clark&lt;/strong&gt;, &lt;em&gt;Chief Architect at Wayfair&lt;/em&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;strong&gt;Scaling Data Plumbing at Wayfair&lt;/strong&gt; &lt;em&gt;by&lt;/em&gt; &lt;strong&gt;Ben Clark&lt;/strong&gt;&lt;em&gt;, Chief Architect at Wayfair&lt;/em&gt;&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Sliding Window on Pipeline&lt;/li&gt;
   &lt;li&gt;Leaky Bucket&lt;/li&gt;
   &lt;li&gt;ETL&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Presto: Pursuit of Performance&lt;/strong&gt; &lt;em&gt;by&lt;/em&gt; &lt;strong&gt;Andrii Rosa&lt;/strong&gt;, &lt;em&gt;Software Engineer at Facebook&lt;/em&gt;  &lt;em&gt;and&lt;/em&gt; &lt;strong&gt;Matt Fuller&lt;/strong&gt;, &lt;em&gt;VP of Engineering at Starburst&lt;/em&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;strong&gt;Presto: Pursuit of Performance&lt;/strong&gt; &lt;em&gt;by&lt;/em&gt; &lt;strong&gt;Andrii Rosa&lt;/strong&gt;&lt;em&gt;, Software Engineer at Facebook and&lt;/em&gt; &lt;strong&gt;Matt Fuller&lt;/strong&gt;&lt;em&gt;, VP of Engineering at Starburst&lt;/em&gt;&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Cost-based optimizer&lt;/li&gt;
   &lt;li&gt;Fast SQL querying&lt;/li&gt;
   &lt;li&gt;Use of coefficients to determine cost of three things: storage usage, CPU usage, and complexity&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Building Highly Reliable Data Pipelines at Datadog&lt;/strong&gt; &lt;em&gt;by&lt;/em&gt; &lt;strong&gt;Jeremy Karn&lt;/strong&gt;, &lt;em&gt;Staff Data Engineer at Datadog&lt;/em&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;strong&gt;Building Highly Reliable Data Pipelines at Datadog&lt;/strong&gt; &lt;em&gt;by&lt;/em&gt; &lt;strong&gt;Jeremy Karn&lt;/strong&gt;&lt;em&gt;, Staff Data Engineer at Datadog&lt;/em&gt;&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Spot Instances&lt;/li&gt;
   &lt;li&gt;On-demand instances&lt;/li&gt;
   &lt;li&gt;Isolate issues via preventatively running multiple pipelines&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">The following notes are quick thoughts and summarizations of various talks at the Data@Scale conference I attended today. I plan to refine them later once I review more resources on each topic and aggregate the shots I took of interesting slides during each presentation.</summary></entry><entry><title type="html">State of Mutation Testing on Android</title><link href="https://grant.ai/programming/2018/10/07/state-of-mutation-testing-on-android.html" rel="alternate" type="text/html" title="State of Mutation Testing on Android" /><published>2018-10-07T14:34:17-04:00</published><updated>2018-10-07T14:34:17-04:00</updated><id>https://grant.ai/programming/2018/10/07/state-of-mutation-testing-on-android</id><content type="html" xml:base="https://grant.ai/programming/2018/10/07/state-of-mutation-testing-on-android.html">&lt;p&gt;Mutation testing is unit test testing. If your unit tests are full of false-positives, meaning that there are pointless or absent assertions, and your test coverage is misleadingly high; it is probably time for you to maintain your test suite with mutation testing.&lt;/p&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">The following notes are quick thoughts and summarizations of various talks at the Data@Scale conference I attended today. The full schedule of events along with some videos of the presentations are found here.</summary></entry><entry><title type="html">State of Mutation Testing on Android</title><link href="https://grant.ai/keyboards/2018/10/07/state-of-mutation-testing-on-android.html" rel="alternate" type="text/html" title="State of Mutation Testing on Android" /><published>2018-10-07T14:34:17-04:00</published><updated>2018-10-07T14:34:17-04:00</updated><id>https://grant.ai/keyboards/2018/10/07/state-of-mutation-testing-on-android</id><content type="html" xml:base="https://grant.ai/keyboards/2018/10/07/state-of-mutation-testing-on-android.html">&lt;p&gt;Mutation testing is unit test testing. If your unit tests are full of false-positives, meaning that there are pointless or absent assertions, and your test coverage is misleadingly high; it is probably time for you to maintain your test suite with mutation testing.&lt;/p&gt;
 
 &lt;p&gt;This is how it works:&lt;/p&gt;
 &lt;ul&gt;
@@ -116,9 +109,9 @@ requirement for large teams.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://grant.ai///assets/img/micro_32.jpg&quot; alt=&quot;result&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The halves are flashed with &lt;a href=&quot;https://github.com/qmk/qmk_firmware/tree/master/keyboards/lets_split&quot;&gt;Let’s Split firmware&lt;/a&gt; and communicate via I2C over a TRRS cable. The switches are Gateron silent black, have O-Rings, and have Krytox-lubed springs and stems. They’re pretty silent so I like using them at work. I got the keycaps off a Commodore 64 PCB I found on eBay.&lt;/p&gt;
+&lt;p&gt;The halves are flashed with &lt;a href=&quot;https://github.com/qmk/qmk_firmware/tree/master/keyboards/lets_split&quot;&gt;Let’s Split firmware&lt;/a&gt; and communicate via I2C over a TRRS cable. The switches are Gateron silent black, have O-Rings, and have Krytox-lubed springs and stems. They’re pretty silent so I like using them at work.&lt;/p&gt;
 
-&lt;p&gt;I am prototyping a PCB and some case designs for a new keyboard with my layout – I’m calling it the Micro32 since it’s a tiny-ass keyboard with 32 keys and it coincidentally sounds like a combination of ProMicro and Atmega32u4.&lt;/p&gt;
+&lt;p&gt;I am prototyping a PCB and some case designs for a new keyboard with my layout – I’m calling it the micro_32 since it’s a tiny-ass keyboard with 32 keys and it coincidentally sounds like a combination of ProMicro and Atmega32u4. Originally I wanted to name it the “Micro32”, but I realized it was &lt;a href=&quot;https://www.favero.com/en2_billiard_electronic_digital_controller_to_time_accounting_system_for_billiard-59-22.html&quot;&gt;already taken and trademarked&lt;/a&gt; – hence the casing and added underscore.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;mailto:granthpark@gmail.com&quot;&gt;Email me&lt;/a&gt; if you would like to get your hands on one.&lt;/p&gt;
 
