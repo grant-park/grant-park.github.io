@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Introducing the micro_32"
+title:  "Introducing the Micro32"
 date:   2018-09-24 12:34:17 -0600
 categories: keyboards
 ---
