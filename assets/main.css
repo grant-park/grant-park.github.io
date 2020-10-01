@@ -197,7 +197,14 @@ table {
   line-height: 54px;
   letter-spacing: -1px;
   margin-bottom: 0;
-  float: left; }
+  float: left;
+font-family: 'Crimson Text', serif;
+
+}
+.site-title::hover{
+  color: blue;
+}
+
   .site-title, .site-title:visited {
     color: #424242; }
 
